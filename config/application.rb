@@ -21,6 +21,14 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
+    def secrets
+      Rails.deprecator.silence { super }
+    end
+
+    def secret_key_base
+      Rails.deprecator.silence { super }
+    end
+
     config.load_defaults 7.0
 
     # Keep belongs_to fields optional by default, because that's the way
