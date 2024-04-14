@@ -74,7 +74,7 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   config.eager_load_paths << "#{Rails.root}/spec/mailers/previews"
-  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
+  config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
 
   # Limit size of local logs
   # TODO: replace with config.log_file_size after upgrading to Rails 7.1
