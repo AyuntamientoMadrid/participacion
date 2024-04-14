@@ -10,16 +10,6 @@
 # https://guides.rubyonrails.org/upgrading_ruby_on_rails.html
 
 ###
-# No longer add autoloaded paths into `$LOAD_PATH`. This means that you won't be able
-# to manually require files that are managed by the autoloader, which you shouldn't do anyway.
-#
-# This will reduce the size of the load path, making `require` faster if you don't use bootsnap, or reduce the size
-# of the bootsnap cache if you use it.
-#
-# To set this configuration, add the following line to `config/application.rb` (NOT this file):
-#   config.add_autoload_paths_to_load_path = false
-
-###
 # Remove the default X-Download-Options headers since it is used only by Internet Explorer.
 # If you need to support Internet Explorer, add back `"X-Download-Options" => "noopen"`.
 #++
