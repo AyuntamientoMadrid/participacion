@@ -38,7 +38,7 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
-      @investment_ids = @investments.ids
+      @investment_ids = @investments.pluck(:id)
 
       @investments_in_map = investments
       @tag_cloud = tag_cloud
