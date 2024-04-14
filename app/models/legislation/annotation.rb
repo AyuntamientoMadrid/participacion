@@ -3,7 +3,7 @@ class Legislation::Annotation < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  serialize :ranges, Array
+  serialize :ranges, type: Array
 
   belongs_to :draft_version, foreign_key: "legislation_draft_version_id", inverse_of: :annotations
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_annotations
