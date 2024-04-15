@@ -214,7 +214,7 @@ Rails.application.config.active_record.commit_transaction_on_non_local_return = 
 ###
 # Controls when to generate a value for <tt>has_secure_token</tt> declarations.
 #++
-# Rails.application.config.active_record.generate_secure_token_on = :initialize
+Rails.application.config.active_record.generate_secure_token_on = :initialize
 
 ###
 # ** Please read carefully, this must be configured in config/application.rb **
