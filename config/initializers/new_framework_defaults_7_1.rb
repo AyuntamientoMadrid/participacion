@@ -216,21 +216,6 @@ Rails.application.config.active_record.commit_transaction_on_non_local_return = 
 #++
 Rails.application.config.active_record.generate_secure_token_on = :initialize
 
-###
-# ** Please read carefully, this must be configured in config/application.rb **
-#
-# Change the format of the cache entry.
-#
-# Changing this default means that all new cache entries added to the cache
-# will have a different format that is not supported by Rails 7.0
-# applications.
-#
-# Only change this value after your application is fully deployed to Rails 7.1
-# and you have no plans to rollback.
-# When you're ready to change format, add this to `config/application.rb` (NOT
-# this file):
-#   config.active_support.cache_format_version = 7.1
-
 
 ###
 # Configure Action View to use HTML5 standards-compliant sanitizers when they are supported on your

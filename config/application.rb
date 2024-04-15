@@ -38,6 +38,19 @@ module Consul
     # of the bootsnap cache if you use it.
     config.add_autoload_paths_to_load_path = false
 
+
+    # Change the format of the cache entry.
+    #
+    # Changing this default means that all new cache entries added to the cache
+    # will have a different format that is not supported by Rails 7.0
+    # applications.
+    #
+    # Only change this value after your application is fully deployed to Rails 7.1
+    # and you have no plans to rollback.
+    # When you're ready to change format, add this to `config/application.rb` (NOT
+    # this file):
+    config.active_support.cache_format_version = 7.1
+
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
     config.active_record.belongs_to_required_by_default = false
