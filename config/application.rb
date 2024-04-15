@@ -29,27 +29,7 @@ module Consul
       Rails.deprecator.silence { super }
     end
 
-    config.load_defaults 7.0
-
-    # No longer add autoloaded paths into `$LOAD_PATH`. This means that you won't be able
-    # to manually require files that are managed by the autoloader, which you shouldn't do anyway.
-    #
-    # This will reduce the size of the load path, making `require` faster if you don't use bootsnap, or reduce the size
-    # of the bootsnap cache if you use it.
-    config.add_autoload_paths_to_load_path = false
-
-
-    # Change the format of the cache entry.
-    #
-    # Changing this default means that all new cache entries added to the cache
-    # will have a different format that is not supported by Rails 7.0
-    # applications.
-    #
-    # Only change this value after your application is fully deployed to Rails 7.1
-    # and you have no plans to rollback.
-    # When you're ready to change format, add this to `config/application.rb` (NOT
-    # this file):
-    config.active_support.cache_format_version = 7.1
+    config.load_defaults 7.1
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -70,6 +50,9 @@ module Consul
     # Keep using ImageMagick instead of libvips for image processing in
     # order to make upgrades easier.
     config.active_storage.variant_processor = :mini_magick
+
+    # Keep using YAML to serialize the legislation_annotations ranges column
+    config.active_record.default_column_serializer = YAML
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
