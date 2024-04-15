@@ -226,7 +226,7 @@ Rails.application.config.active_record.generate_secure_token_on = :initialize
 #
 # In previous versions of Rails, Action View always used `Rails::HTML4::Sanitizer` as its vendor.
 #++
-# Rails.application.config.action_view.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
+Rails.application.config.action_view.sanitizer_vendor = Rails::HTML::Sanitizer.best_supported_vendor
 
 
 ###

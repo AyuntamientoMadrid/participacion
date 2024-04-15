@@ -135,16 +135,14 @@ describe Legislation::DraftVersion do
 
       <p>Something about this.</p>
 
-      <table>
-      <thead>
+      <table><thead>
       <tr>
       <th>id</th>
       <th>name</th>
       <th>age</th>
       <th>gender</th>
       </tr>
-      </thead>
-      <tbody>
+      </thead><tbody>
       <tr>
       <td>1</td>
       <td>Roberta</td>
@@ -157,8 +155,7 @@ describe Legislation::DraftVersion do
       <td>25</td>
       <td>F</td>
       </tr>
-      </tbody>
-      </table>
+      </tbody></table>
     BODY_HTML
   end
 
