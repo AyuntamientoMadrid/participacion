@@ -76,12 +76,6 @@ Rails.application.configure do
   config.eager_load_paths << "#{Rails.root}/spec/mailers/previews"
   config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
 
-  # Limit size of local logs
-  # TODO: replace with config.log_file_size after upgrading to Rails 7.1
-  logger = ActiveSupport::Logger.new(config.default_log_file, 1, 100.megabytes)
-  logger.formatter = config.log_formatter
-  config.logger = ActiveSupport::TaggedLogging.new(logger)
-
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 

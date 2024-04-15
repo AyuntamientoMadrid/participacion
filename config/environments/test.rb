@@ -67,12 +67,6 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
-  # Limit size of local logs
-  # TODO: replace with config.log_file_size after upgrading to Rails 7.1
-  logger = ActiveSupport::Logger.new(config.default_log_file, 1, 100.megabytes)
-  logger.formatter = config.log_formatter
-  config.logger = ActiveSupport::TaggedLogging.new(logger)
-
   # Raise error when a before_action's only/except options reference missing actions
   # config.action_controller.raise_on_missing_callback_actions = true
 
