@@ -267,7 +267,7 @@ describe "Comments" do
   scenario "Sanitizes comment body for security" do
     create(:comment, commentable: resource,
                      body: "<script>alert('hola')</script> " \
-                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me</a> " \
                            "http://www.url.com")
 
     visit polymorphic_path(resource)
