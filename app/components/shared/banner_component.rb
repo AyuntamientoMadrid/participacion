@@ -15,10 +15,8 @@ class Shared::BannerComponent < ApplicationComponent
 
   private
 
-    def link
-      link_to banner.target_url do
-        tag.h2(banner.title, style: "color:#{banner.font_color}") +
-          tag.h3(banner.description, style: "color:#{banner.font_color}")
-      end
+    def banner_content
+      tag.h2(link_to(banner.title, banner.target_url), style: "color:#{banner.font_color}") +
+        tag.h3(banner.description, style: "color:#{banner.font_color}")
     end
 end

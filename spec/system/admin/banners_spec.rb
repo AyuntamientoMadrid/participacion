@@ -86,7 +86,7 @@ describe "Admin banners magement", :admin do
     visit proposals_path
 
     expect(page).to have_content "Such banner"
-    expect(page).to have_link "Such banner many text wow link", href: "https://www.url.com"
+    expect(page).to have_link "Such banner", href: "https://www.url.com"
   end
 
   scenario "Publish a banner with a translation different than the current locale" do
