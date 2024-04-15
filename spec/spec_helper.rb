@@ -10,7 +10,7 @@ Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
-  config.fixture_path = "spec/fixtures/files"
+  config.fixture_paths = ["spec/fixtures/files"]
 
   config.filter_run_when_matching :focus
   config.include RequestSpecHelper, type: :request
