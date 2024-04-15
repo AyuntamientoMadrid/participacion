@@ -256,4 +256,4 @@ Rails.application.config.action_dispatch.debug_exception_log_level = :error
 #
 # In previous versions of Rails, these test helpers always used an HTML4 parser.
 #++
-# Rails.application.config.dom_testing_default_html_version = :html5
+Rails.application.config.dom_testing_default_html_version = :html5
