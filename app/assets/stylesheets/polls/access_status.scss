@@ -1,0 +1,55 @@
+.poll .access-status {
+  border-bottom: 60px solid transparent;
+  border-top: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+
+  &.cant-answer::after,
+  &.not-logged-in::after,
+  &.already-answer::after,
+  &.unverified::after {
+    font-family: "icons" !important;
+    left: 34px;
+    position: absolute;
+    top: 5px;
+  }
+
+  &.cant-answer {
+    border-right: 60px solid $alert-bg;
+
+    &::after {
+      color: $color-alert;
+      content: "\74";
+    }
+  }
+
+  &.not-logged-in {
+    border-right: 60px solid $info-bg;
+
+    &::after {
+      color: $color-info;
+      content: "\6f";
+    }
+  }
+
+  &.unverified {
+    border-right: 60px solid $warning-bg;
+
+    &::after {
+      color: $color-warning;
+      content: "\6f";
+    }
+  }
+
+  &.already-answer {
+    border-right: 60px solid $success-bg;
+
+    &::after {
+      color: $color-success;
+      content: "\59";
+    }
+  }
+}

@@ -1,23 +1,6 @@
 <div class="poll with-image">
-  <% if current_user %>
-    <% if current_user.unverified? %>
-      <div class="icon-poll-answer unverified" title="<%= t("polls.index.unverified") %>">
-        <span class="show-for-sr"><%= t("polls.index.unverified") %></span>
-      </div>
-    <% elsif cannot?(:answer, poll) %>
-      <div class="icon-poll-answer cant-answer" title="<%= t("polls.index.cant_answer") %>">
-        <span class="show-for-sr"><%= t("polls.index.cant_answer") %></span>
-      </div>
-    <% elsif !poll.votable_by?(current_user) %>
-      <div class="icon-poll-answer already-answer" title="<%= t("polls.index.already_answer") %>">
-        <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="icon-poll-answer not-logged-in" title="<%= t("polls.index.not_logged_in") %>">
-      <span class="show-for-sr"><%= t("polls.index.not_logged_in") %></span>
-    </div>
-  <% end %>
+  <%= render Polls::AccessStatusComponent.new(poll) %>
+
   <div class="row" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column">
       <div class="image-container" data-equalizer-watch>

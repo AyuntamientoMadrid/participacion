@@ -1,0 +1,19 @@
+<% if current_user %>
+  <% if current_user.unverified? %>
+    <div class="access-status unverified" title="<%= t("polls.index.unverified") %>">
+      <span class="show-for-sr"><%= t("polls.index.unverified") %></span>
+    </div>
+  <% elsif cannot?(:answer, poll) %>
+    <div class="access-status cant-answer" title="<%= t("polls.index.cant_answer") %>">
+      <span class="show-for-sr"><%= t("polls.index.cant_answer") %></span>
+    </div>
+  <% elsif !poll.votable_by?(current_user) %>
+    <div class="access-status already-answer" title="<%= t("polls.index.already_answer") %>">
+      <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
+    </div>
+  <% end %>
+<% else %>
+  <div class="access-status not-logged-in" title="<%= t("polls.index.not_logged_in") %>">
+    <span class="show-for-sr"><%= t("polls.index.not_logged_in") %></span>
+  </div>
+<% end %>
