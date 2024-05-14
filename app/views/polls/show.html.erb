@@ -31,7 +31,7 @@
         <% end %>
       <% end %>
 
-      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
+      <%= render Polls::FormComponent.new(@questions) %>
     </div>
   </div>
 
