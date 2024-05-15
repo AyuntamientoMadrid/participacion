@@ -31,7 +31,7 @@
         <% end %>
       <% end %>
 
-      <%= render Polls::FormComponent.new(@questions) %>
+      <%= render Polls::FormComponent.new(@web_vote) %>
     </div>
   </div>
 
@@ -46,7 +46,7 @@
 
   <div id="poll_more_info_options" class="expanded poll-more-info-options">
     <div class="row padding">
-      <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
+      <%= render Polls::Questions::ReadMoreComponent.with_collection(@web_vote.questions) %>
     </div>
   </div>
 

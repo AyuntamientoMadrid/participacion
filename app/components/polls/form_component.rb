@@ -1,7 +1,8 @@
 class Polls::FormComponent < ApplicationComponent
-  attr_reader :questions
+  attr_reader :web_vote
+  delegate :poll, :questions, to: :web_vote
 
-  def initialize(questions)
-    @questions = questions
+  def initialize(web_vote)
+    @web_vote = web_vote
   end
 end
