@@ -6,7 +6,7 @@
   <%= render "poll_subnav" %>
 
   <div class="polls-results-content">
-    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+    <div>
       <p><strong><%= t("polls.show.results.title") %></strong></p>
       <ul class="menu vertical">
         <%- poll.questions.each do |question| %>
@@ -15,7 +15,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-9 column" data-equalizer-watch>
+    <div>
       <%= render Polls::Results::QuestionComponent.with_collection(poll.questions) %>
     </div>
   </div>
