@@ -1,4 +1,19 @@
 .users-following {
+  margin-top: $line-height;
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > .followables {
+      flex-basis: calc(100% * 2 / 3);
+    }
+
+    > .interests {
+      border-left: 1px solid #ececec;
+      flex-basis: calc(100% / 3);
+      padding-left: $line-height;
+    }
+  }
 
   .follow-list {
     list-style-type: circle;
@@ -20,14 +35,6 @@
       left: 0;
       position: absolute;
       top: 2px;
-    }
-  }
-
-  .interests {
-
-    @include breakpoint(medium) {
-      border-left: 1px solid #ececec;
-      padding-left: $line-height;
     }
   }
 }
