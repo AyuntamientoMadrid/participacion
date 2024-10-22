@@ -1,0 +1,60 @@
+.recommended-index {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
+  @include full-width-border(top, 1px solid #fafafa);
+  background: #fafafa;
+  margin-bottom: $line-height;
+  margin-top: rem-calc(-25);
+  padding: $line-height 0 calc(#{$line-height} / 2);
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  a {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .recommendation {
+    @include card;
+    background: $body-background;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: calc(#{$line-height} / 4);
+    padding: calc(#{$line-height} / 2);
+    z-index: 1;
+
+    &:hover:not(:focus-within) {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .hide-recommendations {
+    color: $text-light;
+    cursor: pointer;
+    font-size: $small-font-size;
+    line-height: inherit;
+    position: absolute;
+    right: 12px;
+    top: -18px;
+    z-index: 2;
+
+    &:focus,
+    &:hover {
+      @include anchor-color-hover;
+    }
+  }
+}
