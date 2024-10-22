@@ -16,13 +16,13 @@
         <span class="show-for-sr"><%= t("shared.recommended_index.hide") %></span>
       <% end %>
 
-      <% recommendations.each do |recommendation| %>
-        <div class="small-12 medium-6 large-4 column end">
-          <div class="recommendation" data-equalizer-watch>
-            <h3><%= link_to recommendation.title, polymorphic_path(recommendation) %></h3>
-          </div>
-        </div>
-      <% end %>
+      <ul>
+        <% recommendations.each do |recommendation| %>
+          <li class="small-12 medium-6 large-4 column end">
+            <%= link_to recommendation.title, polymorphic_path(recommendation), class: "recommendation", "data-equalizer-watch": true %>
+          </li>
+        <% end %>
+      </ul>
 
       <div class="small-12 column">
         <%= link_to t("shared.recommended_index.see_more"),
