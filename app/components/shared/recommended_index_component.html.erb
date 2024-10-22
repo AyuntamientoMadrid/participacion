@@ -19,7 +19,7 @@
       <% recommended.each do |recommended| %>
         <div class="small-12 medium-6 large-4 column end">
           <div class="recommendation" data-equalizer-watch>
-            <h3><%= link_to recommended.title, recommended_path(recommended) %></h3>
+            <h3><%= link_to recommended.title, polymorphic_path(recommended) %></h3>
           </div>
         </div>
       <% end %>

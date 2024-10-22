@@ -1,6 +1,6 @@
 class Shared::RecommendedIndexComponent < ApplicationComponent
   attr_reader :recommended, :disable_recommendations_path, :namespace
-  use_helpers :recommended_path, :current_path_with_query_params
+  use_helpers :current_path_with_query_params
 
   def initialize(recommended, disable_recommendations_path:, namespace:)
     @recommended = recommended
