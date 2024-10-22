@@ -16,7 +16,7 @@
         <span class="show-for-sr"><%= t("shared.recommended_index.hide") %></span>
       <% end %>
 
-      <% recommended.each_with_index do |recommended, index| %>
+      <% recommended.each do |recommended| %>
         <div class="small-12 medium-6 large-4 column end">
           <div class="recommendation" data-equalizer-watch>
             <h3><%= link_to recommended.title, recommended_path(recommended) %></h3>
