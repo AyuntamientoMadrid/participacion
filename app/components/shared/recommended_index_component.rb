@@ -1,14 +1,14 @@
 class Shared::RecommendedIndexComponent < ApplicationComponent
-  attr_reader :recommended, :disable_recommendations_path, :namespace
+  attr_reader :recommendations, :disable_recommendations_path, :namespace
   use_helpers :current_path_with_query_params
 
-  def initialize(recommended, disable_recommendations_path:, namespace:)
-    @recommended = recommended
+  def initialize(recommendations, disable_recommendations_path:, namespace:)
+    @recommendations = recommendations
     @disable_recommendations_path = disable_recommendations_path
     @namespace = namespace
   end
 
   def render?
-    feature?("user.recommendations") && recommended.present?
+    feature?("user.recommendations") && recommendations.present?
   end
 end
