@@ -1,39 +1,33 @@
 <div class="poll with-image">
   <%= render Polls::AccessStatusComponent.new(poll) %>
 
-  <div class="row" data-equalizer data-equalize-on="medium">
-    <div class="small-12 medium-3 column">
-      <div class="image-container" data-equalizer-watch>
-        <% if poll.image.present? %>
-          <%= image_tag poll.image.variant(:large), alt: poll.image.title.unicode_normalize %>
-        <% end %>
-      </div>
-    </div>
-    <div class="small-12 medium-6 column" data-equalizer-watch>
-      <% if poll.questions.one? %>
-        <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
-        <div class="dates"><%= dates %></div>
-      <% else %>
-        <h4><%= link_to_poll poll.name, poll %></h4>
-        <div class="dates"><%= dates %></div>
-
-        <ul class="margin-top">
-          <% poll.questions.sort_for_list.each do |question| %>
-            <li><%= question.title %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <%= render Polls::GeozonesComponent.new(poll) %>
-      <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
-    </div>
-    <div class="small-12 medium-3 column table" data-equalizer-watch>
-      <div class="table-cell align-middle">
-        <% if poll.expired? %>
-          <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
-        <% else %>
-          <%= link_to_poll t("polls.index.participate_button"), poll, class: "button hollow expanded" %>
-        <% end %>
-      </div>
-    </div>
+  <div class="image-container">
+    <% if poll.image.present? %>
+      <%= image_tag poll.image.variant(:large), alt: poll.image.title.unicode_normalize %>
+    <% end %>
   </div>
+
+  <div class="poll-info">
+    <% if poll.questions.one? %>
+      <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
+      <div class="dates"><%= dates %></div>
+    <% else %>
+      <h4><%= link_to_poll poll.name, poll %></h4>
+      <div class="dates"><%= dates %></div>
+
+      <ul class="margin-top">
+        <% poll.questions.sort_for_list.each do |question| %>
+          <li><%= question.title %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= render Polls::GeozonesComponent.new(poll) %>
+    <%= render SDG::TagListComponent.new(poll, limit: 5, linkable: false) %>
+  </div>
+
+  <% if poll.expired? %>
+    <%= link_to_poll t("polls.index.participate_button_expired"), poll, class: "button hollow expanded" %>
+  <% else %>
+    <%= link_to_poll t("polls.index.participate_button"), poll, class: "button hollow expanded" %>
+  <% end %>
 </div>

@@ -2,7 +2,25 @@
   &.with-image {
 
     @include breakpoint(medium) {
+      display: flex;
       padding: 0 calc(#{$line-height} / 2) 0 0;
+
+      > * {
+        flex-basis: 25%;
+      }
+
+      .poll-info {
+        flex-basis: 50%;
+      }
+
+      > a {
+        align-self: center;
+      }
+
+      > .poll-info,
+      > a {
+        margin-#{$global-left}: rem-calc(map-get($grid-column-gutter, medium));
+      }
     }
   }
 
