@@ -642,10 +642,10 @@ RSpec/SpecFilePathFormat:
 RSpec/SpecFilePathSuffix:
   Enabled: true
 
-RSpec/StringAsInstanceDoubleConstant:
+RSpec/UndescriptiveLiteralsDescription:
   Enabled: true
 
-RSpec/UndescriptiveLiteralsDescription:
+RSpec/VerifiedDoubleReference:
   Enabled: true
 
 RSpec/VoidExpect:
