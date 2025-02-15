@@ -118,8 +118,6 @@ es:
       allegations_phase: "Fase de comentarios"
       debates:
         zero: "No hay debates"
-        one: "%{count} debate"
-        other: "%{count} debates"
       proposals:
         zero: "No hay propuestas"
         one: "%{count} propuesta"

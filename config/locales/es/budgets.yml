@@ -3,7 +3,6 @@ es:
     ballots:
       show:
         title: Mis votos
-        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Todavía disponible <span>%{count}</span>"
           approval:
@@ -41,7 +40,7 @@ es:
         casted_offline: Ya has participado presencialmente
     groups:
       show:
-        title: Selecciona una partida
+        title: Selecciona una opción
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
@@ -74,8 +73,6 @@ es:
     investments:
       form:
         title: "Crear nuevo proyecto"
-        subtitle: "%{heading} (%{price})"
-        subtitle_without_price: "%{heading}"
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
@@ -155,11 +152,11 @@ es:
           one: 1 apoyo
           other: "%{count} apoyos"
       header:
-        check_ballot: Revisar y confirmar mis votos
+        check_ballot: "Revisar y confirmar mis votos"
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar y confirmar mis votos"
-        price: "Presupuesto total"
+        price: "Esta partida tiene un presupuesto de"
       votes:
         already_supported: "Ya has apoyado este proyecto de gasto. ¡Compártelo!"
         confirm_group:

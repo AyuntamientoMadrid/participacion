@@ -1,7 +1,6 @@
 es:
   account:
     show:
-      last_sign_in: "Último acceso efectuado: %{last_sign_in_at} desde la IP %{last_sign_in_ip}"
       change_credentials_link: Cambiar mis datos de acceso
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
@@ -36,13 +35,13 @@ es:
         one: 1 respuesta
         other: "%{count} respuestas"
       responses_show:
+        zero: Sin respuestas
         one: "1 respuesta (mostrar)"
         other: "%{count} respuestas (mostrar)"
-        zero: Sin respuestas
       responses_collapse:
+        zero: Sin respuestas
         one: "1 respuesta (colapsar)"
         other: "%{count} respuestas (colapsar)"
-        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -116,7 +115,7 @@ es:
     new:
       form:
         submit_button: Empieza un debate
-      more_info: "¿Cómo funcionan los debates?"
+      more_info: Más información
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
@@ -162,7 +161,6 @@ es:
     legislation/process: el proceso
     legislation/question: la pregunta
     poll/shift: el turno
-    poll/question/option: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -196,9 +194,8 @@ es:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       consul: aplicación CONSUL DEMOCRACY
-      consul_url: https://github.com/consuldemocracy/consuldemocracy
-      cookies_consent_management: Configuración de cookies
-      copyright: CONSUL DEMOCRACY, %{year}
+      consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       open_source: software de código abierto
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -224,12 +221,11 @@ es:
       budgets: Presupuestos participativos
       notification_item:
         new_notifications:
+          zero: "No tienes notificaciones nuevas"
           one: Tienes una nueva notificación
           other: Tienes %{count} notificaciones nuevas
-          zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
       sdg: "ODS"
-    skip_to_main_content: "Saltar al contenido principal"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -401,7 +397,6 @@ es:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
-      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
@@ -638,20 +633,18 @@ es:
     read_more_about: "Leer más:"
   proposal_notifications:
     new:
-      title: "Enviar notificación"
-      submit_button: "Enviar notificación"
+      title: "Enviar mensaje"
+      submit_button: "Enviar mensaje"
       info_about_receivers: "Esta notificación se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> Las notificaciones no se enviarán inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi contenido"
   shared:
-    actions:
-      label: "%{action} %{name}"
     edit: "Editar"
     filter: "Filtrar"
     save: "Guardar"
     delete: "Borrar"
-    "yes": "Sí"
+    "yes": "Si"
     "no": "No"
     search_results: "Resultados de la búsqueda"
     advanced_search:
@@ -676,8 +669,8 @@ es:
       author_deleted: Usuario eliminado
       email_deleted: Email eliminado
     back: Volver
-    check_all: Seleccionar todos
-    check_none: Seleccionar ninguno
+    check_all: Todos
+    check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
     follow: "Seguir"
@@ -722,7 +715,7 @@ es:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
-    target_blank: "Se abre en ventana nueva"
+    target_blank: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
     unfollow_entity: "Dejar de seguir %{entity}"
@@ -743,7 +736,6 @@ es:
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
     translations:
-      current_language: Idioma actual
       remove_language: Eliminar idioma
       add_language: Añadir idioma
       languages_in_use:
@@ -753,17 +745,15 @@ es:
     optional: "Campos opcionales"
     required: "Campos obligatorios"
     comments:
+      zero: "Sin comentarios"
       one: "1 comentario"
       other: "%{count} comentarios"
-      zero: "Sin comentarios"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  ip_denied_handler:
-    unauthorized: "Acceso denegado. Tu IP no tiene permiso para ver este contenido."
   unauthorized:
     default: No tienes permiso para acceder a esta página.
     manage:
@@ -921,7 +911,7 @@ es:
       take_part: Participa del %{from} al %{to}
   remote_translations:
     text: El contenido de esta página no está disponible en tu idioma
-    all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"
+    all_remote_translations_enqueued_text: En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
@@ -934,21 +924,3 @@ es:
   machine_learning:
     comments_summary: "Resumen de comentarios"
     info_text: "Contenido generado mediante IA / Machine Learning"
-  cookies_consent:
-    accept_all_cookies: "Aceptar todo"
-    accept_essential_cookies: "Aceptar cookies esenciales"
-    message: "Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso de cookies."
-    more_info_link: "Más información sobre cookies"
-    management: "Ajustes"
-    title: "Política de cookies"
-  cookies_management:
-    title: Configuración de cookies
-    description: Esta web utiliza cookies propias y de terceros para su correcto funcionamiento. Al hacer click en el botón Aceptar todo, aceptas el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
-    essentials:
-      title: Cookies esenciales
-      description: Utilizadas para finalidades muy diversas, como por ejemplo, reconocerte como usuario, elegir el idioma o personalizar la forma en la que se muestra el contenido.
-      hint: Sin ellas, las funciones básicas de navegación se verán afectadas, por lo que deben estar siempre activas.
-    third_party:
-      title: Cookies de terceros
-      description: Esta web usa cookies de terceros. Estas cookies pueden recopilar información para mejorar tu experiencia de usuario.
-    save_preferences: Guardar preferencias

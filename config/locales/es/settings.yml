@@ -79,7 +79,7 @@ es:
       poster_description_description: Descripción detallada de la funcionalidad de póster
     analytics_url: "URL de estadísticas externas"
     proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
-    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que siguen su propuesta"
+    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
     direct_message_max_per_day: "Mensajes directos máximos por día"
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
@@ -134,15 +134,13 @@ es:
       remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
-      cookies_consent: Banner de consentimiento de cookies
-      cookies_consent_description: Activa el banner de consentimiento de cookies para informar a los usuarios sobre las cookies que utiliza la aplicación.
     remote_census:
       general:
         endpoint: "Endpoint"
         endpoint_description: "Nombre del host donde se encuentra el servicio del censo (wsdl)"
       request:
         method_name: "Nombre del método de la petición"
-        method_name_description: "Nombre del método qe acepta el WebService del Censo del Ayuntamiento."
+        method_name_description: "Nombre del método que acepta el WebService del Censo del Ayuntamiento."
         structure: "Estructura de la petición"
         structure_description: 'Estructura de la petición a enviar al WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Ruta para Tipo de Documento"
@@ -169,9 +167,6 @@ es:
         valid: "Condición para detectar una respuesta válida"
         valid_description: "Que ruta de la respuesta tiene que venir informado para considerarse una respuesta válida"
     map:
-      feature:
-        marker_clustering: "Agrupación de marcadores"
-        marker_clustering_description: "Activa la agrupación de marcadores en el mapa. Útil cuando hay muchos marcadores que mostrar."
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
       longitude: "Longitud"
@@ -228,8 +223,3 @@ es:
         budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
         legislation: Alineamiento ODS en legislación colaborativa
         legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
-    cookies_consent:
-      more_info_link: Enlace a la política de cookies
-      more_info_link_description: Enlace que se muestra en el banner de consentimiento a la página de política de cookies
-      version_name: Nombre de la versión
-      version_name_description: Cambia el nombre de la versión para obligar a todos los usuarios a realizar el proceso de consentimiento de cookies de nuevo. Esto puede ser particularmente útil cuando se introducen cambios drásticos en la política de cookies que requieren de un nuevo consentimiento explícito por parte de los usuarios.

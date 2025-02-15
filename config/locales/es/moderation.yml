@@ -93,7 +93,7 @@ es:
         headers:
           moderate: Moderar
           proposal_notification: Notificación de propuesta
-        hide: Ocultar notificaciones
+        hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         orders:
           created_at: Más recientes

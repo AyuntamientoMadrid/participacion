@@ -7,9 +7,6 @@ es:
         direct_message: "Tu mensaje ha sido enviado correctamente."
         poll: "Votación creada correctamente."
         poll_booth: "Urna creada correctamente."
-        poll_question_option: "Respuesta creada correctamente"
-        poll_question_option_video: "Vídeo creado correctamente"
-        poll_question_option_image: "Imagen cargada correctamente"
         proposal: "Propuesta creada correctamente."
         proposal_notification: "Tu mensaje ha sido enviado correctamente."
         budget_investment: "Proyecto de gasto creado correctamente."
@@ -17,7 +14,6 @@ es:
         support: "Proyecto de gasto apoyado correctamente"
         topic: "Tema creado correctamente."
         valuator_group: "Grupo de evaluadores creado correctamente"
-        vote: "Voto creado correctamente"
       save_changes:
         notice: Cambios guardados
       update:
@@ -34,7 +30,4 @@ es:
       destroy:
         budget_investment: "Proyecto de gasto eliminado."
         topic: "Tema eliminado."
-        poll_question_option_image: "Imagen eliminada correctamente."
-        poll_question_option_video: "Vídeo de respuesta eliminado."
         valuator_group: "Grupo de evaluadores eliminado correctamente"
-        vote: "Voto eliminado correctamente"

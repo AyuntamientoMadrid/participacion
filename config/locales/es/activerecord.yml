@@ -151,9 +151,6 @@ es:
       votation_type:
         one: Tipo de votación
         other: Tipos de votación
-      cookies/vendor:
-        one: proveedor de cookies
-        other: proveedores de cookies
     attributes:
       budget:
         name: "Nombre"
@@ -164,11 +161,11 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase activa"
+        phase: "Fase"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
-        voting_style_knapsack: Bolsa de dinero
-        voting_style_approval: Por aprobación
+        voting_style_knapsack: "Bolsa de dinero"
+        voting_style_approval: "Por aprobación"
         hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         main_link_text: "Texto del enlace"
@@ -180,7 +177,7 @@ es:
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
-        location: "Información adicional de la ubicación"
+        location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
@@ -203,8 +200,8 @@ es:
         description: "Descripción"
       geozone:
         name: Nombre
-        color: "Color (opcional)"
         external_code: "Código externo (opcional)"
+        color: "Color (opcional)"
         census_code: "Código del censo (opcional)"
         geojson: "Datos GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
@@ -226,7 +223,7 @@ es:
         primary: "Principal"
         secondary: "Secundaria"
       budget/group:
-        max_votable_headings: "Máximo número de partidas en que un usuario puede seleccionar proyectos"
+        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       budget/group/translation:
         name: "Nombre del grupo"
       budget/heading:
@@ -234,7 +231,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad de dinero"
+        price: "Cantidad"
         population: "Población (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
@@ -293,7 +290,7 @@ es:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        public_interests: "Mostrar públicamente los elementos que sigo"
+        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
         recommended_debates: "Mostrar recomendaciones en el listado de debates"
         recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
@@ -337,6 +334,11 @@ es:
       proposal_notification:
         body: "Mensaje"
         title: "Título"
+      signature_sheet:
+        title: "Título"
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
+        document_numbers: "Números de documentos"
       sdg/goal:
         code: "Código"
         title: "Título"
@@ -355,11 +357,6 @@ es:
       sdg/target:
         code: "Código"
         title: "Título"
-      signature_sheet:
-        title: "Título"
-        signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
-        document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
         created_at: Creada
@@ -390,7 +387,6 @@ es:
         domain: "Dominio"
         schema: "Dominio / Subdominio"
         subdomain: "Subdominio"
-        url: "URL"
       topic:
         title: "Título"
         description: "Texto inicial"
@@ -451,7 +447,7 @@ es:
         title: Título
         question_options: Respuestas
       legislation/question/translation:
-        title: "Pregunta"
+        title: Pregunta
       legislation/question_option:
         value: Valor
       legislation/annotation:
@@ -462,15 +458,6 @@ es:
       image:
         title: Título
         attachment: "Selecciona una imagen"
-      poll/question/option:
-        title: Respuesta
-        description: Descripción
-      poll/question/option/translation:
-        title: Respuesta
-        description: "Descripción (opcional)"
-      poll/question/option/video:
-        title: Título
-        url: Vídeo externo
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
@@ -491,7 +478,6 @@ es:
         link_text: Texto del enlace
         link_url: URL del enlace
         columns: Número de columnas
-        order: Posición
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
@@ -518,7 +504,7 @@ es:
         user: Ejecutado por
       link:
         label: Título
-        url: URL
+        url: Enlace
       valuator:
         description: Descripción
         valuator_group_id: Grupo de evaluación
@@ -537,10 +523,6 @@ es:
       votation_type/vote_type:
         unique: Respuesta única
         multiple: Respuesta múltiple
-      cookies/vendor:
-        name: Nombre del proveedor
-        cookie: Nombre de la cookie
-        script: Código javascript
     errors:
       models:
         user:
@@ -558,8 +540,7 @@ es:
         geozone:
           attributes:
             geojson:
-              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben seguir el formato estándar RFC 7946"
-              invalid_coordinates: "Los datos GeoJSON proporcionados contienen coordenadas inválidas; las coordenadas deben utilizar el formato \"Longitud, Latitud\" y seguir el formato estándar RFC 7946"
+              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"."
         image:
           attributes:
             attachment:

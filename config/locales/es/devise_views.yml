@@ -87,7 +87,7 @@ es:
           title: Darme de baja
         edit:
           current_password_label: Contraseña actual
-          edit: Editar
+          edit: Editar propuesta
           email_label: Email
           leave_blank: Dejar en blanco si no deseas cambiarla
           need_current: Necesitamos tu contraseña actual para confirmar los cambios

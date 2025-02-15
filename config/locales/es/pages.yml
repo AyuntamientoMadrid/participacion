@@ -91,22 +91,22 @@ es:
           key_header: Tecla
           page_header: Página
           rows:
-            -
+            - 
               key_column: 0
               page_column: Inicio
-            -
+            - 
               key_column: 1
               page_column: Debates
-            -
+            - 
               key_column: 2
               page_column: Propuestas
-            -
+            - 
               key_column: 3
               page_column: Votaciones
-            -
+            - 
               key_column: 4
               page_column: Presupuestos participativos
-            -
+            - 
               key_column: 5
               page_column: Legislación colaborativa
         browser_table:
@@ -115,19 +115,19 @@ es:
           browser_header: Navegador
           key_header: Combinación de teclas
           rows:
-            -
+            - 
               browser_column: Explorer
               key_column: ALT + atajo y luego ENTER
-            -
+            - 
               browser_column: Firefox
               key_column: ALT + MAYÚSCULAS + atajo
-            -
+            - 
               browser_column: Chrome
               key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
-            -
+            - 
               browser_column: Safari
               key_column: ALT + atajo (si es un MAC, CMD + atajo)
-            -
+            - 
               browser_column: Opera
               key_column: MAYÚSCULAS + ESC + atajo
       textsize:
@@ -137,28 +137,28 @@ es:
           browser_header: Navegador
           action_header: Acción a realizar
           rows:
-            -
+            - 
               browser_column: Explorer
               action_column: Ver > Tamaño del texto
-            -
+            - 
               browser_column: Firefox
               action_column: Ver > Tamaño
-            -
+            - 
               browser_column: Chrome
               action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
-            -
+            - 
               browser_column: Safari
               action_column: Visualización > ampliar/reducir
-            -
+            - 
               browser_column: Opera
               action_column: Ver > escala
         browser_shortcuts_table:
           description: "Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
           rows:
-            -
+            - 
               shortcut_column: CTRL y + (CMD y + en MAC)
               description_column: para aumentar el tamaño del texto
-            -
+            - 
               shortcut_column: CTRL y - (CMD y - en MAC)
               description_column: para reducir el tamaño del texto
       compatibility:
