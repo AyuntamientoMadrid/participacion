@@ -5,8 +5,8 @@ es:
     actions:
       actions: Acciones
       block_author: "Bloquear al autor"
-      confirm_action: "¿Estás seguro? %{action} \"%{name}\""
-      confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
+      confirm_action: '¿Estás seguro? %{action} "%{name}"'
+      confirm_delete: '¿Estás seguro? Esta acción borrará "%{name}" y no se puede deshacer.'
       confirm_hide: Confirmar moderación
       delete: Borrar
       hide: Ocultar
@@ -105,7 +105,7 @@ es:
         admin_ballots: Urnas
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: '¡Presupuestos participativos creados con éxito!'
+        notice: "¡Presupuestos participativos creados con éxito!"
       update:
         notice: Presupuestos participativos actualizados
       publish:
@@ -346,7 +346,7 @@ es:
           back: "Volver a editar grupo"
       heading_mode:
         multiple:
-          description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+          description: 'Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para "Distrito norte", 30.000€ para "Distrito centro", 28.000€ para "Distrito sur" y toda la ciudad. O para varios temas como deporte, cultura o salud.'
           link: "Crear presupuesto de múltiples partidas"
           title: "Presupuesto de <strong>múltiples partidas</strong>"
         single:
@@ -468,8 +468,8 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          active: 'Si'
-          inactive: 'No'
+          active: "Si"
+          inactive: "No"
           title: Recursos y acciones
           action_title: Título
           action_type: Tipo
@@ -872,7 +872,7 @@ es:
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
-        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -907,7 +907,7 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
+        send_alert: "¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?"
     system_emails:
       preview_pending:
         action: Previsualizar pendientes
@@ -1300,6 +1300,13 @@ es:
         milestones: Hitos
         selected: Seleccionada
         no_proposals: No hay propuestas.
+        download: Descargar propuestas
+        list:
+          id: ID
+          title: Propuesta
+          author: Autor
+          summary: Resumen
+          description: Descripción
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
       form:
@@ -1421,7 +1428,7 @@ es:
         coordinates: Coordenadas disponibles
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
         geojson: GeoJSON disponible
-        geojson_help: "Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"; en el mapa de un presupuesto aparecerá un polígono basado en estos datos si una partida se asocia a esta geozona"
+        geojson_help: 'Deben tener un tipo del formato "Polygon" o "MultiPolygon"; en el mapa de un presupuesto aparecerá un polígono basado en estos datos si una partida se asocia a esta geozona'
       create:
         notice: "Zona creada correctamente"
       edit:
@@ -1776,7 +1783,7 @@ es:
         title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL DEMOCRACY?"
         description_2: "Este módulo permite implementar en CONSUL DEMOCRACY cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL DEMOCRACY y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL DEMOCRACY y el código de estos nuevos programas."
         title_3: "Cómo usar el módulo"
-        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL DEMOCRACY para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL DEMOCRACY desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
+        description_3: 'Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL DEMOCRACY para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña "Ejecutar scripts". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL DEMOCRACY desde la pestaña de "Configuración", así como descargar otros archivos generados que nos puedan resultar útiles.'
         title_4: "Cómo implementar nuevos scripts de IA / Machine Learning."
         description_4: "Utiliza los scripts existentes como ejemplo."
         description_4b: "Los nuevos scripts deben estar ubicados en la carpeta <code>public/machine_learning/scripts</code>"

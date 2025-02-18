@@ -49,7 +49,9 @@ namespace :admin do
         patch :select
         patch :deselect
       end
-
+      collection do
+        get :download_csv, defaults: { format: :csv }
+      end
       resources :milestones, controller: "proposal_milestones"
       resources :progress_bars, except: :show, controller: "proposal_progress_bars"
     end

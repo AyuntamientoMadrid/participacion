@@ -5,8 +5,8 @@ en:
     actions:
       actions: Actions
       block_author: "Block author"
-      confirm_action: "Are you sure? %{action} \"%{name}\""
-      confirm_delete: "Are you sure? This action will delete \"%{name}\" and can't be undone."
+      confirm_action: 'Are you sure? %{action} "%{name}"'
+      confirm_delete: 'Are you sure? This action will delete "%{name}" and can''t be undone.'
       confirm_hide: Confirm moderation
       delete: "Delete"
       hide: Hide
@@ -346,7 +346,7 @@ en:
           back: "Go back to edit group"
       heading_mode:
         multiple:
-          description: "Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for \"North District\", 30,000€ for \"Center District\", 28,000€ for \"South District\" and the whole city. Or for several themes like sport, culture or health."
+          description: 'Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for "North District", 30,000€ for "Center District", 28,000€ for "South District" and the whole city. Or for several themes like sport, culture or health.'
           link: "Create multiple headings budget"
           title: "<strong>Multiple headings</strong> budget"
         single:
@@ -468,8 +468,8 @@ en:
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
-          active: 'Yes'
-          inactive: 'No'
+          active: "Yes"
+          inactive: "No"
           title: Resources and actions
           action_title: Title
           action_type: Type
@@ -1084,7 +1084,7 @@ en:
         results: "Results"
         date: "Date"
         count_final: "Final recount (by officer)"
-        count_by_system:  "Votes (automatic)"
+        count_by_system: "Votes (automatic)"
         total_system: Total votes (automatic)
       index:
         booths_title: "List of booths"
@@ -1300,6 +1300,13 @@ en:
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
+        download: Download proposals
+        list:
+          id: ID
+          title: Proposal
+          author: Author
+          summary: Summary
+          description: Description
       show:
         create_question: Add this proposal to a poll to be voted
       form:
@@ -1421,7 +1428,7 @@ en:
         coordinates: Coordinates available
         coordinates_help: Coordinates that will generate a clickable area on an HTML image map
         geojson: GeoJSON available
-        geojson_help: "Must follow the \"Polygon\" or \"MultiPolygon\" type format; on a budget's map, a polygon based on this data will appear when a heading is associated to this geozone"
+        geojson_help: 'Must follow the "Polygon" or "MultiPolygon" type format; on a budget''s map, a polygon based on this data will appear when a heading is associated to this geozone'
       create:
         notice: "Geozone created successfully"
       edit:
@@ -1684,7 +1691,7 @@ en:
         enable: "Enable tenant %{tenant}"
         enabled: Enabled
       new:
-        admin_information: "When you create a tenant, your current user <strong>\"%{username}\"</strong> with the email <strong>\"%{email}\"</strong> and your password will be copied into the new tenant's database and will be automatically granted administration permissions. Note that these user accounts are stored in completely separate databases, so if you change the password of your user in one tenant, your accounts in other tenants will remain intact."
+        admin_information: 'When you create a tenant, your current user <strong>"%{username}"</strong> with the email <strong>"%{email}"</strong> and your password will be copied into the new tenant''s database and will be automatically granted administration permissions. Note that these user accounts are stored in completely separate databases, so if you change the password of your user in one tenant, your accounts in other tenants will remain intact.'
         title: New tenant
       restore:
         notice: Tenant enabled successfully
@@ -1776,7 +1783,7 @@ en:
         title_2: "What does the AI / Machine Learning module in CONSUL DEMOCRACY?"
         description_2: "This module allows any type of AI/Machine Learning programs to be implemented in CONSUL DEMOCRACY. The programs can process the information available in CONSUL DEMOCRACY and produce results that help both users and administrators to carry out more effective and intelligent citizen participation. The module has been developed to make it easy to implement and run new programs, keeping the general code of CONSUL DEMOCRACY and the code of these new programs independent from each other."
         title_3: "How to use this module"
-        description_3: "To use it for the first time it is necessary to follow the instructions available in the CONSUL DEMOCRACY documentation to properly activate this module. Once the module is correctly activated, the programs are executed from the \"Execute scripts\" tab. Before executing it, we can see in the same tab an estimation of the execution time and other relevant information. At the end of the execution, we can activate the content that will be shown in CONSUL DEMOCRACY from the \"Settings\" tab, as well as download other generated files that may be useful to us."
+        description_3: 'To use it for the first time it is necessary to follow the instructions available in the CONSUL DEMOCRACY documentation to properly activate this module. Once the module is correctly activated, the programs are executed from the "Execute scripts" tab. Before executing it, we can see in the same tab an estimation of the execution time and other relevant information. At the end of the execution, we can activate the content that will be shown in CONSUL DEMOCRACY from the "Settings" tab, as well as download other generated files that may be useful to us.'
         title_4: "How to implement new AI / Machine Learning scripts"
         description_4: "Please use previous scripts as examples."
         description_4b: "The new scripts should be located in the folder <code>public/machine_learning/scripts</code>"

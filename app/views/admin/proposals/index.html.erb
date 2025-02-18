@@ -8,6 +8,7 @@
   <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
 
   <h3><%= page_entries_info @proposals %></h3>
+  <%= render Admin::Proposals::ProposalsComponent.new(proposals: @proposals) %>
 
   <table>
     <thead>

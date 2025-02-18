@@ -106,4 +106,27 @@ describe "Admin proposals", :admin do
       expect(find_field("Mark as selected")).not_to be_checked
     end
   end
+  
+  context "Selecting csv", :no_js do
+    scenario "Downloading CSV file" do
+      first_proposal = create(:proposal, title: "Make Pluto a planet again", summary: "summary 1")
+      second_proposal = create(:proposal, title: "Build a monument to honour CONSUL developers", summary: "summary 2")
+      third_proposal = create(:proposal, title: "Build another monument just because", summary: "summary 3")
+      
+      visit admin_proposals_path
+
+      click_link "Download proposals"
+
+      header = page.response_headers["Content-Disposition"]
+      expect(header).to match(/^attachment/)
+      expect(header).to match(/filename="proposals.csv"/)
+
+      csv_contents = "ID,Proposal,Author,Summary,Description\n" \
+                     "#{first_proposal.id},#{first_proposal.title},#{first_proposal.author.email},#{first_proposal.summary},#{first_proposal.description}\n" \
+                     "#{second_proposal.id},#{second_proposal.title},#{second_proposal.author.email},#{second_proposal.summary},#{first_proposal.description}\n" \
+                     "#{third_proposal.id},#{third_proposal.title},#{third_proposal.author.email},#{third_proposal.summary},#{first_proposal.description}\n" 
+
+      expect(page.body).to eq(csv_contents)
+    end
+  end
 end
