@@ -82,6 +82,7 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+        submit_button: "Crear proyecto"
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
