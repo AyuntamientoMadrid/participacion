@@ -4,7 +4,9 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Everyone.new(user)
-
+      
+      can [:read, :enable, :manage, :show], :two_factor_authentication
+      
       can [:read, :update], User, id: user.id
 
       can :read, Debate

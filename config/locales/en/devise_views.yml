@@ -60,6 +60,7 @@ en:
         title: Forgotten password?
     sessions:
       new:
+        otp_label: Enter your 6-Digit Code
         remember_me: Remember me
         submit: Enter
         title: Sign in

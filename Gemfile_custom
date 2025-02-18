@@ -24,3 +24,6 @@
 ###### Other gems ######
 #
 # Add your custom gem dependencies here
+gem 'devise-two-factor'
+gem 'dotenv-rails'
+gem 'rqrcode'

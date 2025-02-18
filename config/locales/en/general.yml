@@ -12,6 +12,7 @@ en:
       save_changes_submit: Save changes
       recommendations: Recommendations
       title: My account
+      two_factor: Two Factor Authentication
       user_permission_info: With your account you can...
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
