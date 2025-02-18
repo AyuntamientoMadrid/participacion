@@ -5,6 +5,10 @@
   </h1>
 
   <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(t("mailers.direct_message_for_sender.hi", sender: @direct_message.sender.name)) %>
+  </p>
+
+  <p style="<%= css_for_mailer_text %>">
     <%= sanitize(t("mailers.direct_message_for_sender.text", receiver: @direct_message.receiver.name)) %>
   </p>
 
@@ -15,4 +19,8 @@
   <div style="<%= css_for_mailer_text %>">
     <%= mailer_simple_format(@direct_message.body) %>
   </div>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.sincerely") %>
+  </p>
 </td>

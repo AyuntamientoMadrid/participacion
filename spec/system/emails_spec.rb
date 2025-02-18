@@ -235,6 +235,7 @@ describe "Emails" do
       email = unread_emails_for(receiver.email).first
 
       expect(email).to have_subject("You have received a new private message")
+      expect(email).to have_body_text(receiver.name)
       expect(email).to have_body_text(direct_message.title)
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.sender.name)
@@ -251,6 +252,7 @@ describe "Emails" do
       email = unread_emails_for(sender.email).first
 
       expect(email).to have_subject("You have sent a new private message")
+      expect(email).to have_body_text(sender.name)
       expect(email).to have_body_text(direct_message.title)
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.receiver.name)

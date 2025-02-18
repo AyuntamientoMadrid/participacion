@@ -32,7 +32,7 @@ describe "Custom information texts", :admin do
     user = create(:user, username: "Rachel")
     create(:budget_investment, author_id: user.id)
 
-    intro_key = "mailers.budget_investment_created.intro"
+    intro_key = "mailers.budget_investment_created.hi"
     create(:i18n_content, key: intro_key, value_en: "Hi %{author}")
 
     visit admin_site_customization_information_texts_path(tab: "mailers")

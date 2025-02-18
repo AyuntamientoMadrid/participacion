@@ -2,6 +2,7 @@ es:
   mailers:
     title: "Gobierno abierto"
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    sincerely: "Atentamente"
     already_confirmed:
       info: "Hemos recibido una solicitud para enviarte instrucciones para confirmar tu cuenta. Sin embargo, tu cuenta ya está confirmada, por lo que no es necesario volver a hacerlo."
       new_password: "Si has olvidado tu contraseña, puedes restablecerla en el siguiente enlace:"
@@ -15,6 +16,7 @@ es:
       notifications_link: Notificaciones
       unsubscribe_text: 'Para darse de baja de estos emails, puedes entrar en %{notifications} y desmarcar la opción "%{notification}".'
     email_verification:
+      hi: "Hola <strong>%{user}</strong>,"
       click_here_to_verify: en este enlace
       instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
       instructions: Para terminar de verificar tu cuenta de usuario pulsa %{verification_link}.
@@ -37,10 +39,12 @@ es:
     direct_message_for_receiver:
       subject: "Has recibido un nuevo mensaje privado"
       reply: Responder a %{sender}
+      hi: "Hola <strong>%{receiver}</strong>,"
       unsubscribe_text: "Si no quieres recibir mensajes privados, puedes entrar en %{notifications} y desmarcar la opción 'Recibir emails con mensajes privados'."
     direct_message_for_sender:
       subject: "Has enviado un nuevo mensaje privado"
       title: "Has enviado un nuevo mensaje privado"
+      hi: "Hola <strong>%{sender}</strong>,"
       text: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
     user_invite:
       ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
@@ -52,34 +56,30 @@ es:
     budget_investment_created:
       subject: "¡Gracias por crear un proyecto!"
       title: "¡Gracias por crear un proyecto!"
-      intro: "Hola <strong>%{author}</strong>,"
+      hi: "Hola <strong>%{author}</strong>,"
       text: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
       follow: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
       follow_link: "Presupuestos participativos"
-      sincerely: "Atentamente,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       title: "Tu proyecto de gasto ha sido marcado como inviable"
-      hi: "Estimado/a usuario/a"
+      hi: "Hola <strong>%{author}</strong>,"
       new: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nuevo proyecto de gasto"
-      sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     budget_investment_selected:
       subject: "Tu proyecto de gasto '%{code}' ha sido seleccionado"
       title: "Tu proyecto de gasto ha sido seleccionado"
-      hi: "Estimado/a usuario/a"
+      hi: "Hola <strong>%{author}</strong>,"
       share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
       share_button: "Comparte tu proyecto"
       thanks: "Gracias de nuevo por tu participación."
-      sincerely: "Atentamente"
     budget_investment_unselected:
       subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
       title: "Tu proyecto de gasto no ha sido seleccionado"
-      hi: "Estimado/a usuario/a"
+      hi: "Hola <strong>%{author}</strong>,"
       thanks: "Gracias de nuevo por tu participación."
-      sincerely: "Atentamente"
     evaluation_comment:
       subject: "Nuevo comentario de evaluación"
       title: Nuevo comentario de evaluación para %{investment}

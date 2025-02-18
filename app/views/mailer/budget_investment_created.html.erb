@@ -5,9 +5,7 @@
   </h1>
 
   <p style="<%= css_for_mailer_text %>">
-    <%= sanitize(
-      t("mailers.budget_investment_created.intro", author: @investment.author.name)
-    ) %>
+    <%= sanitize(t("mailers.budget_investment_created.hi", author: @investment.author.name)) %>
   </p>
 
   <p style="<%= css_for_mailer_text %>">
@@ -43,6 +41,6 @@
   </table>
 
   <p style="<%= css_for_mailer_text %>">
-    <%= t("mailers.budget_investment_created.sincerely") %>
+    <%= t("mailers.sincerely") %>
   </p>
 </td>

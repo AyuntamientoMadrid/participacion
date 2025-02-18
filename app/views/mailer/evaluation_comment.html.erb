@@ -23,4 +23,8 @@
   <div style="<%= css_for_mailer_text + css_for_mailer_quote %>">
     <%= mailer_simple_format(@email.comment.body) %>
   </div>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.sincerely") %>
+  </p>
 </td>

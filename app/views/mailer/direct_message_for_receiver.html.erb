@@ -3,6 +3,10 @@
     <%= @direct_message.title %>
   </h1>
 
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(t("mailers.direct_message_for_receiver.hi", receiver: @direct_message.receiver.name)) %>
+  </p>
+
   <div style="<%= css_for_mailer_text %>">
     <%= mailer_simple_format(@direct_message.body) %>
   </div>
@@ -32,5 +36,9 @@
       ),
       attributes: %w[href style]
     ) %>
+  </p>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.sincerely") %>
   </p>
 </td>

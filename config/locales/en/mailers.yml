@@ -2,6 +2,7 @@ en:
   mailers:
     title: "Open Government"
     no_reply: "This message was sent from an email address that does not accept replies."
+    sincerely: "Sincerely"
     already_confirmed:
       info: "We've received a request to send you instructions to confirm your account. However, your account is already confirmed, so there's no need to do so again."
       new_password: "If you've forgotten your password, you can reset it at the following link:"
@@ -15,6 +16,7 @@ en:
       notifications_link: Notifications
       unsubscribe_text: 'To unsubscribe from these emails, visit %{notifications} and uncheck "%{notification}".'
     email_verification:
+      hi: "Hi <strong>%{user}</strong>,"
       click_here_to_verify: this link
       instructions_2: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
       instructions: To complete the verification of your user account you must click %{verification_link}.
@@ -37,10 +39,12 @@ en:
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
+      hi: "Hi <strong>%{receiver}</strong>,"
       unsubscribe_text: "If you don't want to receive direct messages, visit %{notifications} and uncheck 'Receive emails about direct messages'."
     direct_message_for_sender:
       subject: "You have sent a new private message"
       title: "You have sent a new private message"
+      hi: "Hi <strong>%{sender}</strong>,"
       text: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
@@ -52,34 +56,30 @@ en:
     budget_investment_created:
       subject: "Thank you for creating an investment!"
       title: "Thank you for creating an investment!"
-      intro: "Hi <strong>%{author}</strong>,"
+      hi: "Hi <strong>%{author}</strong>,"
       text: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
       follow: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
       follow_link: "Participatory Budgets"
-      sincerely: "Sincerely,"
       share: "Share your project"
     budget_investment_unfeasible:
       title: "Your investment project has been marked as unfeasible"
-      hi: "Dear user,"
+      hi: "Hi <strong>%{author}</strong>,"
       new: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
-      sincerely: "Sincerely"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
     budget_investment_selected:
       subject: "Your investment project '%{code}' has been selected"
       title: "Your investment project has been selected"
-      hi: "Dear user,"
+      hi: "Hi <strong>%{author}</strong>,"
       share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
       share_button: "Share your investment project"
       thanks: "Thank you again for participating."
-      sincerely: "Sincerely"
     budget_investment_unselected:
       subject: "Your investment project '%{code}' has not been selected"
       title: "Your investment project has not been selected"
-      hi: "Dear user,"
+      hi: "Hi <strong>%{author}</strong>,"
       thanks: "Thank you again for participating."
-      sincerely: "Sincerely"
     evaluation_comment:
       subject: "New evaluation comment"
       title: New evaluation comment for %{investment}
