@@ -1,7 +1,7 @@
 <td style="<%= css_for_mailer_content %>">
 
   <p style="<%= css_for_mailer_text %>">
-    <%= auto_link_already_sanitized_html wysiwyg(@newsletter.body) %>
+    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@newsletter.body) %>
   </p>
 
   <p style="<%= css_for_mailer_text %>">
