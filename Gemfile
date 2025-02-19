@@ -80,7 +80,7 @@ group :test do
   gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.3.0"
   gem "pdf-reader", "~> 2.12.0"
-  gem "rspec-rails", "~> 7.0.1"
+  gem "rspec-rails", "~> 7.1.0"
   gem "selenium-webdriver", "~> 4.25.0"
   gem "simplecov", "~> 0.22.0", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
