@@ -87,7 +87,7 @@ group :test do
 end
 
 group :development do
-  gem "capistrano", "~> 3.19.1", require: false
+  gem "capistrano", "~> 3.19.2", require: false
   gem "capistrano-bundler", "~> 2.1.1", require: false
   gem "capistrano-npm", "~> 1.0.3", require: false
   gem "capistrano-rails", "~> 1.6.3", require: false

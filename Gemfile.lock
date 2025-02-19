@@ -111,7 +111,7 @@ GEM
       json
     builder (3.3.0)
     cancancan (3.6.1)
-    capistrano (3.19.1)
+    capistrano (3.19.2)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -429,7 +429,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    ostruct (0.6.0)
+    ostruct (0.6.1)
     parallel (1.26.3)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
@@ -647,7 +647,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sshkit (1.23.1)
+    sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
       net-sftp (>= 2.1.2)
@@ -721,7 +721,7 @@ DEPENDENCIES
   autoprefixer-rails (~> 10.4.19)
   bing_translator (~> 6.2.0)
   cancancan (~> 3.6.1)
-  capistrano (~> 3.19.1)
+  capistrano (~> 3.19.2)
   capistrano-bundler (~> 2.1.1)
   capistrano-npm (~> 1.0.3)
   capistrano-rails (~> 1.6.3)
