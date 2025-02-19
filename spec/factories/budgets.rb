@@ -111,7 +111,10 @@ FactoryBot.define do
 
   factory :budget_investment, class: "Budget::Investment" do
     sequence(:title) { |n| "Budget Investment #{n} title" }
-    heading { budget&.headings&.reload&.sample || association(:budget_heading, budget: budget) }
+    heading do
+      budget_headings = budget&.headings&.reload
+      budget_headings&.sample || association(:budget_heading, budget: budget)
+    end
 
     author factory: :user
     description          { "Spend money on this" }
