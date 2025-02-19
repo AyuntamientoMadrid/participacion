@@ -18,9 +18,11 @@ class Poll::Answer < ApplicationRecord
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
   def save_and_record_voter_participation
-    author.with_lock do
+    transaction do
       save!
-      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
+      attributes = { user: author, poll: poll, origin: "web" }
+      # TODO: use find_or_create_by! after upgrading to Rails 7.1.
+      Poll::Voter.find_by(attributes) || Poll::Voter.create_or_find_by!(attributes)
     end
   end
 
