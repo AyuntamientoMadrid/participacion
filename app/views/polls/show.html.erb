@@ -31,14 +31,14 @@
         <% end %>
       <% end %>
 
-      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
+      <%= render Polls::FormComponent.new(@web_vote) %>
     </div>
   </div>
 
   <div class="expanded poll-more-info">
     <div class="row margin">
       <div class="small-12 medium-9 column">
-        <h3><%= t("polls.show.more_info_title") %></h3>
+        <h2><%= t("polls.show.more_info_title") %></h2>
         <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
       </div>
     </div>
@@ -46,7 +46,7 @@
 
   <div id="poll_more_info_options" class="expanded poll-more-info-options">
     <div class="row padding">
-      <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
+      <%= render Polls::Questions::ReadMoreComponent.with_collection(@web_vote.questions) %>
     </div>
   </div>
 
