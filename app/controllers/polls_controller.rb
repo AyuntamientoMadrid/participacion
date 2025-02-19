@@ -18,8 +18,22 @@ class PollsController < ApplicationController
   end
 
   def show
-    @questions = @poll.questions.for_render.sort_for_list
+    @web_vote = Poll::WebVote.new(@poll, current_user)
     @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
+  end
+
+  def answer
+    @web_vote = Poll::WebVote.new(@poll, current_user)
+    begin
+      if @web_vote.update(answer_params)
+        redirect_to @poll, notice: t("polls.answers.create.success_notice")
+      else
+        @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
+        render :show
+      end
+    rescue 
+      redirect_to @poll, alert: t("polls.answers.create.rollback_notice")
+    end
   end
 
   def stats
@@ -37,5 +51,13 @@ class PollsController < ApplicationController
 
     def load_active_poll
       @active_poll = ActivePoll.first
+    end
+
+    def answer_params
+      params[:web_vote]
+    end
+
+    def allowed_params
+      [question_attributes: [:id, :option_id]]
     end
 end

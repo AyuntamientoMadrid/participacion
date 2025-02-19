@@ -545,6 +545,15 @@ RSpec/BeNil:
   Enabled: true
   EnforcedStyle: be
 
+RSpec/Capybara/FeatureMethods:
+  Enabled: true
+  EnabledMethods:
+    - scenario
+    - xscenario
+
+RSpec/ChangeByZero:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: true
 

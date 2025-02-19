@@ -1491,39 +1491,6 @@
   }
 }
 
-.poll-question-options {
-  @include flex-with-gap($line-height * 0.25);
-  flex-wrap: wrap;
-
-  .button {
-    min-width: rem-calc(168);
-
-    @include breakpoint(medium down) {
-      width: 100%;
-    }
-
-    &.answered {
-      background: #f4f8ec;
-      border: 2px solid #92ba48;
-      color: color-pick-contrast(#f4f8ec);
-      position: relative;
-
-      &::after {
-        background: #92ba48;
-        border-radius: rem-calc(20);
-        color: #fff;
-        content: "\6c";
-        font-family: "icons" !important;
-        font-size: rem-calc(12);
-        padding: calc(#{$line-height} / 4);
-        position: absolute;
-        right: -6px;
-        top: -6px;
-      }
-    }
-  }
-}
-
 // 09. Polls results and stats
 // ---------------------------
 
