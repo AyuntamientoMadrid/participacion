@@ -22,7 +22,7 @@ jobs:
           - name: Markdownlint
             run: bundle exec mdl *.md docs/
           - name: HTML Beautifier
-            run: find app/ -name *.html.erb -exec bundle exec htmlbeautifier --lint-only --keep-blank-lines 1 {} +
+            run: find app/ -name *.html.erb -exec bundle exec htmlbeautifier --lint-only --keep-blank-lines 1 -e {} +
     name: ${{ matrix.name }}
     steps:
       - name: Checkout code
