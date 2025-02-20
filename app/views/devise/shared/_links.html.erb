@@ -3,20 +3,6 @@
     <%= link_to t("devise_views.shared.links.login"), new_session_path(resource_name) %><br>
   <% end -%>
 
-  <%#- if devise_mapping.registerable? &&
-        controller_name != "registrations" ||
-        controller_path != "users/registrations" %>
-    <%#= link_to t("devise_views.shared.links.signup"), new_user_registration_path %><!-- <br> -->
-  <%# end -%>
-
-  <%#- if devise_mapping.registerable? && controller_name == "registrations" && controller_path != "organizations/registrations" %>
-    <%#= link_to t("devise_views.shared.links.organization_signup"), new_organization_registration_path %>
-  <%# end -%>
-
-  <%#- if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
-    <%#= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name) %><!-- <br> -->
-  <%# end -%>
-
   <%- if devise_mapping.confirmable? && controller_name != "confirmations" %>
     <%= link_to t("devise_views.shared.links.new_confirmation"), new_confirmation_path(resource_name) %><br>
   <% end -%>
