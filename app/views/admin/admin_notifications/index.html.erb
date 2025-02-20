@@ -14,34 +14,34 @@
       </tr>
     </thead>
     <tbody>
-    <% @admin_notifications.order(created_at: :desc).each do |admin_notification| %>
-      <tr id="<%= dom_id(admin_notification) %>" class="admin_notification">
-        <td>
-          <%= admin_notification.title %>
-        </td>
-        <td>
-          <%= segment_name(admin_notification.segment_recipient) %>
-        </td>
-        <td>
-          <% if admin_notification.draft? %>
-            <%= t("admin.admin_notifications.index.draft") %>
-          <% else %>
-            <%= l admin_notification.sent_at.to_date %>
-          <% end %>
-        </td>
-        <td>
-          <% if admin_notification.draft? %>
-            <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
-              <%= actions.action(:preview, text: t("admin.admin_notifications.index.preview")) %>
+      <% @admin_notifications.order(created_at: :desc).each do |admin_notification| %>
+        <tr id="<%= dom_id(admin_notification) %>" class="admin_notification">
+          <td>
+            <%= admin_notification.title %>
+          </td>
+          <td>
+            <%= segment_name(admin_notification.segment_recipient) %>
+          </td>
+          <td>
+            <% if admin_notification.draft? %>
+              <%= t("admin.admin_notifications.index.draft") %>
+            <% else %>
+              <%= l admin_notification.sent_at.to_date %>
             <% end %>
-          <% else %>
-            <%= render Admin::TableActionsComponent.new(admin_notification, actions: []) do |actions| %>
-              <%= actions.action(:show, text: t("admin.admin_notifications.index.view")) %>
+          </td>
+          <td>
+            <% if admin_notification.draft? %>
+              <%= render Admin::TableActionsComponent.new(admin_notification) do |actions| %>
+                <%= actions.action(:preview, text: t("admin.admin_notifications.index.preview")) %>
+              <% end %>
+            <% else %>
+              <%= render Admin::TableActionsComponent.new(admin_notification, actions: []) do |actions| %>
+                <%= actions.action(:show, text: t("admin.admin_notifications.index.view")) %>
+              <% end %>
             <% end %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 <% else %>

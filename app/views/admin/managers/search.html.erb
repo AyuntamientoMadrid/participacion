@@ -13,15 +13,15 @@
         <th scope="col"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td>
-            <%= render Admin::Roles::TableActionsComponent.new(user.manager || user.build_manager) %>
-          </td>
-        </tr>
-      <% end %>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= render Admin::Roles::TableActionsComponent.new(user.manager || user.build_manager) %>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   <% else %>

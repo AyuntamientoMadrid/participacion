@@ -1,10 +1,10 @@
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-           social_url: budget_investments_path(investment),
-           social_title: investment.title,
-           social_description: investment.description,
-           twitter_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil),
-           og_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil) %>
+  <%= render "shared/social_media_meta_tags",
+             social_url: budget_investments_path(investment),
+             social_title: investment.title,
+             social_description: investment.description,
+             twitter_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil),
+             og_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil) %>
 <% end %>
 
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
@@ -120,6 +120,6 @@
 
       <%= render "communities/access_button", community: investment.community %>
 
-     </aside>
+    </aside>
   </div>
 </section>

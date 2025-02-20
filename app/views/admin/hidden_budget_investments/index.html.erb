@@ -14,21 +14,21 @@
       <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
-    <% @investments.each do |investment| %>
-      <tr id="<%= dom_id(investment) %>">
-        <td class="align-top">
-          <strong><%= investment.title %></strong>
-        </td>
-        <td>
-          <div class="moderation-description">
-            <%= wysiwyg(investment.description) %>
-          </div>
-        </td>
-        <td class="align-top">
-          <%= render Admin::HiddenTableActionsComponent.new(investment) %>
-        </td>
-      </tr>
-    <% end %>
+      <% @investments.each do |investment| %>
+        <tr id="<%= dom_id(investment) %>">
+          <td class="align-top">
+            <strong><%= investment.title %></strong>
+          </td>
+          <td>
+            <div class="moderation-description">
+              <%= wysiwyg(investment.description) %>
+            </div>
+          </td>
+          <td class="align-top">
+            <%= render Admin::HiddenTableActionsComponent.new(investment) %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

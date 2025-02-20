@@ -9,41 +9,41 @@
     </tr>
   </thead>
   <tbody>
-  <% @system_emails.each do |system_email_title, system_email_actions| %>
-    <tr id="<%= system_email_title %>" class="system_email">
-      <td>
-        <%= t("admin.system_emails.#{system_email_title}.title") %>
-      </td>
-      <td>
-        <%= t("admin.system_emails.#{system_email_title}.description") %>
-      </td>
-      <td>
-        <%= render Admin::TableActionsComponent.new(system_email_title, actions: []) do |actions| %>
-          <% if system_email_actions.include?("view") %>
-            <%= actions.action(:show,
-                               text: t("admin.shared.view"),
-                               path: admin_system_email_view_path(system_email_title)) %>
-          <% end %>
+    <% @system_emails.each do |system_email_title, system_email_actions| %>
+      <tr id="<%= system_email_title %>" class="system_email">
+        <td>
+          <%= t("admin.system_emails.#{system_email_title}.title") %>
+        </td>
+        <td>
+          <%= t("admin.system_emails.#{system_email_title}.description") %>
+        </td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(system_email_title, actions: []) do |actions| %>
+            <% if system_email_actions.include?("view") %>
+              <%= actions.action(:show,
+                                 text: t("admin.shared.view"),
+                                 path: admin_system_email_view_path(system_email_title)) %>
+            <% end %>
 
-          <% if system_email_actions.include?("preview_pending") %>
-            <%= actions.action(:preview_pending,
-                               text: t("admin.system_emails.preview_pending.action"),
-                               path: admin_system_email_preview_pending_path(system_email_title)) %>
-             <%= actions.action(:send_pending,
-                                text: t("admin.system_emails.preview_pending.send_pending"),
-                                path: admin_system_email_send_pending_path(system_email_title),
-                                method: :put) %>
-          <% end %>
+            <% if system_email_actions.include?("preview_pending") %>
+              <%= actions.action(:preview_pending,
+                                 text: t("admin.system_emails.preview_pending.action"),
+                                 path: admin_system_email_preview_pending_path(system_email_title)) %>
+              <%= actions.action(:send_pending,
+                                 text: t("admin.system_emails.preview_pending.send_pending"),
+                                 path: admin_system_email_send_pending_path(system_email_title),
+                                 method: :put) %>
+            <% end %>
 
-          <% if system_email_actions.include?("edit_info") %>
-            <p class="help-text">
-              <%= t("admin.system_emails.edit_info") %><br>
-              <code><%= "app/views/mailer/#{system_email_title}.html.erb" %></code>
-            </p>
+            <% if system_email_actions.include?("edit_info") %>
+              <p class="help-text">
+                <%= t("admin.system_emails.edit_info") %><br>
+                <code><%= "app/views/mailer/#{system_email_title}.html.erb" %></code>
+              </p>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

@@ -81,7 +81,7 @@
               <%= results_by_booth[booth_assignment].first.booth_assignment.booth.name %>
             </td>
             <td>
-            <%= link_to t("officing.results.new.see_results"), officing_poll_results_path(@poll, date: l(date), booth_assignment_id: booth_assignment) %>
+              <%= link_to t("officing.results.new.see_results"), officing_poll_results_path(@poll, date: l(date), booth_assignment_id: booth_assignment) %>
             </td>
           </tr>
         <% end %>

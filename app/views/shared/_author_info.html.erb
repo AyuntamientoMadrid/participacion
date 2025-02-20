@@ -1,12 +1,12 @@
 <% if resource.author.hidden? || resource.author.erased? %>
   <span class="icon-deleted author-deleted"></span>
   <span class="author deleted">
-      <%= t("shared.author_info.author_deleted") %>
+    <%= t("shared.author_info.author_deleted") %>
   </span>
 <% else %>
   <%= render Shared::AvatarComponent.new(resource.author, size: 32, class: "author-photo") %>
   <span class="author">
-      <%= link_to resource.author.name, user_path(resource.author) %>
+    <%= link_to resource.author.name, user_path(resource.author) %>
   </span>
 
   <% if resource.respond_to?(:association_name) && resource.association_name.present? %>

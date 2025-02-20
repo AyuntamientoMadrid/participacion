@@ -9,8 +9,8 @@
       <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
 
       <% if @requires_password %>
-          <p><%= f.password_field :password %></p>
-          <p><%= f.password_field :password_confirmation %></p>
+        <p><%= f.password_field :password %></p>
+        <p><%= f.password_field :password_confirmation %></p>
       <% end %>
 
       <%= hidden_field_tag :confirmation_token, @confirmation_token %>

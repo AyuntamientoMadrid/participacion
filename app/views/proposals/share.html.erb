@@ -1,9 +1,9 @@
 <% provide :title, @proposal.title %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-           social_url: proposal_url(@proposal),
-           social_title: @proposal.title,
-           social_description: @proposal.summary %>
+  <%= render "shared/social_media_meta_tags",
+             social_url: proposal_url(@proposal),
+             social_title: @proposal.title,
+             social_description: @proposal.summary %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>

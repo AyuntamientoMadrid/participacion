@@ -25,9 +25,9 @@
         </div>
         <div class="poster-content">
           <h2><%= t("dashboard.poster.index.support") %></h2>
-            <%= image_tag "quote_before_blue.png", alt: "" %>
-            <h3><%= proposal.title %></h3>
-            <%= image_tag "quote_after_blue.png", alt: "" %>
+          <%= image_tag "quote_before_blue.png", alt: "" %>
+          <h3><%= proposal.title %></h3>
+          <%= image_tag "quote_after_blue.png", alt: "" %>
           <p class="poster-footer">
             <%= sanitize(t("dashboard.poster.index.footer", link: proposal_url(proposal))) %>
           </p>

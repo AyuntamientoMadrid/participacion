@@ -15,22 +15,22 @@
     </thead>
     <tbody>
       <% @officers.each do |user| %>
-      <tr>
-        <td>
-          <%= user.name %>
-        </td>
-        <td>
-          <%= user.email %>
-        </td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(
+        <tr>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(
             user,
             actions: [:edit],
             edit_text: t("admin.poll_shifts.new.edit_shifts"),
             edit_path: new_admin_booth_shift_path(officer_id: user.poll_officer.id)
           ) %>
-        </td>
-      </tr>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

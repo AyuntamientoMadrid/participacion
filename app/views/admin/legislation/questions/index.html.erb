@@ -18,7 +18,7 @@
 
     <% if @process.questions.any? %>
       <table class="stack">
-       <thead>
+        <thead>
           <tr>
             <th><%= t("admin.legislation.questions.table.title") %></th>
             <th><%= t("admin.legislation.questions.table.question_options") %></th>
@@ -27,22 +27,22 @@
           </tr>
         </thead>
         <tbody>
-        <% @process.questions.each do |question| %>
-          <tr id="<%= dom_id(question) %>">
-            <td>
-              <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
-            </td>
-            <td>
-              <ul>
-                <% question.question_options.each do |question_option| %>
-                  <li><%= "#{question_option.value} (#{question_option.answers_count})" %></li>
-                <% end %>
-              </ul>
-            </td>
-            <td class="text-center"><%= question.answers_count %></td>
-            <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: "comments") %></td>
-          </tr>
-        <% end %>
+          <% @process.questions.each do |question| %>
+            <tr id="<%= dom_id(question) %>">
+              <td>
+                <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
+              </td>
+              <td>
+                <ul>
+                  <% question.question_options.each do |question_option| %>
+                    <li><%= "#{question_option.value} (#{question_option.answers_count})" %></li>
+                  <% end %>
+                </ul>
+              </td>
+              <td class="text-center"><%= question.answers_count %></td>
+              <td class="text-center"><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: "comments") %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     <% end %>

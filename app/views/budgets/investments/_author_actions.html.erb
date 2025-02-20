@@ -7,12 +7,12 @@
                   edit_budget_investment_path(investment.budget, investment),
                   method: :get, class: "button hollow expanded" %>
     <% else %>
-        <%= link_to image_path(investment.image),
-                    method: :delete,
-                    class: "button hollow alert expanded" do %>
-          <span class="icon-image"></span>
-          <%= t("images.remove_image") %>
-        <% end %>
+      <%= link_to image_path(investment.image),
+                  method: :delete,
+                  class: "button hollow alert expanded" do %>
+        <span class="icon-image"></span>
+        <%= t("images.remove_image") %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

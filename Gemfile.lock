@@ -272,6 +272,7 @@ GEM
     hashery (2.1.2)
     hashie (5.0.0)
     highline (2.0.3)
+    htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     httparty (0.22.0)
       csv
@@ -753,6 +754,7 @@ DEPENDENCIES
   graphiql-rails (~> 1.8.0)
   graphql (~> 2.3.18)
   groupdate (~> 6.5.1)
+  htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
   image_processing (~> 1.13.0)
   invisible_captcha (~> 2.3.0)

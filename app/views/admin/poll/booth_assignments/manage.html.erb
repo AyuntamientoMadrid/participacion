@@ -15,11 +15,11 @@
       <th class="small-3"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-    <% @booths.each do |booth| %>
-      <tr id="<%= dom_id(booth) %>" class="booth">
-        <%= render "booth_assignment", booth: booth, booth_assignment: booth.assignment_on_poll(@poll) %>
-      </tr>
-    <% end %>
+      <% @booths.each do |booth| %>
+        <tr id="<%= dom_id(booth) %>" class="booth">
+          <%= render "booth_assignment", booth: booth, booth_assignment: booth.assignment_on_poll(@poll) %>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

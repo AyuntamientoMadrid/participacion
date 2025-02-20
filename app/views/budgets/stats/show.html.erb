@@ -1,9 +1,9 @@
 <% provide :title, t("stats.budgets.page_title", budget: @budget.name) %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-           social_url: budget_stats_url(@budget),
-           social_title: @budget.name,
-           social_description: @budget.description_for_phase("finished") %>
+  <%= render "shared/social_media_meta_tags",
+             social_url: budget_stats_url(@budget),
+             social_title: @budget.name,
+             social_description: @budget.description_for_phase("finished") %>
 <% end %>
 
 <div class="participation-stats budgets-stats">
@@ -40,10 +40,10 @@
               </p>
             <% end %>
             <p class="help-text">
-                <%= t("stats.budgets.participatory_disclaimer") %>
+              <%= t("stats.budgets.participatory_disclaimer") %>
             </p>
             <p class="help-text">
-                <%= t("stats.budgets.heading_disclaimer") %>
+              <%= t("stats.budgets.heading_disclaimer") %>
             </p>
           </div>
         </div>

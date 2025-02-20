@@ -13,8 +13,8 @@
         <% @verified_users.each do |verified_user| %>
           <% if verified_user.email.present? %>
             <li id="<%= dom_id(verified_user) %>_email">
-                <span><%= mask_email(verified_user.email) %></span>
-                <span><%= render "form", url: email_path, verified_user: verified_user %></span>
+              <span><%= mask_email(verified_user.email) %></span>
+              <span><%= render "form", url: email_path, verified_user: verified_user %></span>
             </li>
           <% end %>
         <% end %>

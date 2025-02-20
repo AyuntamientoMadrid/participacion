@@ -15,15 +15,15 @@ describe Admin::Stats::SDG::GoalComponent do
 
     render_inline component
 
-    expect(page).to have_text "Proposals 3"
-    expect(page).to have_text "Polls 2"
-    expect(page).to have_text "Debates 1"
+    expect(page).to have_text "Proposals 3", normalize_ws: true
+    expect(page).to have_text "Polls 2", normalize_ws: true
+    expect(page).to have_text "Debates 1", normalize_ws: true
     expect("Current budget").to appear_before("Past year budget")
-    expect(page).to have_text "Investment projects sent 2"
-    expect(page).to have_text "Winner investment projects 0"
-    expect(page).to have_text "Approved amount $0"
-    expect(page).to have_text "Investment projects sent 1"
-    expect(page).to have_text "Winner investment projects 1"
-    expect(page).to have_text "Approved amount $1,000"
+    expect(page).to have_text "Investment projects sent 2", normalize_ws: true
+    expect(page).to have_text "Winner investment projects 0", normalize_ws: true
+    expect(page).to have_text "Approved amount $0", normalize_ws: true
+    expect(page).to have_text "Investment projects sent 1", normalize_ws: true
+    expect(page).to have_text "Winner investment projects 1", normalize_ws: true
+    expect(page).to have_text "Approved amount $1,000", normalize_ws: true
   end
 end

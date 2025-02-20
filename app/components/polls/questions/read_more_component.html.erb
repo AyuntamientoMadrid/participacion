@@ -47,9 +47,7 @@
           </p>
 
           <% option.videos.each do |video| %>
-              <%= link_to video.title,
-                          video.url,
-                          rel: "nofollow" %><br>
+            <%= link_to video.title, video.url, rel: "nofollow" %><br>
           <% end %>
         </div>
       <% end %>

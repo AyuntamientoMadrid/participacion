@@ -33,25 +33,25 @@
       <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-          <%= f.select :document_type, document_types, prompt: "" %>
+            <%= f.select :document_type, document_types, prompt: "" %>
           </div>
           <div class="small-12 medium-5 column end">
 
-          <div class="inline-block">
-            <%= f.label :document_number, t("verification.residence.new.document_number") %>
-          </div>
+            <div class="inline-block">
+              <%= f.label :document_number, t("verification.residence.new.document_number") %>
+            </div>
 
-          <button type="button" class="inline-block" data-toggle="info-document-number">
-            <span class="icon-help"></span>
-            <span class="show-for-sr"><%= t("verification.residence.new.document_number_help_title") %></span>
-          </button>
+            <button type="button" class="inline-block" data-toggle="info-document-number">
+              <span class="icon-help"></span>
+              <span class="show-for-sr"><%= t("verification.residence.new.document_number_help_title") %></span>
+            </button>
 
-          <div class="dropdown-pane" id="info-document-number" data-dropdown
-               data-hover="true" data-hover-pane="true">
-            <%= sanitize(t("verification.residence.new.document_number_help_text")) %>
-          </div>
+            <div class="dropdown-pane" id="info-document-number" data-dropdown
+                 data-hover="true" data-hover-pane="true">
+              <%= sanitize(t("verification.residence.new.document_number_help_text")) %>
+            </div>
 
-          <%= f.text_field :document_number, label: false %>
+            <%= f.text_field :document_number, label: false %>
           </div>
         </div>
       </div>

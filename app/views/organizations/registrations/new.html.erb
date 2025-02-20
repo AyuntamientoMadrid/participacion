@@ -1,10 +1,10 @@
 <% provide :title, t("devise_views.organizations.registrations.new.title") %>
 <h2><%= t("devise_views.organizations.registrations.new.title") %></h2>
 
- <%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
-   <%= render "shared/errors", resource: resource %>
-   <div class="row">
-     <div class="small-12 column">
+<%= form_for(resource, as: :user, url: organization_registration_path) do |f| %>
+  <%= render "shared/errors", resource: resource %>
+  <div class="row">
+    <div class="small-12 column">
 
       <%= f.fields_for :organization do |fo| %>
         <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>

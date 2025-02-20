@@ -14,25 +14,25 @@
       <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
-    <% @proposals.each do |proposal| %>
-      <tr id="<%= dom_id(proposal) %>">
-        <td class="align-top">
-          <strong><%= proposal.title %></strong>
-        </td>
-        <td>
-          <div class="moderation-description">
-            <p><small><%= proposal.summary %></small></p>
-            <%= wysiwyg(proposal.description) %>
-            <% if proposal.video_url.present? %>
-              <p><%= sanitize_and_auto_link proposal.video_url %></p>
-            <% end %>
-          </div>
-        </td>
-        <td class="align-top">
-          <%= render Admin::HiddenTableActionsComponent.new(proposal) %>
-        </td>
-      </tr>
-    <% end %>
+      <% @proposals.each do |proposal| %>
+        <tr id="<%= dom_id(proposal) %>">
+          <td class="align-top">
+            <strong><%= proposal.title %></strong>
+          </td>
+          <td>
+            <div class="moderation-description">
+              <p><small><%= proposal.summary %></small></p>
+              <%= wysiwyg(proposal.description) %>
+              <% if proposal.video_url.present? %>
+                <p><%= sanitize_and_auto_link proposal.video_url %></p>
+              <% end %>
+            </div>
+          </td>
+          <td class="align-top">
+            <%= render Admin::HiddenTableActionsComponent.new(proposal) %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
