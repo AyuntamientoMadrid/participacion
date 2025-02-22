@@ -392,41 +392,53 @@
 
   @include breakpoint(medium) {
     min-height: $line-height * 15;
-
-    .with-image > .row {
-      display: flex;
-    }
   }
 }
 
-.budget-investments-list .budget-investment,
-.proposals-list .proposal,
-.legislation-proposals .proposal {
+.debates-list,
+.proposals-list,
+.budget-investments-list,
+.legislation-proposals {
 
-  @include breakpoint(medium) {
+  .panel {
+    column-gap: calc(rem-calc(map-get($grid-column-gutter, medium)) * 3 / 4);
+    display: flex;
+    flex-wrap: wrap;
 
-    .panel {
+    > * {
+      flex-grow: 1;
+    }
 
-      &.with-image {
-        padding: 0 calc(#{$line-height} / 2) 0 0;
+    &.with-image {
+      padding-bottom: 0;
+      padding-top: 0;
+
+      .panel-image {
+        margin-#{$global-left}: rem-calc(-12);
+        text-align: center;
+
+        ~ * {
+          padding-top: calc(#{$line-height} / 2);
+        }
+      }
+
+      img {
+        height: 100%;
       }
     }
 
-    .column:first-child {
-      overflow: hidden;
-    }
+    .debate-content,
+    .budget-investment-content,
+    .proposal-content {
+      flex-basis: calc((35rem - 100%) * 999);
+      flex-grow: 1000;
+      max-width: 50rem;
 
-    .column:nth-child(2) {
-      float: left;
-    }
-
-    .column:last-child:not(:first-child) {
-      padding-top: calc(#{$line-height} / 2);
-    }
-
-    img {
-      height: 100%;
-      max-width: 12rem;
+      + * {
+        flex-basis: 22.5%;
+        flex-shrink: 0;
+        text-align: center;
+      }
     }
   }
 }
