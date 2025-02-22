@@ -1166,7 +1166,6 @@ en:
         edit_question: Edit question
         valid_answers: Valid answers
         add_answer: Add answer
-        video_url: External video
         answers:
           title: Answer
           description: Description
