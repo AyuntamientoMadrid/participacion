@@ -18,7 +18,7 @@
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
-    <%= render "layouts/header", with_subnavigation: false %>
+    <%= render "layouts/header" %>
 
     <div class="menu-and-content">
       <%= check_box_tag :show_menu, nil, false, role: "switch" %>
