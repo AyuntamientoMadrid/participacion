@@ -1,9 +1,4 @@
-<% if budget.image.present? %>
-  <div class="budget-header with-background-image"
-       style="<%= attached_background_css polymorphic_path(budget.image.variant(:large)) %>">
-<% else %>
-  <div class="budget-header">
-<% end %>
+<div <%= tag.attributes(html_attributes) %>>
   <div class="row">
     <div class="small-12 column text-center">
       <span class="budget-title"><%= t("budgets.index.title") %></span>

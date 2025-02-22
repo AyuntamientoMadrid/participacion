@@ -58,14 +58,14 @@
           <div><span class="panel-title"><%= t("legislation.draft_versions.show.text_body") %></span></div>
         </div>
         <div id="sticky-panel" class="draft-text">
-          <% if @draft_version.final_version? %>
-          <section>
-          <% else %>
-          <section class="legislation-annotatable"
-                   data-legislation-draft-version-id="<%= @draft_version.id %>"
-                   data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
-                   data-legislation-open-phase="<%= @process.allegations_phase.open? %>">
-          <% end %>
+          <section <%= tag.attributes(
+                         class: "legislation-annotatable",
+                         data: {
+                           "legislation-draft-version-id": @draft_version.id,
+                           "legislation-annotatable-base-url": legislation_process_draft_version_path(@process, @draft_version),
+                           "legislation-open-phase": @process.allegations_phase.open?
+                         }
+                       ) unless @draft_version.final_version? %>>
             <%= AdminLegislationSanitizer.new.sanitize(@draft_version.body_html) %>
           </section>
         </div>
