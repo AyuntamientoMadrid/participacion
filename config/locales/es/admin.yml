@@ -1166,7 +1166,6 @@ es:
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
-        video_url: Vídeo externo
         answers:
           title: Respuesta
           description: Descripción
