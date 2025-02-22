@@ -88,15 +88,6 @@
   }
 }
 
-.supports-container {
-  border-top: 1px solid $border;
-
-  @include breakpoint(medium) {
-    border-left: 1px solid $border;
-    border-top: 0;
-  }
-}
-
 .participation-not-allowed {
   background: $warning-bg;
   color: $color-warning;
@@ -601,14 +592,11 @@
 .legislation-proposals {
 
   .votes {
-    border-top: 1px solid $border;
     margin-top: $line-height;
     padding: calc(#{$line-height} / 2) 0;
     position: relative;
 
     @include breakpoint(medium) {
-      border-left: 1px solid $border;
-      border-top: 0;
       margin-top: 0;
       text-align: center;
     }
@@ -635,7 +623,6 @@
 
 .proposal-show .votes,
 .debate-show .votes {
-  border: 0;
   padding: calc(#{$line-height} / 2) 0;
 }
 
