@@ -18,7 +18,7 @@
     <%= raw setting["html.per_page_code_body"] %>
 
     <div class="wrapper <%= yield(:wrapper_class) %>">
-      <%= render "layouts/header", with_subnavigation: true %>
+      <%= render "layouts/header" %>
 
       <main id="main" class="public-content <%= yield(:main_class) %>">
         <%= render "layouts/flash" %>
