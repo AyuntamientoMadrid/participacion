@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html <%= common_html_attributes %>>
-<head>
-  <title><%= t("mailers.title") %></title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0" />
-</head>
-<body style="background: #fff; font-family:font-family: 'Open Sans','Helvetica Neue',arial,sans-serif !important; margin: 0 10px; padding: 0; text-align: left;">
+<html <%= common_html_attributes %> id="mailer_layout">
+  <head>
+    <title><%= t("mailers.title") %></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0" />
+  </head>
+  <body style="background: #fff; font-family:font-family: 'Open Sans','Helvetica Neue',arial,sans-serif !important; margin: 0 10px; padding: 0; text-align: left;">
 
-  <%= render "layouts/mailer_header" %>
+    <%= render "layouts/mailer_header" %>
 
-  <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
-    <tbody>
-      <tr>
-        <%= yield %>
-      </tr>
-    </tbody>
-  </table>
+    <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
+      <tbody>
+        <tr>
+          <%= yield %>
+        </tr>
+      </tbody>
+    </table>
 
-  <%= render "layouts/mailer_footer" %>
-</body>
+    <%= render "layouts/mailer_footer" %>
+  </body>
 </html>

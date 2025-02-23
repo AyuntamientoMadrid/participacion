@@ -1,94 +1,86 @@
 <div id="<%= dom_id(proposal) %>"
-     class="proposal clear
-            <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     class="proposal clear <%= ("successful" if proposal.successful?) %>"
      data-type="proposal">
   <div class="panel <%= "with-image" if proposal.image.present? %>">
-    <div class="icon-successful"></div>
+    <% if proposal.successful? %>
+      <div class="icon-successful"></div>
+    <% end %>
 
     <% if proposal.image.present? %>
-      <div class="row">
-        <div class="small-12 medium-3 large-2 column text-center">
-          <%= image_tag proposal.image.variant(:thumb),
-                        alt: proposal.image.title.unicode_normalize %>
-        </div>
-
-        <div class="<%= css_for_proposal_info_row(proposal) %>">
-    <% else %>
-      <div class="row">
-        <div class="<%= css_for_proposal_info_row(proposal) %>">
-      <% end %>
-        <div class="proposal-content">
-          <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
-            <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
-            <p class="proposal-info">
-              <%= l proposal.created_at.to_date %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= render Shared::CommentsCountComponent.new(
-                proposal.comments_count,
-                url: namespaced_proposal_path(proposal, anchor: "comments")
-              ) %>
-
-              <% if proposal.author.hidden? || proposal.author.erased? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= t("proposals.show.author_deleted") %>
-                </span>
-              <% else %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= proposal.author.name %>
-                </span>
-                <% if proposal.author.display_official_position_badge? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= proposal.author.official_level %>">
-                    <%= proposal.author.official_position %>
-                  </span>
-                <% end %>
-              <% end %>
-
-              <% if proposal.author.verified_organization? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="label round is-association">
-                  <%= t("shared.collective") %>
-                </span>
-              <% end %>
-
-              <% if Geozone.any? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="geozone">
-                  <%= link_to geozone_name(proposal), proposals_path(search: geozone_name(proposal)) %>
-                </span>
-              <% end %>
-            </p>
-            <div class="proposal-description">
-              <p><%= proposal.summary %></p>
-              <div class="truncate"></div>
-            </div>
-            <%= render "shared/tags", taggable: proposal, limit: 5 %>
-          <% end %>
-        </div>
+      <div class="panel-image">
+        <%= image_tag proposal.image.variant(:thumb),
+                      alt: proposal.image.title.unicode_normalize %>
       </div>
+    <% end %>
 
-      <% if show_proposal_votes? %>
-        <div id="<%= dom_id(proposal) %>_votes"
-             class="small-12 medium-3 column supports-container">
-          <% if proposal.successful? %>
-            <div class="padding">
-              <div class="supports text-center">
-                <%= render "proposals/supports", proposal: proposal %>
-              </div>
-            </div>
-          <% elsif proposal.archived? %>
-            <div class="padding text-center">
-              <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
-              <p><%= t("proposals.proposal.archived") %></p>
-            </div>
+    <div class="proposal-content">
+      <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
+        <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
+        <p class="proposal-info">
+          <%= l proposal.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= render Shared::CommentsCountComponent.new(
+            proposal.comments_count,
+            url: namespaced_proposal_path(proposal, anchor: "comments")
+          ) %>
+
+          <% if proposal.author.hidden? || proposal.author.erased? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= t("proposals.show.author_deleted") %>
+            </span>
           <% else %>
-            <%= render "votes", proposal: proposal %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= proposal.author.name %>
+            </span>
+            <% if proposal.author.display_official_position_badge? %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <span class="label round level-<%= proposal.author.official_level %>">
+                <%= proposal.author.official_position %>
+              </span>
+            <% end %>
           <% end %>
-        </div>
-      <% end %>
 
+          <% if proposal.author.verified_organization? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="label round is-association">
+              <%= t("shared.collective") %>
+            </span>
+          <% end %>
+
+          <% if Geozone.any? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="geozone">
+              <%= link_to geozone_name(proposal), proposals_path(search: geozone_name(proposal)) %>
+            </span>
+          <% end %>
+        </p>
+        <div class="proposal-description">
+          <p><%= proposal.summary %></p>
+          <div class="truncate"></div>
+        </div>
+        <%= render "shared/tags", taggable: proposal, limit: 5 %>
+      <% end %>
     </div>
+
+    <% if show_proposal_votes? %>
+      <div id="<%= dom_id(proposal) %>_votes" class="supports-container">
+        <% if proposal.successful? %>
+          <div class="padding">
+            <div class="supports">
+              <%= render "proposals/supports", proposal: proposal %>
+            </div>
+          </div>
+        <% elsif proposal.archived? %>
+          <div class="padding">
+            <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+            <p><%= t("proposals.proposal.archived") %></p>
+          </div>
+        <% else %>
+          <%= render "votes", proposal: proposal %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

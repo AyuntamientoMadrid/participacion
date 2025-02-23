@@ -9,10 +9,10 @@
                       method: :post,
                       remote: true,
                       html: { id: "new_officing_voter" } do |f| %>
-      <%= f.hidden_field :poll_id, value: poll.id %>
-      <%= f.hidden_field :user_id, value: @user.id %>
-      <%= f.submit t("officing.voters.show.submit"),
-                   class: "button success",
-                   data: { disable_with: t("officing.voters.can_vote.submit_disable_with") } %>
+    <%= f.hidden_field :poll_id, value: poll.id %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.submit t("officing.voters.show.submit"),
+                 class: "button success",
+                 data: { disable_with: t("officing.voters.can_vote.submit_disable_with") } %>
   <% end %>
 </td>

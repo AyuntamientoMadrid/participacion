@@ -19,9 +19,9 @@
                           officing_poll_ballot_sheets_path(poll),
                           class: "button" %>
 
-                <%= link_to t("officing.polls.final.add_results"),
-                            new_officing_poll_ballot_sheet_path(poll),
-                            class: "button hollow" %>
+              <%= link_to t("officing.polls.final.add_results"),
+                          new_officing_poll_ballot_sheet_path(poll),
+                          class: "button hollow" %>
             <% else %>
               <%= link_to t("officing.polls.final.add_results"),
                           new_officing_poll_result_path(poll),

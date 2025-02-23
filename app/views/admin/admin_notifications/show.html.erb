@@ -28,7 +28,7 @@
   </div>
 
   <div class="small-12 column">
-      <strong><%= t("admin.admin_notifications.show.segment_recipient") %></strong><br>
+    <strong><%= t("admin.admin_notifications.show.segment_recipient") %></strong><br>
     <%= segment_name(@admin_notification.segment_recipient) %>
     <% if @admin_notification.draft? %>
       <%= t("admin.admin_notifications.show.will_get_notified",

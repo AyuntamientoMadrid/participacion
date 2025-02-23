@@ -13,18 +13,18 @@
     </thead>
     <tbody>
       <% @polls.each do |poll| %>
-      <tr id="<%= dom_id(poll) %>">
-        <td>
-          <%= poll.name %>
-        </td>
-        <% if poll.votable_by?(@user) %>
-          <%= render "can_vote", poll: poll %>
-        <% elsif poll.voted_by?(@user) || poll.user_has_an_online_ballot?(@user) %>
-          <%= render "already_voted" %>
-        <% else %>
-          <%= render "cannot_vote" %>
-        <% end %>
-      </tr>
+        <tr id="<%= dom_id(poll) %>">
+          <td>
+            <%= poll.name %>
+          </td>
+          <% if poll.votable_by?(@user) %>
+            <%= render "can_vote", poll: poll %>
+          <% elsif poll.voted_by?(@user) || poll.user_has_an_online_ballot?(@user) %>
+            <%= render "already_voted" %>
+          <% else %>
+            <%= render "cannot_vote" %>
+          <% end %>
+        </tr>
       <% end %>
     </tbody>
   </table>

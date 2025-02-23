@@ -16,16 +16,16 @@
     </thead>
     <tbody>
       <% @officers.each do |user| %>
-      <tr>
-        <td>
-          <strong>
-            <%= link_to user.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.id) %>
-          </strong>
-        </td>
-        <td>
-          <%= user.email %>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            <strong>
+              <%= link_to user.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.id) %>
+            </strong>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

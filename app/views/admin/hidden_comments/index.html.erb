@@ -13,21 +13,21 @@
       <th scope="col"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
-    <% @comments.each do |comment| %>
-      <tr id="<%= dom_id(comment) %>">
-        <td>
-          <%= sanitize_and_auto_link comment.body %><br>
-          <% if comment.commentable.hidden? %>
-            (<%= t("admin.hidden_comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
-          <% else %>
-            <%= link_to comment.commentable.title, commentable_path(comment) %>
-          <% end %>
-        </td>
-        <td>
-          <%= render Admin::HiddenTableActionsComponent.new(comment) %>
-        </td>
-      </tr>
-    <% end %>
+      <% @comments.each do |comment| %>
+        <tr id="<%= dom_id(comment) %>">
+          <td>
+            <%= sanitize_and_auto_link comment.body %><br>
+            <% if comment.commentable.hidden? %>
+              (<%= t("admin.hidden_comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
+            <% else %>
+              <%= link_to comment.commentable.title, commentable_path(comment) %>
+            <% end %>
+          </td>
+          <td>
+            <%= render Admin::HiddenTableActionsComponent.new(comment) %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

@@ -18,22 +18,22 @@
     <th scope="col"><%= t("admin.actions.actions") %></th>
   </thead>
   <tbody>
-  <% @tags.each do |tag| %>
-    <tr>
-      <td>
-        <%= form_for(tag,
-                     url: admin_tag_path(tag),
-                     as: :tag,
-                     html: { id: "edit_tag_#{tag.id}" }) do |f| %>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= form_for(tag,
+                       url: admin_tag_path(tag),
+                       as: :tag,
+                       html: { id: "edit_tag_#{tag.id}" }) do |f| %>
 
-          <strong><%= tag.name %></strong>
-        <% end %>
-      </td>
-      <td id="tag_<%= tag.id %>">
-        <%= render Admin::TableActionsComponent.new(tag, actions: [:destroy]) %>
-      </td>
-    </tr>
-  <% end %>
+            <strong><%= tag.name %></strong>
+          <% end %>
+        </td>
+        <td id="tag_<%= tag.id %>">
+          <%= render Admin::TableActionsComponent.new(tag, actions: [:destroy]) %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

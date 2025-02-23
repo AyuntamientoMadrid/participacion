@@ -2,78 +2,74 @@
      class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
   <div class="panel <%= ("with-image" if proposal.image.present?) %>">
-    <div class="icon-successful"></div>
+    <% if proposal.total_votes > Proposal.votes_needed_for_success %>
+      <div class="icon-successful"></div>
+    <% end %>
 
     <% if proposal.image.present? %>
-      <div class="row">
-        <div class="small-12 medium-3 large-2 column text-center">
-          <%= image_tag proposal.image.variant(:thumb),
-                        alt: proposal.image.title.unicode_normalize %>
-        </div>
-        <div class="small-12 medium-6 large-7 column margin-top">
-    <% else %>
-      <div class="row">
-        <div class="small-12 medium-9 column">
+      <div class="panel-image">
+        <%= image_tag proposal.image.variant(:thumb),
+                      alt: proposal.image.title.unicode_normalize %>
+      </div>
     <% end %>
-        <div class="proposal-content">
-          <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
-            <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
-            <p class="proposal-info">
-              <%= l proposal.created_at.to_date %>
+
+    <div class="proposal-content">
+      <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
+        <h3><%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %></h3>
+        <p class="proposal-info">
+          <%= l proposal.created_at.to_date %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= render Shared::CommentsCountComponent.new(
+            proposal.comments_count,
+            url: legislation_process_proposal_path(
+                   proposal.legislation_process_id,
+                   proposal,
+                   anchor: "comments"
+                 )
+          ) %>
+
+          <% if proposal.author.hidden? || proposal.author.erased? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= t("proposals.show.author_deleted") %>
+            </span>
+          <% else %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="author">
+              <%= proposal.author.name %>
+            </span>
+            <% if proposal.author.display_official_position_badge? %>
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= render Shared::CommentsCountComponent.new(
-                proposal.comments_count,
-                url: legislation_process_proposal_path(
-                       proposal.legislation_process_id,
-                       proposal,
-                       anchor: "comments"
-                     )
-              ) %>
-
-              <% if proposal.author.hidden? || proposal.author.erased? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= t("proposals.show.author_deleted") %>
-                </span>
-              <% else %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= proposal.author.name %>
-                </span>
-                <% if proposal.author.display_official_position_badge? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= proposal.author.official_level %>">
-                    <%= proposal.author.official_position %>
-                  </span>
-                <% end %>
-              <% end %>
-
-              <% if proposal.author.verified_organization? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="label round is-association">
-                  <%= t("shared.collective") %>
-                </span>
-              <% end %>
-
-              <% if Geozone.any? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="geozone">
-                  <%= link_to geozone_name(proposal), legislation_process_proposals_path(proposal.legislation_process_id, search: geozone_name(proposal)) %>
-                </span>
-              <% end %>
-            </p>
-            <div class="proposal-description">
-              <p><%= proposal.summary %></p>
-              <div class="truncate"></div>
-            </div>
-            <%= render "shared/tags", taggable: proposal, limit: 5 %>
+              <span class="label round level-<%= proposal.author.official_level %>">
+                <%= proposal.author.official_position %>
+              </span>
+            <% end %>
           <% end %>
-        </div>
-      </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <%= render Legislation::Proposals::VotesComponent.new(proposal) %>
-      </div>
+          <% if proposal.author.verified_organization? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="label round is-association">
+              <%= t("shared.collective") %>
+            </span>
+          <% end %>
+
+          <% if Geozone.any? %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="geozone">
+              <%= link_to geozone_name(proposal), legislation_process_proposals_path(proposal.legislation_process_id, search: geozone_name(proposal)) %>
+            </span>
+          <% end %>
+        </p>
+        <div class="proposal-description">
+          <p><%= proposal.summary %></p>
+          <div class="truncate"></div>
+        </div>
+        <%= render "shared/tags", taggable: proposal, limit: 5 %>
+      <% end %>
+    </div>
+
+    <div id="<%= dom_id(proposal) %>_votes">
+      <%= render Legislation::Proposals::VotesComponent.new(proposal) %>
     </div>
   </div>
 </div>

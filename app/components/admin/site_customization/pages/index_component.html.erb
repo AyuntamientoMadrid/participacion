@@ -17,28 +17,28 @@
       </tr>
     </thead>
     <tbody>
-    <% pages.each do |page| %>
-      <tr id="<%= dom_id(page) %>">
-        <td><%= page.title %></td>
-        <td><%= page.slug %></td>
-        <td><%= I18n.l page.created_at, format: :long %></td>
-        <td><%= I18n.l page.updated_at, format: :long %></td>
-        <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(page) do |actions| %>
-            <%= actions.action(:cards,
-                               text: t("admin.site_customization.pages.page.see_cards"),
-                               path: admin_site_customization_page_widget_cards_path(page)) %>
+      <% pages.each do |page| %>
+        <tr id="<%= dom_id(page) %>">
+          <td><%= page.title %></td>
+          <td><%= page.slug %></td>
+          <td><%= I18n.l page.created_at, format: :long %></td>
+          <td><%= I18n.l page.updated_at, format: :long %></td>
+          <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(page) do |actions| %>
+              <%= actions.action(:cards,
+                                 text: t("admin.site_customization.pages.page.see_cards"),
+                                 path: admin_site_customization_page_widget_cards_path(page)) %>
 
-            <% if page.status == "published" %>
-              <%= actions.action(:show,
-                                 text: t("admin.site_customization.pages.index.see_page"),
-                                 path: page.url) %>
+              <% if page.status == "published" %>
+                <%= actions.action(:show,
+                                   text: t("admin.site_customization.pages.index.see_page"),
+                                   path: page.url) %>
+              <% end %>
             <% end %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

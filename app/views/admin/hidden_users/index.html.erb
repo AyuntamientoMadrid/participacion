@@ -13,23 +13,23 @@
       <th scope="col"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
-    <% @users.each do |user| %>
-      <tr id="<%= dom_id(user) %>">
-        <td>
-          <p><%= link_to user.name, admin_hidden_user_path(user) %></p>
-        </td>
+      <% @users.each do |user| %>
+        <tr id="<%= dom_id(user) %>">
+          <td>
+            <p><%= link_to user.name, admin_hidden_user_path(user) %></p>
+          </td>
 
-        <td>
-          <%= render Admin::HiddenTableActionsComponent.new(user) %>
-        </td>
-      </tr>
-    <% end %>
+          <td>
+            <%= render Admin::HiddenTableActionsComponent.new(user) %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
   <%= paginate @users %>
 <% else %>
- <div class="callout primary margin">
+  <div class="callout primary margin">
     <%= t("admin.hidden_users.index.no_hidden_users") %>
   </div>
 <% end %>

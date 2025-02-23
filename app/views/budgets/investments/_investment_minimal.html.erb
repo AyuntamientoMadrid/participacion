@@ -1,13 +1,9 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment minimal clear">
   <div class="panel">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="budget-investment-content">
-          <% cache [locale_and_user_status(investment), "index_minimal", investment, investment.author] do %>
-            <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
-          <% end %>
-        </div>
-      </div>
+    <div class="budget-investment-content">
+      <% cache [locale_and_user_status(investment), "index_minimal", investment, investment.author] do %>
+        <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+      <% end %>
     </div>
   </div>
 </div>

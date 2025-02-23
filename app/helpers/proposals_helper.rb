@@ -64,22 +64,6 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
-  def css_for_proposal_info_row(proposal)
-    if proposal.image.present?
-      if params[:selected].present?
-        "small-12 medium-9 column"
-      else
-        "small-12 medium-6 large-7 column"
-      end
-    else
-      if params[:selected].present?
-        "small-12 column"
-      else
-        "small-12 medium-9 column"
-      end
-    end
-  end
-
   def show_proposal_votes?
     params[:selected].blank?
   end

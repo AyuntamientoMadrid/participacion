@@ -1,14 +1,10 @@
 <div id="<%= dom_id(proposal) %>" class="proposal minimal clear" data-type="proposal">
   <div class="panel">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="proposal-content">
-          <% cache [locale_and_user_status(proposal),
-                    "index_minimal", proposal, proposal.author] do %>
-            <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
-          <% end %>
-        </div>
-      </div>
+    <div class="proposal-content">
+      <% cache [locale_and_user_status(proposal),
+                "index_minimal", proposal, proposal.author] do %>
+        <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
+      <% end %>
     </div>
   </div>
 </div>

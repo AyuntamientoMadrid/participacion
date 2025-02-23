@@ -8,7 +8,8 @@
 
     <div class="small-12 medium-3 column highlight padding">
       <strong><%= t("admin.poll_shifts.new.officer") %></strong>
-      <br><%= officer.name %>
+      <br>
+      <%= officer.name %>
       <%= f.hidden_field :officer_id, value: officer.id %>
     </div>
 

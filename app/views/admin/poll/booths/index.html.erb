@@ -21,9 +21,9 @@
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-    <% @booths.each do |booth| %>
-      <%= render "booth", booth: booth %>
-    <% end %>
+      <% @booths.each do |booth| %>
+        <%= render "booth", booth: booth %>
+      <% end %>
     </tbody>
   </table>
 

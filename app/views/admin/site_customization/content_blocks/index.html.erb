@@ -32,28 +32,28 @@
       </tr>
     </thead>
     <tbody>
-    <% @content_blocks.each do |content_block| %>
-      <tr id="<%= dom_id(content_block) %>">
-        <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
-        <td><%= raw content_block.body %></td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(content_block) %>
-        </td>
-      </tr>
-    <% end %>
-    <% @headings_content_blocks.each do |content_block| %>
-      <tr id="<%= dom_id(content_block) %>">
-        <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
-        <td><%= raw content_block.body %></td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(
+      <% @content_blocks.each do |content_block| %>
+        <tr id="<%= dom_id(content_block) %>">
+          <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
+          <td><%= raw content_block.body %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(content_block) %>
+          </td>
+        </tr>
+      <% end %>
+      <% @headings_content_blocks.each do |content_block| %>
+        <tr id="<%= dom_id(content_block) %>">
+          <td><%= "#{content_block.name} (#{content_block.locale})" %></td>
+          <td><%= raw content_block.body %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(
             content_block,
             edit_path: admin_site_customization_edit_heading_content_block_path(content_block),
             destroy_path: admin_site_customization_delete_heading_content_block_path(content_block)
           ) %>
-        </td>
-      </tr>
-    <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 <% else %>

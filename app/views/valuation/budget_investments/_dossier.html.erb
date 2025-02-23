@@ -2,12 +2,12 @@
   <p id="price">
     <strong>
       <%= t("valuation.budget_investments.show.price") %>
-     (<%= t("valuation.budget_investments.show.currency") %>):
+      (<%= t("valuation.budget_investments.show.currency") %>):
     </strong>
     <% if @investment.price.present? %>
       <%= @investment.price %>
     <% else %>
-     <%= t("valuation.budget_investments.show.undefined") %>
+      <%= t("valuation.budget_investments.show.undefined") %>
     <% end %>
   </p>
 
@@ -20,7 +20,7 @@
     <% if @investment.price_first_year.present? %>
       <%= @investment.price_first_year %>
     <% else %>
-     <%= t("valuation.budget_investments.show.undefined") %>
+      <%= t("valuation.budget_investments.show.undefined") %>
     <% end %>
   </p>
 <% end %>

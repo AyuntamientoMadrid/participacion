@@ -1,10 +1,10 @@
 <% provide :title, t("budgets.results.page_title", budget: @budget.name) %>
 <% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-           social_url: budget_results_url(@budget),
-           social_title: @budget.name,
-           social_description: @budget.description_for_phase("finished") %>
+  <%= render "shared/social_media_meta_tags",
+             social_url: budget_results_url(@budget),
+             social_title: @budget.name,
+             social_description: @budget.description_for_phase("finished") %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_results_url(@budget) %>

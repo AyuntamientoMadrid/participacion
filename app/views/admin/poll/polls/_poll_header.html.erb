@@ -19,8 +19,8 @@
     <div class="inline-block margin-left">
       <strong><%= t("admin.polls.index.geozone_restricted") %></strong>
       <br>
-        <%= @poll.geozones.pluck(:name).to_sentence %>
-      </div>
+      <%= @poll.geozones.pluck(:name).to_sentence %>
+    </div>
   <% end %>
 </div>
 

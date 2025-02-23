@@ -17,11 +17,6 @@
 
 <hr>
 <%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
-</hr>
-
-<% if @investment.external_url.present? %>
-  <p><%= sanitize_and_auto_link @investment.external_url %></p>
-<% end %>
 
 <hr>
 

@@ -1,8 +1,8 @@
-<div class="legislation-hero jumbo" style="<%= css_for_process_header %>">
+<div class="legislation-hero jumbo" style="<%= css_for_process_header(@process) %>">
   <div class="row">
     <div class="small-12 medium-9 column">
 
-      <% if banner_color? %>
+      <% if banner_color?(@process) %>
         <%= link_to t("shared.back"),
                     legislation_processes_path,
                     class: "icon-angle-left",

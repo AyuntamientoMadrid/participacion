@@ -18,8 +18,8 @@
   <aside class="small-12 medium-3 column">
     <div class="sidebar-divider"></div>
     <h2><%= t("legislation.shared.share") %></h2>
-      <%= render "/shared/social_share",
-                 title: t("legislation.shared.share_comment", version_name: @draft_version.title.downcase, process_name: @process.title),
-                 url: legislation_process_draft_version_path(process, draft_version) %>
+    <%= render "/shared/social_share",
+               title: t("legislation.shared.share_comment", version_name: @draft_version.title.downcase, process_name: @process.title),
+               url: legislation_process_draft_version_path(process, draft_version) %>
   </aside>
 </div>

@@ -1,14 +1,10 @@
 <div id="<%= dom_id(debate) %>" class="debate minimal clear" data-type="debate">
   <div class="panel">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="debate-content">
-          <% cache [locale_and_user_status,
-                    "index_minimal", debate, current_user&.voted_as_when_voted_for(debate)] do %>
-            <h3><%= link_to debate.title, debate %></h3>
-          <% end %>
-        </div>
-      </div>
+    <div class="debate-content">
+      <% cache [locale_and_user_status,
+                "index_minimal", debate, current_user&.voted_as_when_voted_for(debate)] do %>
+        <h3><%= link_to debate.title, debate %></h3>
+      <% end %>
     </div>
   </div>
 </div>

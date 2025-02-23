@@ -13,14 +13,14 @@
         <%= link_to legislation_process_question_path(@process, @question.next_question_id), class: "quiz-next-link" do %>
           <div class="quiz-next">
             <%= t("legislation.questions.show.next_question") %>
-            <span class="icon-angle-right" aria-hidden="true">
+            <span class="icon-angle-right" aria-hidden="true"></span>
           </div>
         <% end %>
       <% elsif @question.first_question_id %>
         <%= link_to legislation_process_question_path(@process, @question.first_question_id), class: "quiz-next-link" do %>
           <div class="quiz-next">
             <%= t("legislation.questions.show.first_question") %>
-            <span class="icon-angle-right" aria-hidden="true">
+            <span class="icon-angle-right" aria-hidden="true"></span>
           </div>
         <% end %>
       <% end %>

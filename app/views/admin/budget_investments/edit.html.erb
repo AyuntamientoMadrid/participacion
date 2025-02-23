@@ -11,7 +11,7 @@
     <%= render "shared/errors", resource: @investment %>
 
     <% Budget::Investment.filter_params(params).to_h.each do |filter_name, filter_value| %>
-     <%= hidden_field_tag filter_name, filter_value %>
+      <%= hidden_field_tag filter_name, filter_value %>
     <% end %>
 
     <div class="row expanded">
@@ -74,9 +74,9 @@
       <div class="small-12 column margin-top">
         <%= f.label :valuator_ids %>
         <ul>
-        <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
-          <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
-        <% end %>
+          <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
+            <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
+          <% end %>
         </ul>
       </div>
 
@@ -85,7 +85,7 @@
         <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
         <ul>
           <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
-              <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+            <li><%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
           <% end %>
         </ul>
       </div>
@@ -93,11 +93,11 @@
 
     <div class="row expanded margin-top">
       <% if @investment.incompatible? || @investment.winner? %>
-      <div class="small-12 medium-3 column">
-        <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
-        <%= f.check_box :incompatible,
-                        title: t("admin.budget_investments.edit.compatibility") %>
-      </div>
+        <div class="small-12 medium-3 column">
+          <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
+          <%= f.check_box :incompatible,
+                          title: t("admin.budget_investments.edit.compatibility") %>
+        </div>
       <% end %>
       <div class="small-12 medium-3 column float-left">
         <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>

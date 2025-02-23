@@ -2,9 +2,9 @@
 
 <%= form_for(resource, as: resource_name, url: [resource_name, :password_expired], html: { method: :put }) do |f| %>
 
-  <%= f.password_field :current_password %></p>
-  <%= f.password_field :password, label: t("devise.password_expired.new_password") %></p>
-  <%= f.password_field :password_confirmation %></p>
+  <%= f.password_field :current_password %>
+  <%= f.password_field :password, label: t("devise.password_expired.new_password") %>
+  <%= f.password_field :password_confirmation %>
 
   <p><%= f.submit t("devise.password_expired.change_password") %></p>
 <% end %>

@@ -39,17 +39,17 @@
 
   <div class="in-favor inline-block">
     <span class="icon-like">
-          <span class="show-for-sr"><%= t("votes.agree") %></span>
-        </span>
+      <span class="show-for-sr"><%= t("votes.agree") %></span>
+    </span>
     <span class="percentage"><%= votes_percentage("likes", @debate) %></span>
   </div>
 
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
 
   <div class="against inline-block">
-        <span class="icon-unlike">
-          <span class="show-for-sr"><%= t("votes.disagree") %></span>
-        </span>
+    <span class="icon-unlike">
+      <span class="show-for-sr"><%= t("votes.disagree") %></span>
+    </span>
     <span class="percentage"><%= votes_percentage("dislikes", @debate) %></span>
   </div>
 
