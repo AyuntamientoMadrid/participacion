@@ -8,8 +8,4 @@ module Admin::ProposalDashboardActionsHelper
   def default_actions
     %w[polls email poster]
   end
-
-  def css_for_resource(action)
-    "hide" if action == "proposed_action"
-  end
 end
