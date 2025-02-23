@@ -5,9 +5,7 @@
     <%= f.label :action_type %>
     <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
       <span class="margin-right">
-        <%= f.radio_button :action_type,
-                           action_type_value,
-                           data: { toggle: "request_to_administrators short_description" } %>
+        <%= f.radio_button :action_type, action_type_value %>
       </span>
     <% end %>
   </div>
@@ -16,9 +14,7 @@
     <%= f.check_box :active %>
   </div>
 
-  <div id="request_to_administrators"
-       class="small-12 column margin-bottom <%= css_for_resource(@dashboard_action.action_type) %>"
-       data-toggler=".hide">
+  <div id="request_to_administrators" class="small-12 column margin-bottom">
     <%= f.check_box :request_to_administrators %>
   </div>
 
@@ -28,7 +24,7 @@
   <div class="small-12 column">
     <%= f.text_field :title %>
 
-    <div id="short_description" class="hide">
+    <div id="short_description">
       <%= f.text_field :short_description %>
     </div>
 
