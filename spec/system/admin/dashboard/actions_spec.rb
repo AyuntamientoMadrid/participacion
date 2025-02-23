@@ -73,14 +73,14 @@ describe "Admin dashboard actions", :admin do
     end
 
     scenario "Updates the action" do
-      fill_in "dashboard_action_title", with: "Great action!"
+      fill_in "Title", with: "Great action!"
       click_button "Save"
 
       expect(page).to have_content "Great action!"
     end
 
     scenario "Renders edit form in case data is invalid" do
-      fill_in "dashboard_action_title", with: "x"
+      fill_in "Title", with: "x"
       click_button "Save"
       expect(page).to have_content("error prevented this Dashboard/Action from being saved.")
     end
