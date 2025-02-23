@@ -1,50 +1,8 @@
 .budget-group-switcher {
   margin-bottom: $line-height;
 
-  p {
+  p,
+  ul {
     margin-bottom: 0;
-  }
-
-  > .menu > li {
-
-    > button {
-      align-items: center;
-      border: $admin-border;
-      border-radius: $button-radius;
-      display: inline-flex;
-      padding: rem-calc(11) rem-calc(16);
-
-      &:active {
-        color: inherit;
-      }
-
-      &::after {
-        @include css-triangle($dropdownmenu-arrow-size, currentcolor, down);
-        margin-left: 0.2em;
-      }
-    }
-  }
-
-  .menu.is-dropdown-submenu {
-    margin: 0;
-    min-width: 100%;
-    padding: 0;
-
-    li {
-      margin-bottom: 0;
-    }
-
-    a {
-      cursor: default;
-      padding: rem-calc(11) rem-calc(16);
-      width: 100%;
-
-      &:focus,
-      &:hover {
-        @include brand-background;
-        @include no-outline;
-        text-decoration: none;
-      }
-    }
   }
 }

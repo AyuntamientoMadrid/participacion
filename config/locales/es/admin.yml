@@ -212,7 +212,6 @@ es:
         submit: "Guardar partida"
       group_switcher:
         currently_showing: "Mostrando las partidas del grupo <strong>%{group}</strong>."
-        different_group: "Ir a partidas de otro grupo"
         the_other_group: "Ir a partidas del grupo %{group}."
       index:
         back: "Volver a grupos"
