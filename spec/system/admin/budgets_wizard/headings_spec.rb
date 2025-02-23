@@ -35,8 +35,7 @@ describe "Budgets wizard, headings step", :admin do
 
       expect(page).not_to have_link "Health"
 
-      click_button "Manage headings from a different group"
-      click_link "Health"
+      click_link "Manage headings from the Health group."
 
       within(".heading") do
         expect(page).to have_content "Hospitals"
