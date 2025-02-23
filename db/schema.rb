@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_22_222739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -1138,7 +1138,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_26_112901) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.tsvector "tsv"
-    t.string "video_url"
     t.index ["author_id"], name: "index_poll_questions_on_author_id"
     t.index ["poll_id"], name: "index_poll_questions_on_poll_id"
     t.index ["proposal_id"], name: "index_poll_questions_on_proposal_id"

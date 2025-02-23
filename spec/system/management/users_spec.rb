@@ -72,6 +72,7 @@ describe "Users" do
   scenario "Delete a level 2 user account from document verification page" do
     level_2_user = create(:user, :level_two, document_number: "12345678Z")
     manager = create(:manager)
+    administrator = create(:administrator)
 
     login_as_manager(manager)
     visit management_document_verifications_path
@@ -93,7 +94,7 @@ describe "Users" do
     expect(page).to have_content "no user account associated to it"
 
     logout
-    login_as(create(:administrator).user)
+    login_as(administrator.user)
 
     visit admin_users_path(filter: "erased")
 

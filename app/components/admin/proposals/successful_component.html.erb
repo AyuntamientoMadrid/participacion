@@ -1,3 +1,9 @@
+<% provide :main_class, "admin-proposals-successful" %>
+
+<%= back_link_to admin_proposals_path %>
+
+<%= header %>
+
 <table>
   <thead>
     <tr>
@@ -6,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @proposals.each do |proposal| %>
+    <% proposals.each do |proposal| %>
       <tr id="<%= dom_id(proposal) %>">
         <td>
           <%= proposal.title %>

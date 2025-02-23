@@ -1,0 +1,41 @@
+<% provide :main_class, "admin-proposals" %>
+
+<%= header do %>
+  <%= successful_proposals_link %>
+<% end %>
+
+<% if proposals.any? %>
+  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
+
+  <h3><%= page_entries_info proposals %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="text-center"><%= t("admin.proposals.index.id") %></th>
+        <th><%= Proposal.human_attribute_name(:title) %></th>
+        <th><%= t("admin.proposals.index.author") %></th>
+        <th><%= t("admin.proposals.index.milestones") %></th>
+        <th><%= t("admin.proposals.index.selected") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% proposals.each do |proposal| %>
+        <tr id="<%= dom_id(proposal) %>" class="proposal">
+          <td class="text-center"><%= proposal.id %></td>
+          <td><%= link_to proposal.title, admin_proposal_path(proposal) %></td>
+          <td><%= proposal.author.username %></td>
+          <td><%= proposal.milestones.count %></td>
+          <td><%= render Admin::Proposals::ToggleSelectionComponent.new(proposal) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate proposals %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.proposals.index.no_proposals") %>
+  </div>
+<% end %>

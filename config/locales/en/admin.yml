@@ -1134,18 +1134,11 @@ en:
         multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
     questions:
       index:
-        title: "Questions"
         create: "Create question"
-        no_questions: "There are no questions."
-        filter_poll: Filter by Poll
         select_poll: Select Poll
-        questions_tab: "Questions"
         successful_proposals_tab: "Successful proposals"
         create_question: "Create question"
         table_proposal: "Proposal"
-        table_question: "Question"
-        table_poll: "Poll"
-        poll_not_assigned: "Poll not assigned"
       edit:
         title: "Edit Question"
       form:
@@ -1166,7 +1159,6 @@ en:
         edit_question: Edit question
         valid_answers: Valid answers
         add_answer: Add answer
-        video_url: External video
         answers:
           title: Answer
           description: Description
