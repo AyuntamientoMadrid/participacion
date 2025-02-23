@@ -73,7 +73,17 @@ describe "Admin dashboard actions", :admin do
     end
 
     scenario "Updates the action" do
+      expect(page).to have_checked_field "Proposed action"
+      expect(page).to have_unchecked_field "Resource"
+      expect(page).not_to have_field "Short description"
+      expect(page).not_to have_field "Include in the resource a button to " \
+                                     "request the resource from administrators"
+
+      choose "Resource"
+      check "Include in the resource a button to request the resource from administrators"
+
       fill_in "Title", with: "Great action!"
+      fill_in "Short description", with: "And awesome too!"
       click_button "Save"
 
       expect(page).to have_content "Great action!"
