@@ -569,7 +569,6 @@ en:
         support: "You just have to click on the button that you will see below 'Support this proposal' and you can inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
         share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
-    all: "All"
     dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
     index:

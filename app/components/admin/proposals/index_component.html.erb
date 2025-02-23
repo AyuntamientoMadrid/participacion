@@ -1,6 +1,8 @@
 <% provide :main_class, "admin-proposals" %>
 
-<%= header %>
+<%= header do %>
+  <%= successful_proposals_link %>
+<% end %>
 
 <% if proposals.any? %>
   <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
