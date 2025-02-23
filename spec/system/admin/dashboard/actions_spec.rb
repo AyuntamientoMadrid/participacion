@@ -89,11 +89,9 @@ describe "Admin dashboard actions", :admin do
   context "when destroying an action" do
     let!(:action) { create(:dashboard_action) }
 
-    before do
-      visit admin_dashboard_actions_path
-    end
-
     scenario "deletes the action" do
+      visit admin_dashboard_actions_path
+
       accept_confirm("Are you sure? This action will delete \"#{action.title}\" and can't be undone.") do
         click_button "Delete"
       end
@@ -101,8 +99,10 @@ describe "Admin dashboard actions", :admin do
       expect(page).not_to have_content(action.title)
     end
 
-    scenario "can not delete actions that have been executed" do
-      _executed_action = create(:dashboard_executed_action, action: action)
+    scenario "cannot delete actions that have been executed" do
+      create(:dashboard_executed_action, action: action)
+
+      visit admin_dashboard_actions_path
 
       accept_confirm("Are you sure? This action will delete \"#{action.title}\" and can't be undone.") do
         click_button "Delete"
