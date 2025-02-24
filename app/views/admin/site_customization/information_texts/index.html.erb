@@ -1,9 +1,9 @@
 <h2><%= t("admin.menu.site_customization.information_texts") %></h2>
 
-<div class="tabs-content" data-tabs-content="information-texts-tabs" role="tablist">
-  <%= render "tabs" %>
+<%= render "tabs" %>
 
-  <div class="tabs-panel is-active" role="tab">
+<div class="tabs-content" data-tabs-content="information-texts-tabs">
+  <div class="tabs-panel is-active">
     <%= render Admin::SiteCustomization::InformationTexts::FormComponent.new([@content]) %>
   </div>
 </div>
