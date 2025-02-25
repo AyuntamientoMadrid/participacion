@@ -284,6 +284,9 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/ConstantReassignment:
+  Enabled: true
+
 Lint/DeprecatedClassMethods:
   Enabled: true
 
@@ -299,6 +302,9 @@ Lint/EmptyBlock:
 Lint/EmptyFile:
   Enabled: true
 
+Lint/HashNewWithKeywordArgumentsAsDefault:
+  Enabled: true
+
 Lint/LiteralAsCondition:
   Enabled: true
 
@@ -306,6 +312,9 @@ Lint/NonAtomicFileOperation:
   Enabled: true
 
 Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/RedundantSafeNavigation:
   Enabled: true
 
 Lint/RedundantStringCoercion:
@@ -317,6 +326,9 @@ Lint/SafeNavigationChain:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
+Lint/SharedMutableDefault:
+  Enabled: true
+
 Lint/SymbolConversion:
   Enabled: true
   Exclude:
@@ -324,6 +336,9 @@ Lint/SymbolConversion:
     - "db/dev_seeds/settings.rb"
 
 Lint/UselessAssignment:
+  Enabled: true
+
+Lint/UselessDefined:
   Enabled: true
 
 Lint/Void:
@@ -705,6 +720,9 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/DigChain:
+  Enabled: true
+
 Style/FileRead:
   Enabled: true
 
@@ -717,9 +735,11 @@ Style/HashConversion:
 Style/HashExcept:
   Enabled: true
 
+Style/HashSlice:
+  Enabled: true
+
 Style/HashSyntax:
   Enabled: true
-  EnforcedShorthandSyntax: either
 
 Style/HashTransformKeys:
   Enabled: true
@@ -743,6 +763,9 @@ Style/InvertibleUnlessCondition:
     :include?: ~
     :present?: :blank?
     :zero?: ~
+
+Style/KeywordArgumentsMerging:
+  Enabled: true
 
 Style/LineEndConcatenation:
   Enabled: true
@@ -817,6 +840,9 @@ Style/RedundantStringEscape:
   Enabled: true
 
 Style/SafeNavigation:
+  Enabled: true
+
+Style/SafeNavigationChainLength:
   Enabled: true
 
 Style/SingleLineDoEndBlock:

@@ -2,10 +2,10 @@
   <%= content %>
 
   <% if actions.include?(:edit) %>
-    <%= action(:edit, **edit_options.merge(text: edit_text, path: edit_path)) %>
+    <%= action(:edit, text: edit_text, path: edit_path, **edit_options) %>
   <% end %>
 
   <% if actions.include?(:destroy) %>
-    <%= action(:destroy, **destroy_options.merge(text: destroy_text, path: destroy_path)) %>
+    <%= action(:destroy, text: destroy_text, path: destroy_path, **destroy_options) %>
   <% end %>
 </div>
