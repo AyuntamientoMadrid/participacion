@@ -2,7 +2,7 @@
   <h5><%= t("milestones.index.progress") %></h5>
 
   <div class="margin">
-    <%= progress_tag_for(primary_progress_bar) %>
+    <%= progress_tag_for(primary_progress_bar, label: t("milestones.index.progress")) %>
   </div>
 
   <% if secondary_progress_bars.any? %>
@@ -13,7 +13,7 @@
             <%= progress_bar.title %>
           </div>
           <div class="small-12 medium-6 large-8 column end">
-            <%= progress_tag_for(progress_bar) %>
+            <%= progress_tag_for(progress_bar, label: progress_bar.title) %>
           </div>
         </div>
       <% end %>

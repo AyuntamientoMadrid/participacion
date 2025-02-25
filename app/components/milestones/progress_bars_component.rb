@@ -19,11 +19,12 @@ class Milestones::ProgressBarsComponent < ApplicationComponent
       milestoneable.secondary_progress_bars
     end
 
-    def progress_tag_for(progress_bar)
+    def progress_tag_for(progress_bar, label:)
       text = number_to_percentage(progress_bar.percentage, precision: 0)
 
       tag.div class: "progress",
               role: "progressbar",
+              "aria-label": label,
               "aria-valuenow": progress_bar.percentage,
               "aria-valuetext": "#{progress_bar.percentage}%",
               "aria-valuemax": ProgressBar::RANGE.max,
