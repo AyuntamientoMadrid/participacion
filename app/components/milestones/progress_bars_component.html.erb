@@ -2,12 +2,12 @@
   <h5><%= t("milestones.index.progress") %></h5>
 
   <div class="margin">
-    <%= progress_tag_for(milestoneable.primary_progress_bar) %>
+    <%= progress_tag_for(primary_progress_bar) %>
   </div>
 
-  <% if milestoneable.secondary_progress_bars.any? %>
+  <% if secondary_progress_bars.any? %>
     <div class="milestone-progress">
-      <% milestoneable.secondary_progress_bars.each do |progress_bar| %>
+      <% secondary_progress_bars.each do |progress_bar| %>
         <div class="row margin-bottom">
           <div class="small-12 medium-6 large-4 column">
             <%= progress_bar.title %>

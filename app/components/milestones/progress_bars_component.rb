@@ -6,10 +6,18 @@ class Milestones::ProgressBarsComponent < ApplicationComponent
   end
 
   def render?
-    milestoneable.primary_progress_bar
+    primary_progress_bar
   end
 
   private
+
+    def primary_progress_bar
+      milestoneable.primary_progress_bar
+    end
+
+    def secondary_progress_bars
+      milestoneable.secondary_progress_bars
+    end
 
     def progress_tag_for(progress_bar)
       text = number_to_percentage(progress_bar.percentage, precision: 0)
