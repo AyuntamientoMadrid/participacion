@@ -475,6 +475,8 @@ en:
       see_proposed_actions: Check out recommended actions
       hide_proposed_actions: Hide recommended actions
       pending_title: Pending
+      execute: "Mark %{name} as done"
+      unexecute: "Unmark %{name} as done"
       show_description: Show description
       without_pending_actions: No recommended actions pending
       done_title: Done

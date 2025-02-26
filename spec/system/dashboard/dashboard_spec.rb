@@ -92,31 +92,42 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress display proposed_action pending on his section" do
-    action = create(:dashboard_action, :proposed_action, :active)
+    create(:dashboard_action, :proposed_action, :active, title: "Expand!")
 
     visit progress_proposal_dashboard_path(proposal)
 
     within "#proposed_actions_pending" do
-      expect(page).to have_content action.title
+      expect(page).to have_content "Expand!"
     end
 
-    find(:css, "#dashboard_action_#{action.id}_execute").click
+    click_link "Mark Expand! as done"
 
     within "#proposed_actions_done" do
-      expect(page).to have_content action.title
+      expect(page).to have_content "Expand!"
     end
-    expect(page).not_to have_css "#dashboard_action_#{action.id}_execute"
+
+    expect(page).not_to have_link "Mark Expand! as done"
+    expect(page).to have_link "Unmark Expand! as done"
   end
 
   scenario "Dashboard progress can unexecute proposed action" do
-    action = create(:dashboard_action, :proposed_action, :active)
+    action = create(:dashboard_action, :proposed_action, :active, title: "Reinforce!")
     create(:dashboard_executed_action, proposal: proposal, action: action)
 
     visit progress_proposal_dashboard_path(proposal)
-    expect(page).to have_content(action.title)
 
-    find(:css, "#dashboard_action_#{action.id}_unexecute").click
-    expect(page).to have_css "#dashboard_action_#{action.id}_execute"
+    within "#proposed_actions_done" do
+      expect(page).to have_content "Reinforce!"
+    end
+
+    click_link "Unmark Reinforce! as done"
+
+    within "#proposed_actions_pending" do
+      expect(page).to have_content "Reinforce!"
+    end
+
+    expect(page).not_to have_link "Unmark Reinforce! as done"
+    expect(page).to have_link "Mark Reinforce! as done"
   end
 
   scenario "Dashboard progress dont show proposed actions with published_proposal: true" do
@@ -450,10 +461,10 @@ describe "Proposal's dashboard" do
   end
 
   scenario "On recommended actions section display proposed_action done on his section" do
-    action = create(:dashboard_action, :proposed_action, :active)
+    action = create(:dashboard_action, :proposed_action, :active, title: "Make progress")
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
-    find(:css, "#dashboard_action_#{action.id}_execute").click
+    click_link "Mark Make progress as done"
 
     within "#proposed_actions_done" do
       expect(page).to have_content(action.title)

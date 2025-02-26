@@ -475,6 +475,8 @@ es:
       see_proposed_actions: Ver todas las acciones recomendadas
       hide_proposed_actions: Ocultar acciones recomendadas
       pending_title: Pendientes
+      execute: "Marcar la acción %{name} como realizada"
+      unexecute: "Desmarcar la acción %{name} como realizada"
       show_description: Mostrar descripción
       without_pending_actions: No hay acciones recomendadas pendientes
       done_title: Realizadas
