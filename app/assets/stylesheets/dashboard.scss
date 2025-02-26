@@ -150,12 +150,12 @@
 
   .checked-link {
     @include has-fa-icon(check, solid);
-    color: $check;
+    color: $color-success;
   }
 
   .unchecked-link {
     @include has-fa-icon(square, regular);
-    color: $border;
+    color: $dark-gray;
   }
 }
 
