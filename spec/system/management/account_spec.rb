@@ -60,14 +60,17 @@ describe "Account" do
     new_password = find_field("user_password").value
 
     expect(page).to have_field "Password", type: :password
+    expect(page).to have_css "button[aria-pressed=false]", exact_text: "Show password"
 
-    click_link "Show password"
+    click_button "Show password"
 
     expect(page).to have_field "Password", type: :text
+    expect(page).to have_css "button[aria-pressed=true]", exact_text: "Show password"
 
-    click_link "Show password"
+    click_button "Show password"
 
     expect(page).to have_field "Password", type: :password
+    expect(page).to have_css "button[aria-pressed=false]", exact_text: "Show password"
 
     click_button "Save password"
 
