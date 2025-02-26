@@ -100,14 +100,14 @@ describe "Proposal's dashboard" do
       expect(page).to have_content "Expand!"
     end
 
-    click_link "Mark Expand! as done"
+    click_button "Mark Expand! as done"
 
     within "#proposed_actions_done" do
       expect(page).to have_content "Expand!"
     end
 
-    expect(page).not_to have_link "Mark Expand! as done"
-    expect(page).to have_link "Unmark Expand! as done"
+    expect(page).not_to have_button "Mark Expand! as done"
+    expect(page).to have_button "Unmark Expand! as done"
   end
 
   scenario "Dashboard progress can unexecute proposed action" do
@@ -120,14 +120,14 @@ describe "Proposal's dashboard" do
       expect(page).to have_content "Reinforce!"
     end
 
-    click_link "Unmark Reinforce! as done"
+    click_button "Unmark Reinforce! as done"
 
     within "#proposed_actions_pending" do
       expect(page).to have_content "Reinforce!"
     end
 
-    expect(page).not_to have_link "Unmark Reinforce! as done"
-    expect(page).to have_link "Mark Reinforce! as done"
+    expect(page).not_to have_button "Unmark Reinforce! as done"
+    expect(page).to have_button "Mark Reinforce! as done"
   end
 
   scenario "Dashboard progress dont show proposed actions with published_proposal: true" do
@@ -464,7 +464,7 @@ describe "Proposal's dashboard" do
     action = create(:dashboard_action, :proposed_action, :active, title: "Make progress")
 
     visit recommended_actions_proposal_dashboard_path(proposal.to_param)
-    click_link "Mark Make progress as done"
+    click_button "Mark Make progress as done"
 
     within "#proposed_actions_done" do
       expect(page).to have_content(action.title)

@@ -139,6 +139,11 @@
     }
   }
 
+  form {
+    display: inline;
+    vertical-align: top;
+  }
+
   .icon-check {
     display: inline-block;
     font-size: rem-calc(24);
@@ -147,7 +152,6 @@
 
   .unchecked-link {
     display: inline-block;
-    vertical-align: top;
   }
 
   .unchecked {
