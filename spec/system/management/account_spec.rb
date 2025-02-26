@@ -59,6 +59,16 @@ describe "Account" do
 
     new_password = find_field("user_password").value
 
+    expect(page).to have_field "Password", type: :password
+
+    click_link "Show password"
+
+    expect(page).to have_field "Password", type: :text
+
+    click_link "Show password"
+
+    expect(page).to have_field "Password", type: :password
+
     click_button "Save password"
 
     expect(page).to have_content "Password reseted successfully"
