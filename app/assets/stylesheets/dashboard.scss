@@ -142,25 +142,20 @@
   form {
     display: inline;
     vertical-align: top;
+
+    button {
+      font-size: 1.5em;
+    }
   }
 
-  .icon-check {
-    display: inline-block;
-    font-size: rem-calc(24);
-    vertical-align: top;
+  .checked-link {
+    @include has-fa-icon(check, solid);
+    color: $check;
   }
 
   .unchecked-link {
-    display: inline-block;
-  }
-
-  .unchecked {
-    border: 1px solid $border;
-    border-radius: rem-calc(4);
-    display: inline-block;
-    height: rem-calc(20);
-    margin-top: calc($line-height / 6);
-    width: rem-calc(20);
+    @include has-fa-icon(square, regular);
+    color: $border;
   }
 }
 

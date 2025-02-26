@@ -6,7 +6,6 @@
         <span class="show-for-sr">
           <%= t("dashboard.recommended_actions.unexecute", name: proposed_action.title) %>
         </span>
-        <span class="icon-check"></span>
       <% end %>
     <% else %>
       <%= button_to execute_proposal_dashboard_action_path(proposal, proposed_action),
@@ -14,7 +13,6 @@
         <span class="show-for-sr">
           <%= t("dashboard.recommended_actions.execute", name: proposed_action.title) %>
         </span>
-        <span class="unchecked"></span>
       <% end %>
     <% end %>
     <div class="action-content">
