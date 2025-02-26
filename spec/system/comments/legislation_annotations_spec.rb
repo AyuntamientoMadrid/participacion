@@ -40,9 +40,10 @@ describe "Commenting legislation annotations" do
         find(".icon-expand").click
       end
 
-      expect(page).to have_css(".comment", count: 2)
-      expect(page).to have_content("my annotation")
-      expect(page).to have_content("my other annotation")
+      expect(page).to have_content "Comments about"
+      expect(page).to have_css ".comment", count: 2
+      expect(page).to have_content "my annotation"
+      expect(page).to have_content "my other annotation"
     end
 
     scenario "Reply on a single annotation thread and display it in the merged annotation thread" do
