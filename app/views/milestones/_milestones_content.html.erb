@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-12 column">
-    <%= render "milestones/progress_bars", milestoneable: milestoneable %>
+    <%= render Milestones::ProgressBarsComponent.new(milestoneable) %>
 
     <% if milestoneable.milestones.blank? %>
       <div class="callout primary text-center margin-top">

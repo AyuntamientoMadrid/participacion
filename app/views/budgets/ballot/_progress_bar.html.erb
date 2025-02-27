@@ -2,7 +2,7 @@
   <%= sanitize(ballot.amount_progress(heading)) %>
 </p>
 
-<div class="progress" role="progressbar" tabindex="0"
+<div class="progress" role="progressbar" tabindex="0" aria-labelledby="total_amount"
      aria-valuenow="<%= ballot.percentage_spent(heading) %>" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-meter"
        style="width: <%= ballot.percentage_spent(heading) %>%">
