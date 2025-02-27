@@ -34,7 +34,7 @@ describe "Account" do
     login_as_manager
     click_link "Reset password manually"
 
-    find(:css, "input[id$='user_password']").set("new_password")
+    fill_in "Password", with: "new_password"
 
     click_button "Save password"
 
@@ -75,7 +75,7 @@ describe "Account" do
     login_as_manager
     click_link "Reset password manually"
 
-    find(:css, "input[id$='user_password']").set("another_new_password")
+    fill_in "Password", with: "another_new_password"
 
     click_button "Save password"
 
