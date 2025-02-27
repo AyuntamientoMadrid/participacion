@@ -47,6 +47,7 @@
         } else {
           App.Managers.togglePassword("password");
         }
+        $(this).attr("aria-pressed", !JSON.parse($(this).attr("aria-pressed")));
       });
     }
   };

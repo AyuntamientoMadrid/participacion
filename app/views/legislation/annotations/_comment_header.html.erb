@@ -1,5 +1,8 @@
-<%= render Shared::CommentsCountComponent.new(annotation.comments.roots.count) %>
-
 <span id="annotation-link" data-sub-annotation-ids="8">
-  <%= render "annotation_link", annotation: annotation %>
-<span>
+  <%= render Shared::CommentsCountComponent.new(
+    annotation.comments.roots.count,
+    url: legislation_process_draft_version_annotation_path(
+           annotation.draft_version.process, annotation.draft_version, annotation, sub_annotation_ids: ""
+         )
+  ) %>
+</span>

@@ -46,6 +46,7 @@ class Legislation::Process < ApplicationRecord
   validates_translation :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :result_publication_date, presence: true, if: :result_publication_enabled?
 
   %i[draft debate proposals_phase allegations].each do |phase_name|
     enabled_attribute = :"#{phase_name.to_s.gsub("_phase", "")}_phase_enabled?"

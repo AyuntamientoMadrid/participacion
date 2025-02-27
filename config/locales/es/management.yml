@@ -18,6 +18,7 @@ es:
           reseted: Contraseña restablecida correctamente
           random: Generar contraseña aleatoria
           save: Guardar contraseña
+          show: Mostrar contraseña
           print: Imprimir contraseña
           print_help: Podrás imprimir la contraseña cuando se haya guardado.
     account_info:

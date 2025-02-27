@@ -1,18 +1,18 @@
 <div id="<%= dom_id(proposed_action) %>">
   <div class="action">
     <% if proposed_action.proposals.where(id: proposal.id).any? %>
-      <%= link_to unexecute_proposal_dashboard_action_path(proposal, proposed_action),
-                  id: "#{dom_id(proposed_action)}_unexecute",
-                  method: :post,
-                  class: "checked-link" do %>
-        <span class="icon-check"></span>
+      <%= button_to unexecute_proposal_dashboard_action_path(proposal, proposed_action),
+                    class: "checked-link" do %>
+        <span class="show-for-sr">
+          <%= t("dashboard.recommended_actions.unexecute", name: proposed_action.title) %>
+        </span>
       <% end %>
     <% else %>
-      <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action),
-                  id: "#{dom_id(proposed_action)}_execute",
-                  method: :post,
-                  class: "unchecked-link" do %>
-        <span class="unchecked"></span>
+      <%= button_to execute_proposal_dashboard_action_path(proposal, proposed_action),
+                    class: "unchecked-link" do %>
+        <span class="show-for-sr">
+          <%= t("dashboard.recommended_actions.execute", name: proposed_action.title) %>
+        </span>
       <% end %>
     <% end %>
     <div class="action-content">

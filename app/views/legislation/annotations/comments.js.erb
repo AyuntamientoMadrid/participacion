@@ -14,11 +14,11 @@ if ($(".comment").length == 0) {
 
   $("#annotation-link a").attr("href", new_annotation_link)
 
-  var current_comment_text = $(".comments-count").text()
+  var current_comment_text = $("#annotation-link a").text()
   var current_comment_count = current_comment_text.match(/\d+/)[0]
   var new_comment_count = parseInt(current_comment_count) + parseInt(<%= @annotation.comments.roots.count %>)
   var new_comment_count_text = current_comment_text.replace(/(\d+)/, new_comment_count);
-  $(".comments-count").text(new_comment_count_text)
+  $("#annotation-link a").text(new_comment_count_text)
 }
 
 <%= render "comments_box_form", comment: @comment, annotation: @annotation %>
