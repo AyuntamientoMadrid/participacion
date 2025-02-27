@@ -4,16 +4,6 @@ module PollsHelper
     booth.name + location
   end
 
-  def link_to_poll(text, poll, options = {})
-    if can?(:results, poll)
-      link_to text, results_poll_path(id: poll.slug || poll.id), options
-    elsif can?(:stats, poll)
-      link_to text, stats_poll_path(id: poll.slug || poll.id), options
-    else
-      link_to text, poll_path(id: poll.slug || poll.id), options
-    end
-  end
-
   def results_menu?
     controller_name == "polls" && action_name == "results"
   end

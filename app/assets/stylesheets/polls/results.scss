@@ -1,0 +1,22 @@
+.polls-results {
+  .polls-results-content {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+
+    @include breakpoint(medium) {
+      display: flex;
+
+      > :first-child {
+        flex-basis: 25%;
+      }
+
+      > :last-child {
+        flex-basis: 75%;
+      }
+    }
+
+    > * {
+      @include grid-column-gutter;
+    }
+  }
+}

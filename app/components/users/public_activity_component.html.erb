@@ -16,7 +16,7 @@
     </ul>
 
     <% if current_filter == "follows" %>
-      <%= render "users/following", user: user, follows: follows.group_by(&:followable_type) %>
+      <%= render Users::FollowingComponent.new(user, follows: follows.group_by(&:followable_type)) %>
     <% else %>
       <%= render_user_partial current_filter %>
     <% end %>

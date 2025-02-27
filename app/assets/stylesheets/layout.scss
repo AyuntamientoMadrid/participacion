@@ -1847,40 +1847,6 @@ table {
   }
 }
 
-.following {
-
-  .follow-list {
-    list-style-type: circle;
-    padding: calc(#{$line-height} / 2);
-
-    li {
-      margin-bottom: calc(#{$line-height} / 2);
-      margin-left: $line-height;
-    }
-  }
-
-  h3 {
-    font-size: rem-calc(24);
-    margin-top: $line-height;
-    padding-left: rem-calc(30);
-    position: relative;
-
-    span {
-      left: 0;
-      position: absolute;
-      top: 2px;
-    }
-  }
-
-  .interests {
-
-    @include breakpoint(medium) {
-      border-left: 1px solid #ececec;
-      padding-left: $line-height;
-    }
-  }
-}
-
 // 19. Recommendations
 // -------------------
 
@@ -2020,67 +1986,6 @@ table {
     @include breakpoint(small) {
       margin: 0 auto;
     }
-  }
-}
-
-.recommended-index {
-  @include full-width-background;
-  @include full-width-border(bottom, 1px solid #eee);
-  @include full-width-border(top, 1px solid #fafafa);
-  background: #fafafa;
-  margin-bottom: $line-height;
-  margin-top: rem-calc(-25);
-  padding: $line-height 0 calc(#{$line-height} / 2);
-
-  @include breakpoint(medium) {
-    padding-top: 0;
-  }
-
-  h2 {
-    font-size: $small-font-size;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    font-size: $base-font-size;
-    margin-bottom: 0;
-  }
-
-  a {
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .recommendation {
-    @include card;
-    background: $body-background;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-    display: block;
-    margin-bottom: calc(#{$line-height} / 4);
-    padding: calc(#{$line-height} / 2);
-    z-index: 1;
-
-    &:hover:not(:focus-within) {
-      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
-    }
-  }
-}
-
-.hide-recommendations {
-  color: $text-light;
-  cursor: pointer;
-  font-size: $small-font-size;
-  line-height: inherit;
-  position: absolute;
-  right: 12px;
-  top: -18px;
-  z-index: 2;
-
-  &:focus,
-  &:hover {
-    @include anchor-color-hover;
   }
 }
 

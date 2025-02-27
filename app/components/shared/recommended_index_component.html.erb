@@ -1,0 +1,30 @@
+<div class="recommended-index">
+  <h2 class="show-for-sr"><%= t("shared.recommended_index.title") %></h2>
+
+  <div id="recommendations" data-toggler=".hide">
+    <%= button_to disable_recommendations_path, title: t("shared.recommended_index.hide"),
+                                                class: "hide-recommendations",
+                                                data: {
+                                                  toggle: "recommendations",
+                                                  confirm: t("#{namespace}.index.recommendations.disable")
+                                                },
+                                                method: :put do %>
+      <span class="icon-x"></span>
+      <span class="show-for-sr"><%= t("shared.recommended_index.hide") %></span>
+    <% end %>
+
+    <ul>
+      <% recommendations.each do |recommendation| %>
+        <li>
+          <%= link_to recommendation.title, polymorphic_path(recommendation), class: "recommendation" %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div>
+      <%= link_to t("shared.recommended_index.see_more"),
+                  current_path_with_query_params(order: "recommendations"),
+                  class: "small" %>
+    </div>
+  </div>
+</div>

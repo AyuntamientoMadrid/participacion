@@ -1,5 +1,5 @@
-<div class="row following margin-top" data-equalizer data-equalize-on="medium">
-  <div class="small-12 medium-8 column" data-equalizer-watch>
+<div class="users-following">
+  <div class="followables">
     <ul class="menu simple clear">
       <% follows.each do |followable_type, follows| %>
         <li><%= link_to followable_type_title(followable_type), "##{followable_type_title(followable_type).parameterize.underscore}" %></li>
@@ -21,7 +21,7 @@
     <% end %>
   </div>
 
-  <div class="small-12 medium-4 column interests" data-equalizer-watch>
+  <div class="interests">
     <%= render "interests", user: user %>
   </div>
 </div>

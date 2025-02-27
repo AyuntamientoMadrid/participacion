@@ -18,11 +18,9 @@
   <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
 <% end %>
 
-<% if feature?("user.recommendations") && @recommended_debates.present? %>
-  <%= render "shared/recommended_index", recommended: @recommended_debates,
-                                         disable_recommendations_path: recommendations_disable_debates_path,
-                                         namespace: "debates" %>
-<% end %>
+<%= render Shared::RecommendedIndexComponent.new(@recommended_debates,
+                                                 disable_recommendations_path: recommendations_disable_debates_path,
+                                                 namespace: "debates") %>
 
 <div class="row">
   <div id="debates" class="debates-list small-12 medium-9 column">

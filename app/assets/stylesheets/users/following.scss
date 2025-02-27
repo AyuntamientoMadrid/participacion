@@ -1,0 +1,40 @@
+.users-following {
+  margin-top: $line-height;
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > .followables {
+      flex-basis: calc(100% * 2 / 3);
+    }
+
+    > .interests {
+      border-left: 1px solid #ececec;
+      flex-basis: calc(100% / 3);
+      padding-left: $line-height;
+    }
+  }
+
+  .follow-list {
+    list-style-type: circle;
+    padding: calc(#{$line-height} / 2);
+
+    li {
+      margin-bottom: calc(#{$line-height} / 2);
+      margin-left: $line-height;
+    }
+  }
+
+  h3 {
+    font-size: rem-calc(24);
+    margin-top: $line-height;
+    padding-left: rem-calc(30);
+    position: relative;
+
+    span {
+      left: 0;
+      position: absolute;
+      top: 2px;
+    }
+  }
+}

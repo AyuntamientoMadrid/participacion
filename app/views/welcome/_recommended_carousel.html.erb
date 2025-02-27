@@ -13,7 +13,7 @@
               <div class="card">
                 <%= render_recommendation_image(recommended, image_default) %>
                 <div class="card-section">
-                  <%= link_to recommended_path(recommended) do %>
+                  <%= link_to polymorphic_path(recommended) do %>
                     <h4 class="truncate-horizontal-text"><%= recommended.title %></h4>
                   <% end %>
                   <%= wysiwyg(recommended.description) %>

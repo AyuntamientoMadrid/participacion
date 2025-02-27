@@ -89,6 +89,6 @@ module ProposalsHelper
   end
 
   def show_recommended_proposals?
-    params[:selected].blank? && feature?("user.recommendations") && @recommended_proposals.present?
+    params[:selected].blank?
   end
 end

@@ -1,0 +1,22 @@
+<% provide :title, poll.name %>
+
+<div class="polls-results">
+  <%= render Polls::PollHeaderComponent.new(poll) %>
+
+  <%= render "poll_subnav" %>
+
+  <div class="polls-results-content">
+    <div>
+      <p><strong><%= t("polls.show.results.title") %></strong></p>
+      <ul class="menu vertical">
+        <%- poll.questions.each do |question| %>
+          <li><%= link_to question.title, "##{question.title.parameterize}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div>
+      <%= render Polls::Results::QuestionComponent.with_collection(poll.questions) %>
+    </div>
+  </div>
+</div>
