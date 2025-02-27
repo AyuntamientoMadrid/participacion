@@ -60,10 +60,6 @@
     @include brand-color;
   }
 
-  .additional-info {
-    margin-bottom: $line-height;
-  }
-
   a:not(.button) {
     text-decoration: underline;
   }

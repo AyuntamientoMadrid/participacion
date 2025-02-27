@@ -161,10 +161,8 @@
 
 .debate-show,
 .proposal-show,
-.poll-question-show,
 .budget-investment-show,
 .polls-show,
-.debate-quiz,
 .draft-panels,
 .debate-questions,
 .communities-show,
@@ -303,11 +301,6 @@
 
   .supports {
     @include supports;
-  }
-
-  .leave-comment {
-    display: inline-block;
-    margin-top: rem-calc(24);
   }
 
   .tags {
@@ -499,7 +492,6 @@
 
   .debate-content,
   .proposal-content,
-  .investment-project-content,
   .budget-investment-content {
     margin: 0;
     min-height: rem-calc(180);
@@ -560,8 +552,7 @@
 
   .debate-description,
   .proposal-description,
-  .investment-project-description,
-  .budget-investment-description {
+  .investment-project-description {
     font-size: rem-calc(13);
     height: rem-calc(72);
     line-height: $line-height;
@@ -652,8 +643,7 @@
 
   .supports {
 
-    .investment-project-amount,
-    .budget-investment-amount {
+    .investment-project-amount {
       color: $budget;
       font-size: rem-calc(20);
       font-weight: bold;
@@ -875,8 +865,7 @@
 // ------------
 
 .featured-debates,
-.featured-proposals,
-.enquiries-list {
+.featured-proposals {
   padding: calc(#{$line-height} / 2) 0;
 
   @include breakpoint(medium) {
@@ -1158,19 +1147,7 @@
   }
 }
 
-.big-number {
-  color: $budget;
-  font-size: rem-calc(60);
-  line-height: rem-calc(120);
-
-  @include breakpoint(large) {
-    font-size: rem-calc(90);
-    line-height: rem-calc(240);
-  }
-}
-
 .ballot {
-
   h2,
   h3 {
     font-weight: normal;
@@ -1277,16 +1254,6 @@
   .header {
     @include full-width-background;
     background: $highlight;
-  }
-
-  .big-number-stat {
-    font-size: rem-calc(60);
-    font-weight: bold;
-    line-height: rem-calc(60);
-
-    &.budget {
-      color: $budget;
-    }
   }
 }
 
@@ -1468,10 +1435,6 @@
   margin-bottom: calc(#{$line-height} / 2);
   padding: calc(#{$line-height} / 2);
   position: relative;
-}
-
-.questions-callout {
-  font-size: $base-font-size;
 }
 
 .section-title-divider {
