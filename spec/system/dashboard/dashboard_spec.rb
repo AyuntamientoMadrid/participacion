@@ -47,14 +47,6 @@ describe "Proposal's dashboard" do
     end
   end
 
-  scenario "Dashboard progress show proposed actions" do
-    action = create(:dashboard_action, :proposed_action, :active)
-
-    visit progress_proposal_dashboard_path(proposal)
-
-    expect(page).to have_content(action.title)
-  end
-
   scenario "Dashboard progress show proposed actions truncated description" do
     action = create(:dashboard_action, :proposed_action, :active, description: "One short action")
     action_long = create(:dashboard_action, :proposed_action, :active,
@@ -105,28 +97,14 @@ describe "Proposal's dashboard" do
     visit progress_proposal_dashboard_path(proposal)
 
     within "#proposed_actions_pending" do
-      expect(page).to have_content(action.title)
+      expect(page).to have_content action.title
     end
-  end
 
-  scenario "Dashboard progress display proposed_action done on his section" do
-    action = create(:dashboard_action, :proposed_action, :active)
-
-    visit progress_proposal_dashboard_path(proposal)
     find(:css, "#dashboard_action_#{action.id}_execute").click
 
     within "#proposed_actions_done" do
-      expect(page).to have_content(action.title)
+      expect(page).to have_content action.title
     end
-  end
-
-  scenario "Dashboard progress can execute proposed action" do
-    action = create(:dashboard_action, :proposed_action, :active)
-
-    visit progress_proposal_dashboard_path(proposal)
-    expect(page).to have_content(action.title)
-
-    find(:css, "#dashboard_action_#{action.id}_execute").click
     expect(page).not_to have_css "#dashboard_action_#{action.id}_execute"
   end
 
