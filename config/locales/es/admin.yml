@@ -1507,7 +1507,7 @@ es:
         level_3_user: Usuarios de nivel 3 verificados
         proposal_created: Propuestas Ciudadanas creadas
         title: Gráficos
-        visit: Visitas
+        visits: Visitas
       budgets:
         no_data_before_balloting_phase: "No hay datos que mostrar hasta que la fase de votación no esté abierta."
         title: "Presupuestos participativos - Estadisticas de participación"
