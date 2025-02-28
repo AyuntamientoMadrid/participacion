@@ -2,7 +2,7 @@
 
   .budget-completed,
   .budget-draft {
-    padding-left: calc(1em + #{rem-calc(10)});
+    padding-left: calc(1em + 0.625rem);
     position: relative;
 
     &::before {
