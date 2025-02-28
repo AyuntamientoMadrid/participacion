@@ -27,8 +27,8 @@
   a {
     color: inherit;
     display: inline-block;
-    padding-bottom: calc(#{$line-height} / 2);
-    padding-top: calc(#{$line-height} / 2);
+    padding-bottom: calc($line-height / 2);
+    padding-top: calc($line-height / 2);
     position: relative;
     text-align: left;
 
@@ -53,7 +53,7 @@
   }
 
   .input-group {
-    padding-top: calc(#{$line-height} / 4);
+    padding-top: calc($line-height / 4);
 
     @include breakpoint(medium) {
       margin-bottom: 0;

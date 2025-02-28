@@ -9,11 +9,11 @@
       margin-bottom: $line-height;
 
       @include breakpoint(medium) {
-        width: calc(100% / 2 - #{$spacing});
+        width: calc(100% / 2 - $spacing);
       }
 
       @include breakpoint(large) {
-        width: calc(100% / 3 - #{$spacing});
+        width: calc(100% / 3 - $spacing);
       }
     }
   }

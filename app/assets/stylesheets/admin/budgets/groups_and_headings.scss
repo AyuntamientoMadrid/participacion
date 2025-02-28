@@ -32,7 +32,7 @@
     align-items: flex-start;
 
     + * {
-      margin-top: calc(#{$line-height} / 2);
+      margin-top: calc($line-height / 2);
     }
 
     .edit-link,

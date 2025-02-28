@@ -16,12 +16,12 @@
   display: block;
   font-size: $small-font-size;
   list-style: none;
-  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
+  padding: calc($line-height / 4) calc($line-height / 3);
 
   .ui-menu-item {
 
     .ui-menu-item-wrapper {
-      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
+      padding: calc($line-height / 4) calc($line-height / 3);
       position: relative;
     }
 

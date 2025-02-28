@@ -30,7 +30,7 @@ $progress-bar-color:      #fea230;
     }
 
     .milestone-progress .row {
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
     }
   }
 }
@@ -68,7 +68,7 @@ $progress-bar-color:      #fea230;
   }
 
   .milestone-content {
-    padding: calc(#{$line-height} / 6) calc(#{$line-height} / 2);
+    padding: calc($line-height / 6) calc($line-height / 2);
     position: relative;
 
     @include breakpoint(medium) {
@@ -121,6 +121,6 @@ $progress-bar-color:      #fea230;
   @include background-with-text-contrast($budget);
   border-radius: rem-calc(4);
   display: inline-block;
-  margin-top: calc(#{$line-height} / 6);
-  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
+  margin-top: calc($line-height / 6);
+  padding: calc($line-height / 4) calc($line-height / 2);
 }

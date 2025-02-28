@@ -5,11 +5,11 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: -$spacing 0 calc(#{$line-height} / 3) -#{$spacing};
-  margin-left: calc(-1 * #{$max-spacing});
-  margin-top: calc(-1 * #{$max-spacing});
-  width: calc(100% + #{$spacing});
-  width: calc(100% + #{$max-spacing});
+  margin: -$spacing 0 calc($line-height / 3) -#{$spacing};
+  margin-left: calc(-1 * $max-spacing);
+  margin-top: calc(-1 * $max-spacing);
+  width: calc(100% + $spacing);
+  width: calc(100% + $max-spacing);
 
   > *,
   > .tabs-title {
@@ -41,7 +41,7 @@
   label,
   li {
     min-width: $sdg-icon-min-width;
-    width: calc(100% / 17 - #{$spacing});
+    width: calc(100% / 17 - $spacing);
 
     &:hover {
       cursor: pointer;

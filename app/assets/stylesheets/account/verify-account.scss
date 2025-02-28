@@ -1,5 +1,5 @@
 .verify-account {
-  padding-right: calc(#{$line-height} / 2);
+  padding-right: calc($line-height / 2);
 
   .already-verified {
     @include has-fa-icon(check, solid);

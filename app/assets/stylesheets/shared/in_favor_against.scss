@@ -80,7 +80,7 @@
     display: inline-block;
     font-size: $small-font-size;
     line-height: $line-height * 2;
-    padding-right: calc(#{$line-height} / 2);
+    padding-right: calc($line-height / 2);
     vertical-align: top;
 
     @include breakpoint(medium) {

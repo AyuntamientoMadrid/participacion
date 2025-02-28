@@ -7,7 +7,7 @@
   width: $icon-width;
 
   &::before {
-    font-size: calc(#{$icon-width} / 2);
+    font-size: calc($icon-width / 2);
     margin-right: 0;
   }
 

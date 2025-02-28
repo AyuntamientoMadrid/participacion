@@ -16,7 +16,7 @@
     }
 
     ul {
-      margin-left: calc(#{$line-height} / 2);
+      margin-left: calc($line-height / 2);
       margin-top: 0;
       padding: 0;
     }
@@ -37,7 +37,7 @@
 
     &::before {
       display: inline-block;
-      margin-right: calc(#{$line-height} / 2);
+      margin-right: calc($line-height / 2);
       vertical-align: top;
     }
 
@@ -99,7 +99,7 @@
   .progress {
     background: #ebf0f4;
     border-radius: rem-calc(20);
-    height: calc(#{$line-height} / 2);
+    height: calc($line-height / 2);
   }
 
   .progress-meter {

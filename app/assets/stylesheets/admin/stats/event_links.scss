@@ -2,8 +2,8 @@
   @include header-font-size(h3);
   font-weight: bold;
   list-style-type: none;
-  margin-#{$global-left}: 0;
   margin-top: $line-height;
+  margin-#{$global-left}: 0;
 
   * + * {
     margin-top: $line-height;

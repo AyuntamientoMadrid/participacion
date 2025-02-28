@@ -5,7 +5,7 @@
 
     @each $size, $headers in $header-styles {
       @include breakpoint($size) {
-        font-size: calc(#{rem-calc(map-get(map-get($headers, h2), font-size)) + rem-calc(map-get(map-get($headers, h3), font-size))} / 2);
+        font-size: calc((rem-calc(map-get(map-get($headers, h2), font-size)) + rem-calc(map-get(map-get($headers, h3), font-size))) / 2);
       }
     }
   }

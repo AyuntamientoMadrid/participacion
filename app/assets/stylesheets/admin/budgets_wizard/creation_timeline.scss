@@ -9,7 +9,7 @@
     display: inline-block;
     font-size: $small-font-size;
     font-weight: bold;
-    padding: calc(#{$line-height} / 2) $line-height * 3 0;
+    padding: calc($line-height / 2) $line-height * 3 0;
     text-transform: uppercase;
 
     &::before {
@@ -17,7 +17,7 @@
       border-radius: 50%;
       content: "";
       height: 20px;
-      margin-left: calc(#{$line-height} / 2);
+      margin-left: calc($line-height / 2);
       position: absolute;
       top: -8px;
       width: 20px;
