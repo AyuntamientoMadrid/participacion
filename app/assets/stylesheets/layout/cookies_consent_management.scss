@@ -34,7 +34,7 @@
 
     &.accept-all-cookies {
       @include breakpoint(small only) {
-        margin-bottom: $line-height / 3;
+        margin-bottom: calc($line-height / 3);
       }
     }
 
@@ -57,7 +57,7 @@
         display: flex;
         gap: $line-height;
         justify-content: space-between;
-        padding: $line-height / 3;
+        padding: calc($line-height / 3);
 
         &:nth-child(odd) {
           background: #efefef;
@@ -66,7 +66,7 @@
     }
 
     .switch {
-      margin-top: $line-height / 3;
+      margin-top: calc($line-height / 3);
 
       &:focus-within {
         @include focus-outline;

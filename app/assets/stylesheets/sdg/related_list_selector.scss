@@ -50,7 +50,7 @@
   }
 
   .input-section {
-    margin-bottom: calc(#{2 * $line-height} / 3);
+    margin-bottom: calc(2 * $line-height / 3);
   }
 
   .amsify-suggestags-area {
@@ -66,7 +66,7 @@
     flex-wrap: wrap;
 
     > input {
-      margin-bottom: calc(#{$line-height} / 4) !important;
+      margin-bottom: calc($line-height / 4) !important;
       order: -1;
     }
   }

@@ -1,5 +1,5 @@
 .budget-executions-filters {
-  margin-bottom: calc(#{$line-height} / 2);
+  margin-bottom: calc($line-height / 2);
 
   @include breakpoint(medium) {
     @include flex-with-gap(1em);

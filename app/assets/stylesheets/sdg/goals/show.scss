@@ -6,7 +6,7 @@
       align-items: center;
       color: $sdg-text;
       display: flex;
-      margin: calc(#{$line-height} / 2) 0;
+      margin: calc($line-height / 2) 0;
       min-width: fit-content;
       text-shadow: 0 0 1px $black;
 

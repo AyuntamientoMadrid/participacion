@@ -70,7 +70,7 @@
       border-top-right-radius: rem-calc(6);
       display: inline-block;
       margin-bottom: 0;
-      margin-right: calc(#{$line-height} / 4);
+      margin-right: calc($line-height / 4);
       margin-top: 0;
 
       &:hover:not(.is-active) {
@@ -84,7 +84,7 @@
 
     a {
       display: block;
-      padding: calc(#{$line-height} / 4) calc(#{$line-height} / 2);
+      padding: calc($line-height / 4) calc($line-height / 2);
 
       @include breakpoint(large) {
         display: inline-block;
@@ -245,9 +245,9 @@
       color: #555;
       cursor: pointer;
       display: inline-block;
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
       margin-right: $line-height;
-      padding: calc(#{$line-height} / 2)  $line-height * 2;
+      padding: calc($line-height / 2)  $line-height * 2;
       position: relative;
     }
 
@@ -455,7 +455,7 @@
 
       @include breakpoint(medium) {
         margin: 0 auto;
-        max-width: calc(3 * #{$grid-row-width} / 4);
+        max-width: calc(3 * $grid-row-width / 4);
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
@@ -672,7 +672,7 @@
           border-bottom: 1px solid $border;
           font-size: $small-font-size;
           margin-bottom: rem-calc(16);
-          padding-bottom: calc(#{$line-height} / 2);
+          padding-bottom: calc($line-height / 2);
 
           .comment-text {
             margin-bottom: rem-calc(8);
@@ -941,7 +941,7 @@
         $margin: rem-calc(map-get($grid-column-gutter, "medium"));
 
         margin-right: $margin;
-        width: calc(75% - #{$margin});
+        width: calc(75% - $margin);
       }
     }
   }
@@ -955,17 +955,17 @@
     padding-top: rem-calc(16);
 
     &:not(:last-child) {
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
     }
   }
 
   .question-title:not(:only-child) {
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
   }
 
   .annotation-title {
-    margin-bottom: calc(#{$line-height} / 2);
-    margin-top: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
+    margin-top: calc($line-height / 2);
   }
 
   .annotation-quote {
@@ -974,7 +974,7 @@
   }
 
   .comment-summary {
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
 
     > :first-child {
       background-color: rgba(217, 216, 243, 0.2);

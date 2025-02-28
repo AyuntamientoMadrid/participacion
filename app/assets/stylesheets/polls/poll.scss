@@ -2,7 +2,7 @@
   &.with-image {
 
     @include breakpoint(medium) {
-      padding: 0 calc(#{$line-height} / 2) 0 0;
+      padding: 0 calc($line-height / 2) 0 0;
     }
 
     .image-container img {
@@ -71,7 +71,7 @@
   .dates {
     color: $text-medium;
     font-size: $small-font-size;
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
   }
 
   h4 {

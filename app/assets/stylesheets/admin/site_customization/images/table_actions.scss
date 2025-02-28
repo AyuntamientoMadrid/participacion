@@ -3,7 +3,7 @@
   container-type: inline-size;
   display: flex;
   flex-wrap: wrap;
-  gap: calc(#{$line-height} / 2);
+  gap: calc($line-height / 2);
 
   > :first-child {
     align-items: flex-start;
@@ -17,8 +17,8 @@
     > div {
       @include grid-column-gutter;
       min-width: 5rem;
-      padding-#{$global-left}: 0 !important;
       width: 50cqi;
+      padding-#{$global-left}: 0 !important;
     }
   }
 

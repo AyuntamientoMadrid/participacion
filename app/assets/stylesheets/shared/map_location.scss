@@ -6,7 +6,7 @@
   color: $delete;
   cursor: pointer;
   margin-bottom: $line-height;
-  margin-top: calc(#{$line-height} / 2);
+  margin-top: calc($line-height / 2);
 
   &:hover,
   &:active,

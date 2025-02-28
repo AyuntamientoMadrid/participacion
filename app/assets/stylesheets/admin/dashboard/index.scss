@@ -9,7 +9,7 @@
       &::after {
         content: "";
         display: block;
-        margin-bottom: calc(#{$line-height} / 3);
+        margin-bottom: calc($line-height / 3);
       }
     }
 

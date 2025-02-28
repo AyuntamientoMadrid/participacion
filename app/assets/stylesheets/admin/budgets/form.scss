@@ -4,7 +4,7 @@
 
   .button {
     &.upload-image {
-      margin-bottom: calc(#{$line-height} / 2);
+      margin-bottom: calc($line-height / 2);
     }
   }
 

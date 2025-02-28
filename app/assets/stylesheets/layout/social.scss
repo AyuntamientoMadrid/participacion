@@ -16,7 +16,7 @@
 
   a {
     font-size: rem-calc(24);
-    margin: 0 calc(#{$line-height} / 2);
+    margin: 0 calc($line-height / 2);
     text-decoration: none;
 
     &:hover {

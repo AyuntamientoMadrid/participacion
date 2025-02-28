@@ -1,7 +1,7 @@
 @mixin bottom-tooltip {
   @include tooltip;
   line-height: $global-lineheight;
-  margin-top: calc(#{$line-height} / 8);
+  margin-top: calc($line-height / 8);
   width: max-content;
 
   &::before {

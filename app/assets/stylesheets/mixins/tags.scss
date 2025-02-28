@@ -19,8 +19,8 @@
   color: color-pick-contrast(#ececec);
   display: inline-block;
   font-size: $small-font-size;
-  margin-bottom: calc(#{$line-height} / 3);
-  padding: calc(#{$line-height} / 4) calc(#{$line-height} / 3);
+  margin-bottom: calc($line-height / 3);
+  padding: calc($line-height / 4) calc($line-height / 3);
   text-decoration: none;
 
   &:hover {

@@ -1,11 +1,11 @@
 .cookies-consent-banner {
   @include brand-border;
   background: inherit;
-  bottom: $line-height / 3;
-  left: $line-height / 3;
+  bottom: calc($line-height / 3);
+  left: calc($line-height / 3);
   padding: 2rem;
   position: fixed;
-  right: $line-height / 3;
+  right: calc($line-height / 3);
   z-index: 20;
 
   button {
@@ -20,7 +20,7 @@
       margin-bottom: 0;
 
       @include breakpoint(small only) {
-        margin-bottom: $line-height / 3;
+        margin-bottom: calc($line-height / 3);
       }
     }
 

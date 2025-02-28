@@ -46,7 +46,7 @@
 
     @include breakpoint(medium) {
       display: inline-block;
-      margin-right: calc(#{$line-height} / 2);
+      margin-right: calc($line-height / 2);
     }
   }
 }
@@ -111,7 +111,7 @@
   .sidebar-card {
     border: 1px solid $border;
     margin-bottom: $line-height;
-    padding: calc(#{$line-height} / 2);
+    padding: calc($line-height / 2);
 
     &.light {
       background: #ecf0f1;

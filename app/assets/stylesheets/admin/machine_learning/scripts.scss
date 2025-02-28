@@ -35,7 +35,7 @@
   }
 
   form {
-    max-width: calc(#{$global-width} * 3 / 4);
+    max-width: calc($global-width * 3 / 4);
   }
 
   select {
