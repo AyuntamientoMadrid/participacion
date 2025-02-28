@@ -92,7 +92,7 @@
         font-size: rem-calc(44);
 
         &::after {
-          right: calc(#{$icon-size-with-padding + $polygon-size + $heading-icon-size} / 2);
+          right: calc(#{$icon-size-with-padding} + #{$polygon-size} + #{$heading-icon-size} / 2);
         }
 
         &::before {
