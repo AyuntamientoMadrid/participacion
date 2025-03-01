@@ -153,10 +153,6 @@ button,
   color: $color-alert;
 }
 
-.postfix.button {
-  padding: 0;
-}
-
 .clear {
   clear: both;
 }
@@ -1017,10 +1013,6 @@ form {
   }
 }
 
-.translation-locale {
-  padding-top: $line-height;
-}
-
 // 07. Callout
 // -----------
 
@@ -1286,19 +1278,9 @@ form {
       width: 14px;
     }
   }
-
-  .map-attributtion {
-    height: auto;
-    visibility: visible;
-  }
 }
 
 .map-marker {
-  visibility: hidden;
-}
-
-.map-attributtion {
-  height: 0;
   visibility: hidden;
 }
 
@@ -1958,28 +1940,6 @@ table {
     width: 100%;
   }
 
-  .debates-inner,
-  .proposals-inner,
-  .budget-investments-inner {
-    max-height: rem-calc(350);
-
-    @include breakpoint(small) {
-      max-height: rem-calc(400);
-    }
-
-    h4 {
-      font-size: rem-calc(18);
-      margin-bottom: $line-height;
-      margin-top: 0;
-      min-height: 0;
-    }
-
-    h5 {
-      font-size: $small-font-size;
-      text-align: left;
-    }
-  }
-
   .carousel-image {
 
     .card .orbit {
@@ -1996,19 +1956,6 @@ table {
       a {
         display: block;
         margin-top: $line-height;
-      }
-    }
-
-    .debates-inner,
-    .proposals-inner,
-    .budget-investments-inner {
-      border: 1px solid $border;
-      margin-right: $line-height;
-      max-height: rem-calc(500);
-      padding: $line-height;
-
-      @include breakpoint(small) {
-        max-height: rem-calc(600);
       }
     }
   }

@@ -556,19 +556,6 @@
 
     .calc-text {
       border-right: 0;
-
-      .show-comments {
-        background: #fafafa;
-        border: 1px solid $border;
-        margin-bottom: rem-calc(16);
-        padding: rem-calc(4) rem-calc(40) rem-calc(4) rem-calc(4);
-        width: 105%;
-
-        p {
-          margin-bottom: 0;
-        }
-      }
-
     }
 
     .calc-comments {
@@ -626,26 +613,6 @@
           margin-bottom: rem-calc(16);
           margin-top: rem-calc(16);
           padding-bottom: rem-calc(64);
-
-          .comment-advice {
-            background: #dfdfdf;
-            border-left: 1px solid #d0d0d0;
-            border-right: 1px solid #d0d0d0;
-            border-top: 1px solid #d0d0d0;
-            display: inline-block;
-            font-size: $small-font-size;
-            padding: rem-calc(8);
-            width: 100%;
-
-            .icon-proposals {
-              color: #838383;
-            }
-
-            a {
-              color: #87a3b9;
-              text-decoration: underline;
-            }
-          }
 
           textarea {
             border-bottom: 1px solid #d0d0d0;
@@ -710,16 +677,6 @@
               color: #838383;
               display: inline-block;
               float: right;
-
-              .comment-votes-number {
-                display: inline-block;
-                margin-right: rem-calc(4);
-
-                &::after {
-                  content: "|";
-                  margin-left: rem-calc(4);
-                }
-              }
             }
           }
         }
@@ -743,37 +700,6 @@
       &::before {
         content: "—";
         margin-right: rem-calc(4);
-      }
-    }
-  }
-
-  .changes-link {
-    display: block;
-    font-size: $small-font-size;
-    margin-left: rem-calc(16);
-
-    @include breakpoint(medium) {
-      display: inline-block;
-    }
-
-    a {
-
-      span {
-        text-decoration: underline;
-      }
-
-      .icon-external {
-        color: #999;
-        line-height: 0;
-        margin-left: rem-calc(8);
-        text-decoration: none;
-        vertical-align: sub;
-      }
-
-      &:active,
-      &:focus,
-      &:hover {
-        text-decoration: none;
       }
     }
   }
