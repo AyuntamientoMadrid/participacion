@@ -442,7 +442,7 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    pg (1.5.8)
+    pg (1.5.9)
     pg_search (2.3.7)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
@@ -770,7 +770,7 @@ DEPENDENCIES
   omniauth-twitter (~> 1.4.0)
   paranoia (~> 3.0.0)
   pdf-reader (~> 2.12.0)
-  pg (~> 1.5.8)
+  pg (~> 1.5.9)
   pg_search (~> 2.3.7)
   pronto (~> 0.11.2)
   pronto-erb_lint (~> 0.1.6)
