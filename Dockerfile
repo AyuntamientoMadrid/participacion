@@ -18,7 +18,7 @@ RUN apt-get update -qq \
     unzip
 
 # Install Chromium for E2E integration tests
-RUN apt-get update -qq && apt-get install -y chromium
+RUN apt-get update -qq && apt-get install -y chromium chromium-driver
 
 # Files created inside the container repect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
