@@ -81,6 +81,92 @@ describe Admin::BudgetInvestmentsController, :admin do
     end
   end
 
+  describe "PATCH mark_as_winner" do
+    let(:budget) { create(:budget, :reviewing_ballots) }
+    let(:investment) { create(:budget_investment, :feasible, :valuation_finished, budget: budget) }
+
+    it "marks the investment as winner" do
+      expect do
+        patch :mark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.winner? }.from(false).to(true)
+
+      expect(response).to be_successful
+    end
+
+    it "does not modify investments that are already winners" do
+      investment.update!(winner: true)
+
+      expect do
+        patch :mark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.winner? }
+    end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :mark_as_winner, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
+    end
+
+    it "does not mark investments with unfinished valuation" do
+      investment.update!(valuation_finished: false)
+
+      expect do
+        patch :mark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.winner? }
+
+      expect(flash[:alert]).to eq(
+        "You do not have permission to carry out the action 'mark_as_winner' on Investment."
+      )
+    end
+
+    it "does not mark investments when the phase is not reviewing ballots" do
+      %w[finished balloting informing accepting reviewing selecting valuating].each do |phase|
+        budget.update!(phase: phase)
+
+        expect do
+          patch :mark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+        end.not_to change { investment.reload.winner? }
+
+        expect(flash[:alert]).to eq(
+          "You do not have permission to carry out the action 'mark_as_winner' on Investment."
+        )
+      end
+    end
+  end
+
+  describe "PATCH unmark_as_winner" do
+    let(:budget) { create(:budget, :reviewing_ballots) }
+    let(:investment) { create(:budget_investment, :feasible, :valuation_finished, :winner, budget: budget) }
+
+    it "unmarks the investment as winner" do
+      expect do
+        patch :unmark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.to change { investment.reload.winner? }.from(true).to(false)
+
+      expect(response).to be_successful
+    end
+
+    it "does not modify investments that are not winners" do
+      investment.update!(winner: false)
+
+      expect do
+        patch :unmark_as_winner, xhr: true, params: { id: investment, budget_id: investment.budget }
+      end.not_to change { investment.reload.winner? }
+    end
+
+    it "redirects admins without JavaScript to the same page" do
+      request.env["HTTP_REFERER"] = admin_budget_budget_investments_path(investment.budget)
+
+      patch :unmark_as_winner, params: { id: investment, budget_id: investment.budget }
+
+      expect(response).to redirect_to admin_budget_budget_investments_path(investment.budget)
+      expect(flash[:notice]).to eq "Investment project updated successfully."
+    end
+  end
+
   describe "PATCH select" do
     let(:investment) { create(:budget_investment, :feasible, :finished) }
 

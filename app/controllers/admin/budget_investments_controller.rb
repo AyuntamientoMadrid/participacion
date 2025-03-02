@@ -92,6 +92,26 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
   end
 
+  def mark_as_winner
+    authorize! :mark_as_winner, @investment
+    @investment.update!(winner: true)
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.budget_investment") }
+      format.js { render :toggle_winner }
+    end
+  end
+
+  def unmark_as_winner
+    authorize! :unmark_as_winner, @investment
+    @investment.update!(winner: false)
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: t("flash.actions.update.budget_investment") }
+      format.js { render :toggle_winner }
+    end
+  end
+
   private
 
     def load_comments

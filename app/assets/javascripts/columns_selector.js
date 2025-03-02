@@ -2,15 +2,12 @@
   "use strict";
   App.ColumnsSelector = {
     initColumns: function() {
-      var c_value, columns;
+      var columns;
       App.ColumnsSelector.hideAll();
-      c_value = App.ColumnsSelector.currentValue();
-      if (c_value.length === 0) {
-        c_value = $("#js-columns-selector").data("default");
-        App.Cookies.saveCookie($("#js-columns-selector").data("cookie"), c_value, 30);
-      }
-      columns = c_value.split(",");
-      columns.forEach(function(column) {
+      columns =
+        App.Cookies.getCookie($("#js-columns-selector").data("cookie")) ||
+        $("#js-columns-selector").data("default");
+      columns.split(",").forEach(function(column) {
         $("[data-field=" + column + "]").removeClass("hidden");
         $("#column_selector_" + column).prop("checked", true);
       });
@@ -44,28 +41,23 @@
       App.ColumnsSelector.displayColumn($(event.target).data("column"));
     },
     displayColumn: function(column) {
-      var value;
       if ($("#column_selector_" + column).prop("checked")) {
         $("[data-field=" + column + "]").removeClass("hidden");
       } else {
         $("[data-field=" + column + "]").addClass("hidden");
       }
-      value = App.ColumnsSelector.updateItem(column);
+      App.ColumnsSelector.saveCookie();
+    },
+    saveCookie: function() {
+      var shownColumns, value;
+      shownColumns = [];
+      $(".column-selector-item input").each(function() {
+        if ($(this).prop("checked")) {
+          shownColumns.push($(this).data("column"));
+        }
+      });
+      value = shownColumns.join(",");
       App.Cookies.saveCookie($("#js-columns-selector").data("cookie"), value, 30);
-    },
-    updateItem: function(value) {
-      var index, values;
-      values = App.ColumnsSelector.currentValue().split(",");
-      index = values.indexOf(value);
-      if (index >= 0) {
-        values.splice(index, 1);
-      } else {
-        values.push(value);
-      }
-      return values.join(",");
-    },
-    currentValue: function() {
-      return App.Cookies.getCookie($("#js-columns-selector").data("cookie"));
     },
     initialize: function() {
       App.ColumnsSelector.initChecks();

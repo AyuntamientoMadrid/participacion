@@ -22,6 +22,7 @@ describe "Admin budget investments", :admin do
 
   context "Index" do
     scenario "Displaying investments" do
+      budget.update!(phase: "selecting")
       budget_investment = create(:budget_investment, budget: budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: budget.id)
       expect(page).to have_content(budget_investment.title)
@@ -44,6 +45,7 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Display admin and valuator assignments" do
+      budget.update!(phase: "valuating")
       olga = create(:user, username: "Olga")
       miriam = create(:user, username: "Miriam")
       valuator1 = create(:valuator, user: olga, description: "Valuator Olga")
@@ -788,9 +790,12 @@ describe "Admin budget investments", :admin do
 
   context "Sorting" do
     before do
-      create(:budget_investment, title: "B First Investment", budget: budget, cached_votes_up: 50)
-      create(:budget_investment, title: "A Second Investment", budget: budget, cached_votes_up: 25)
-      create(:budget_investment, title: "C Third Investment", budget: budget, cached_votes_up: 10)
+      create(:budget_investment, title: "B First Investment",
+                                 budget: budget, cached_votes_up: 50, ballot_lines_count: 40)
+      create(:budget_investment, title: "A Second Investment",
+                                 budget: budget, cached_votes_up: 25, ballot_lines_count: 20)
+      create(:budget_investment, title: "C Third Investment",
+                                 budget: budget, cached_votes_up: 10, ballot_lines_count: 30)
     end
 
     scenario "Default" do
@@ -825,11 +830,23 @@ describe "Admin budget investments", :admin do
       end
 
       scenario "Sort by supports" do
+        budget.update!(phase: "valuating")
         visit admin_budget_budget_investments_path(budget, sort_by: "supports", direction: "asc")
 
         expect("C Third Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("B First Investment")
         within("th", text: "Supports") do
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
+        end
+      end
+
+      scenario "Sort by votes" do
+        budget.update!(phase: "reviewing_ballots")
+        visit admin_budget_budget_investments_path(budget, sort_by: "ballot_lines_count", direction: "asc")
+
+        expect("A Second Investment").to appear_before("C Third Investment")
+        expect("C Third Investment").to appear_before("B First Investment")
+        within("th", text: "Votes") do
           expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
@@ -857,11 +874,23 @@ describe "Admin budget investments", :admin do
       end
 
       scenario "Sort by supports" do
+        budget.update!(phase: "valuating")
         visit admin_budget_budget_investments_path(budget, sort_by: "supports", direction: "desc")
 
         expect("B First Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("C Third Investment")
         within("th", text: "Supports") do
+          expect(page).to have_css ".icon-sortable.asc", visible: :all
+        end
+      end
+
+      scenario "Sort by votes" do
+        budget.update!(phase: "reviewing_ballots")
+        visit admin_budget_budget_investments_path(budget, sort_by: "ballot_lines_count", direction: "desc")
+
+        expect("B First Investment").to appear_before("C Third Investment")
+        expect("C Third Investment").to appear_before("A Second Investment")
+        within("th", text: "Votes") do
           expect(page).to have_css ".icon-sortable.asc", visible: :all
         end
       end
@@ -889,11 +918,23 @@ describe "Admin budget investments", :admin do
       end
 
       scenario "Sort by supports" do
+        budget.update!(phase: "valuating")
         visit admin_budget_budget_investments_path(budget, sort_by: "supports")
 
         expect("C Third Investment").to appear_before("A Second Investment")
         expect("A Second Investment").to appear_before("B First Investment")
         within("th", text: "Supports") do
+          expect(page).to have_css ".icon-sortable.desc", visible: :all
+        end
+      end
+
+      scenario "Sort by votes" do
+        budget.update!(phase: "reviewing_ballots")
+        visit admin_budget_budget_investments_path(budget, sort_by: "ballot_lines_count")
+
+        expect("A Second Investment").to appear_before("C Third Investment")
+        expect("C Third Investment").to appear_before("B First Investment")
+        within("th", text: "Votes") do
           expect(page).to have_css ".icon-sortable.desc", visible: :all
         end
       end
@@ -1491,6 +1532,89 @@ describe "Admin budget investments", :admin do
     end
   end
 
+  context "Mark as winner" do
+    let!(:selected_bi) do
+      create(:budget_investment, :selected, budget: budget, title: "Selected project")
+    end
+
+    let!(:winner_bi) do
+      create(:budget_investment, :winner, budget: budget, title: "Winning project")
+    end
+
+    scenario "Marking an investment as winner" do
+      budget.update!(phase: "reviewing_ballots")
+      visit admin_budget_budget_investments_path(budget)
+
+      expect(page).to have_content "Winner"
+
+      within("tr", text: "Selected project") do
+        within("[data-field=winner]") do
+          expect(page).to have_content "No"
+          expect(page).not_to have_content "Yes"
+
+          click_button "No"
+
+          expect(page).to have_content "Yes"
+          expect(page).not_to have_content "No"
+
+          expect(selected_bi.reload).to be_winner
+        end
+      end
+    end
+
+    scenario "Unmarking an investment as winner" do
+      budget.update!(phase: "reviewing_ballots")
+      visit admin_budget_budget_investments_path(budget)
+
+      within("tr", text: "Winning project") do
+        within("[data-field=winner]") do
+          expect(page).to have_content "Yes"
+          expect(page).not_to have_content "No"
+
+          click_button "Yes"
+
+          expect(page).to have_content "No"
+          expect(page).not_to have_content "Yes"
+
+          expect(winner_bi.reload).not_to be_winner
+        end
+      end
+    end
+
+    scenario "Cannot mark unselected investment as winner" do
+      create(:budget_investment, budget: budget, title: "Unselected project")
+      budget.update!(phase: "reviewing_ballots")
+      visit admin_budget_budget_investments_path(budget)
+
+      within("tr", text: "Unselected project") do
+        within("[data-field=winner]") do
+          expect(page).not_to have_content "Yes"
+          expect(page).not_to have_content "No"
+          expect(page).not_to have_button
+        end
+      end
+    end
+
+    scenario "Cannot mark as winner on finished budgets" do
+      budget.update!(phase: "finished")
+      visit admin_budget_budget_investments_path(budget)
+
+      within("tr", text: "Winning project") do
+        within("[data-field=winner]") do
+          expect(page).to have_content "Winner"
+          expect(page).not_to have_button
+        end
+      end
+
+      within("tr", text: "Selected project") do
+        within("[data-field=winner]") do
+          expect(page).not_to have_content "Winner"
+          expect(page).not_to have_button
+        end
+      end
+    end
+  end
+
   context "Mark as visible to valuators" do
     let(:valuator) { create(:valuator) }
     let(:admin) { create(:administrator) }
@@ -1590,6 +1714,11 @@ describe "Admin budget investments", :admin do
       create(:budget_investment, budget: budget, title: "Invisible", visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
+
+      click_button "Columns"
+      within("#js-columns-selector-wrapper") do
+        check "Show to valuators"
+      end
 
       within "tr", text: "Visible" do
         within "[data-field=visible_to_valuators]" do
@@ -1726,29 +1855,51 @@ describe "Admin budget investments", :admin do
              budget: budget,
              author: create(:user, username: "Jon Doe"))
     end
-    let(:default_columns) do
-      %w[id title supports admin valuator geozone feasibility price
-         valuation_finished visible_to_valuators selected]
+    let(:all_columns) do
+      %w[id title supports admin author valuator geozone feasibility price
+         valuation_finished visible_to_valuators selected incompatible ballot_lines_count winner]
     end
     let(:selectable_columns) do
       %w[title supports admin author valuator geozone feasibility price
-         valuation_finished visible_to_valuators selected]
+         valuation_finished visible_to_valuators selected ballot_lines_count winner]
     end
 
-    scenario "Display default columns" do
-      visit admin_budget_budget_investments_path(budget)
+    scenario "Display default columns for each phase" do
+      {
+        "informing" => %w[id title geozone price selected],
+        "accepting" => %w[id title geozone price selected feasibility admin valuator valuation_finished \
+                          visible_to_valuators],
+        "reviewing" => %w[id title geozone price selected feasibility admin valuator valuation_finished \
+                          visible_to_valuators],
+        "selecting" => %w[id title geozone price selected feasibility admin valuator valuation_finished \
+                          visible_to_valuators supports],
+        "valuating" => %w[id title geozone price selected feasibility admin valuator valuation_finished \
+                          visible_to_valuators supports],
+        "publishing_prices" => %w[id title geozone price selected feasibility admin valuator \
+                                  valuation_finished visible_to_valuators supports],
+        "balloting" => %w[id title geozone price selected ballot_lines_count],
+        "reviewing_ballots" => %w[id title geozone price selected ballot_lines_count winner],
+        "finished" => %w[id title geozone price selected ballot_lines_count winner]
+      }.each do |phase, columns|
+        budget.update!(phase: phase)
+        visit admin_budget_budget_investments_path(budget)
 
-      within("table.column-selectable") do
-        default_columns.each do |default_column|
-          columns_header = I18n.t("admin.budget_investments.index.list.#{default_column}")
-          expect(page).to have_content(columns_header)
+        within("table.column-selectable") do
+          all_columns.each do |column|
+            header = I18n.t("admin.budget_investments.index.list.#{column}")
+            if columns.include?(column)
+              expect(page).to have_content(header)
+            else
+              expect(page).not_to have_content(header)
+            end
+          end
+
+          expect(page).to have_content(investment.title)
         end
-
-        expect(page).to have_content(investment.title)
       end
     end
 
-    scenario "Display incompatible column as default if selected filter was set" do
+    scenario "Display incompatible column as default if and only if selected filter was set" do
       visit admin_budget_budget_investments_path(budget, advanced_filters: ["selected"])
 
       within("table.column-selectable") do
@@ -1758,13 +1909,10 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content(investment.title)
     end
 
-    scenario "Set cookie with default columns value if undefined" do
+    scenario "Do not set cookie if column selector is not used" do
       visit admin_budget_budget_investments_path(budget)
 
-      cookie_value = cookie_by_name("investments-columns")[:value]
-
-      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone,feasibility,price," \
-                                 "valuation_finished,visible_to_valuators,selected,incompatible")
+      expect(cookie_by_name("investments-columns")).to be(nil)
     end
 
     scenario "Use column selector to display visible columns" do
@@ -1798,6 +1946,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Cookie will be updated after change columns selection" do
+      budget.update!(phase: "balloting")
+      # default columns: id title geozone price selected ballot_lines_count
       visit admin_budget_budget_investments_path(budget)
 
       click_button "Columns"
@@ -1805,21 +1955,18 @@ describe "Admin budget investments", :admin do
       within("#js-columns-selector-wrapper") do
         uncheck "Title"
         uncheck "Price"
-        uncheck "Valuation Group / Valuator"
         check "Author"
       end
 
-      cookie_value = cookie_by_name("investments-columns")[:value]
+      cookie_value = cookie_by_name("investments-columns-balloting")[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
-                                 "visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,author,geozone,selected,ballot_lines_count")
 
       visit admin_budget_budget_investments_path(budget)
 
-      cookie_value = cookie_by_name("investments-columns")[:value]
+      cookie_value = cookie_by_name("investments-columns-balloting")[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
-                                 "visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,author,geozone,selected,ballot_lines_count")
     end
 
     scenario "Select an investment when some columns are not displayed" do

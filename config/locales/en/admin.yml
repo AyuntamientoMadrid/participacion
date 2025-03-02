@@ -18,6 +18,7 @@ en:
       configure: Configure
       select: Select
       show_to_valuators: "Show %{name} to valuators"
+      mark_as_winner: "Mark as winner"
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -288,6 +289,8 @@ en:
           incompatible: Incompatible
           price: Price
           author: Author
+          ballot_lines_count: Votes
+          winner: Winner
         cannot_calculate_winners: The budget has to stay on phase "%{phase}" in order to calculate winners projects
         see_results: "See results"
         milestone_tags_filter_all: "All milestone tags"

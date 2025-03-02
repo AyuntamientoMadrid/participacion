@@ -223,6 +223,10 @@ FactoryBot.define do
       after(:create) { |investment| create(:image, imageable: investment) }
     end
 
+    trait :valuation_finished do
+      valuation_finished { true }
+    end
+
     transient do
       voters { [] }
       followers { [] }

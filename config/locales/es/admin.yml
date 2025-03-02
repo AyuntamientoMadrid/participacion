@@ -18,6 +18,7 @@ es:
       configure: Configurar
       select: Seleccionar
       show_to_valuators: "Mostrar %{name} a evaluadores"
+      mark_as_winner: Marcar como ganador
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -288,6 +289,8 @@ es:
           incompatible: Incompatible
           price: Precio
           author: Autor
+          ballot_lines_count: Votos
+          winner: Ganadores
         cannot_calculate_winners: El presupuesto debe estar en la fase "%{phase}" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"

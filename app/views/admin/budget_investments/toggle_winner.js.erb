@@ -1,0 +1,4 @@
+<%= render "admin/shared/toggle_switch",
+           record: @investment,
+           form_class: "toggle-winner",
+           new_content: render(Admin::BudgetInvestments::ToggleWinnerComponent.new(@investment)) %>

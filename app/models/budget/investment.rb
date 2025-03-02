@@ -1,6 +1,8 @@
 class Budget
   class Investment < ApplicationRecord
-    SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
+    SORTING_OPTIONS = { id: "id",
+                        supports: "cached_votes_up",
+                        ballot_lines_count: "ballot_lines_count" }.freeze
 
     include Measurable
     include Sanitizable

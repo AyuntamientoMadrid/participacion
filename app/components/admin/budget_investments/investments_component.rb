@@ -27,4 +27,26 @@ class Admin::BudgetInvestments::InvestmentsComponent < ApplicationComponent
         admin_budget_budget_investments_path(sort_by: column, direction: direction)
       )
     end
+
+    def cookie
+      "investments-columns-#{budget.current_phase.kind}"
+    end
+
+    def default_columns
+      base_columns = ["id", "title", "geozone", "price", "selected", "incompatible"]
+      if budget.selecting? || budget.valuating? || budget.publishing_prices?
+        base_columns += ["supports"]
+      end
+      if budget.accepting? || budget.reviewing? || budget.selecting? ||
+         budget.valuating? || budget.publishing_prices?
+        base_columns += ["feasibility", "admin", "valuator", "valuation_finished", "visible_to_valuators"]
+      end
+      if budget.balloting? || budget.reviewing_ballots? || budget.finished?
+        base_columns += ["ballot_lines_count"]
+      end
+      if budget.reviewing_ballots? || budget.finished?
+        base_columns += ["winner"]
+      end
+      base_columns
+    end
 end

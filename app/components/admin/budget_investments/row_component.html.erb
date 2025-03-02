@@ -54,4 +54,12 @@
       <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
     </td>
   <% end %>
+
+  <td data-field="ballot_lines_count">
+    <%= investment.ballot_lines_count %>
+  </td>
+
+  <td data-field="winner">
+    <%= render Admin::BudgetInvestments::ToggleWinnerComponent.new(investment) %>
+  </td>
 </tr>

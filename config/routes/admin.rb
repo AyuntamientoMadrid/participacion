@@ -84,6 +84,8 @@ namespace :admin do
           patch :deselect
           patch :show_to_valuators
           patch :hide_from_valuators
+          patch :mark_as_winner
+          patch :unmark_as_winner
         end
 
         resources :audits, only: :show, controller: "budget_investment_audits"

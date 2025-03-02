@@ -78,6 +78,9 @@ module Abilities
       can [:select, :deselect], Budget::Investment do |investment|
         investment.feasible? && investment.valuation_finished? && !investment.budget.finished?
       end
+      can [:mark_as_winner, :unmark_as_winner], Budget::Investment do |investment|
+        investment.feasible? && investment.valuation_finished? && investment.budget.reviewing_ballots?
+      end
 
       can :create, Budget::ValuatorAssignment
 
