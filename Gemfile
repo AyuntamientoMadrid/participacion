@@ -62,7 +62,7 @@ gem "uglifier", "~> 4.2.1"
 gem "uuidtools", "~> 2.2.0"
 gem "view_component", "~> 3.11.0"
 gem "whenever", "~> 1.0.0", require: false
-gem "wicked_pdf", "~> 2.8.1"
+gem "wicked_pdf", "~> 2.8.2"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 group :development, :test do
