@@ -613,6 +613,7 @@ en:
       info_menu: "Information"
       stats_menu: "Participation statistics"
       results_menu: "Poll results"
+      send_vote: "Vote"
       stats:
         total_votes: "Total amount of given votes"
         votes: "VOTES"
@@ -628,10 +629,11 @@ en:
         most_voted_answer: "Most voted answer: "
     poll_header:
       back_to_proposal: Back to proposal
+    answers:
+      create:
+        success_notice: "Your votes were submitted successfully"
+        rollback_notice: "An error occured while submitting your votes, please try again."
   poll_questions:
-    show:
-      vote_answer: "Vote %{answer}"
-      voted: "You have voted %{answer}"
     description:
       unique: "You can select a maximum of 1 answer."
       multiple: "You can select a maximum of %{maximum} answers."

@@ -1,17 +1,33 @@
-<div id="<%= dom_id(question) %>" class="poll-question">
+<fieldset id="<%= dom_id(question) %>" class="poll-question <%= question.max_votes > 1 ? 'multiple-choice' : 'single-choice' %>" data-max_votes="<%=question.max_votes%>" <%= "disabled='disabled'" unless can?(:answer, question.poll) %>>
   <h3>
     <%= question.title %>
   </h3>
 
-  <% if question.votation_type.present? %>
-    <strong>
+  <% if question.max_votes > 1 %>
+    <span class="help-text">
       <%= t("poll_questions.description.#{question.vote_type}", maximum: question.max_votes) %>
-    </strong>
-  <% end %>
+    </span>
 
-  <div id="<%= dom_id(question) %>_options" class="padding">
-    <%= render Polls::Questions::OptionsComponent.new(question) %>
-  </div>
+    <% question.question_options.each do |option| %>
+      <%= label_tag "web_vote_option_#{option.id}" do %>
+        <%= check_box_tag "web_vote[#{question.id}][option_id][]",
+                          option.id,
+                          checked?(question, option),
+                          id: "web_vote_option_#{option.id}" %>
+        <%= option.title %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% question.question_options.each do |option| %>
+      <%= label_tag "web_vote_option_#{option.id}" do %>
+        <%= radio_button_tag "web_vote[#{question.id}][option_id]",
+                             option.id,
+                             checked?(question, option),
+                             id: "web_vote_option_#{option.id}" %>
+        <%= option.title %>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <% if question.options_with_read_more? %>
     <div>
@@ -19,4 +35,4 @@
       <p><%= options_read_more_links %></p>
     </div>
   <% end %>
-</div>
+</fieldset>
