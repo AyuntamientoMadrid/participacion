@@ -82,6 +82,7 @@ en:
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
+        submit_button: "Submit Investment"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
