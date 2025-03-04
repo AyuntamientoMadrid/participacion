@@ -5,8 +5,8 @@
   background-image: linear-gradient(
     to right,
     #{$color} 0,
-    #{$color} calc(100% - #{$final-color-width} - 1px),
-    #{$body-background} calc(100% - #{$final-color-width}),
+    #{$color} calc(100% - $final-color-width - 1px),
+    #{$body-background} calc(100% - $final-color-width),
     #{$body-background} 100%
   );
 }
@@ -52,14 +52,14 @@
         display: block;
         height: 100%;
         position: absolute;
-        right: calc(#{$icon-size-with-padding} - #{$rounding-error});
+        right: calc($icon-size-with-padding - $rounding-error);
         top: 0;
         width: $polygon-size;
       }
     }
 
     &::before {
-      height: calc(100% + #{$border-width * 2});
+      height: calc(100% + $border-width * 2);
       top: -$border-width;
     }
 
@@ -92,7 +92,7 @@
         font-size: rem-calc(44);
 
         &::after {
-          right: calc(#{$icon-size-with-padding + $polygon-size + $heading-icon-size} / 2);
+          right: calc($icon-size-with-padding + $polygon-size + $heading-icon-size / 2);
         }
 
         &::before {
@@ -106,7 +106,7 @@
       span {
         display: block;
         font-size: 0.75em;
-        margin-top: calc(#{$line-height} / 2);
+        margin-top: calc($line-height / 2);
       }
     }
 
@@ -195,7 +195,7 @@
     color: $admin-text;
     font-size: $small-font-size;
     font-weight: bold;
-    padding-right: calc(#{$line-height} / 2);
+    padding-right: calc($line-height / 2);
     text-transform: uppercase;
   }
 }

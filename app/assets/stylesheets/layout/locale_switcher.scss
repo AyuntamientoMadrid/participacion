@@ -1,6 +1,6 @@
 .locale {
-  margin-bottom: calc(#{$line-height} / 4);
-  margin-top: calc(#{$line-height} / 4);
+  margin-bottom: calc($line-height / 4);
+  margin-top: calc($line-height / 4);
   position: relative;
 
   .locale-form {
@@ -34,8 +34,8 @@
       height: $line-height;
       margin-bottom: 0;
       outline: none;
-      padding-left: calc(#{$line-height} / 4);
-      padding-right: calc(#{$line-height} / 4 + 1em);
+      padding-left: calc($line-height / 4);
+      padding-right: calc($line-height / 4 + 1em);
       transition: none;
       width: auto;
 

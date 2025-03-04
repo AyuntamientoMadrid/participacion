@@ -8,8 +8,8 @@
 
     a {
       display: inline-block;
-      padding-bottom: calc(#{$line-height} / 4);
-      padding-top: calc(#{$line-height} / 4);
+      padding-bottom: calc($line-height / 4);
+      padding-top: calc($line-height / 4);
     }
 
     [aria-current] {

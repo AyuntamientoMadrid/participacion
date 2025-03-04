@@ -11,7 +11,7 @@
   color: $admin-text;
   margin-bottom: $line-height;
   padding: $padding;
-  padding-right: calc(2 * #{$padding} + #{$quote-width});
+  padding-right: calc(2 * $padding + $quote-width);
   position: relative;
 
   @include breakpoint(medium) {
@@ -34,9 +34,9 @@
   }
 
   &::after {
-    bottom: calc(#{$padding} / 2);
+    bottom: calc($padding / 2);
     color: $white;
     position: absolute;
-    right: calc(#{$padding} + #{$quote-padding});
+    right: calc($padding + $quote-padding);
   }
 }

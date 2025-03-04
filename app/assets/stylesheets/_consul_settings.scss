@@ -57,7 +57,7 @@ $switch-background: $dark-gray !default;
 // 2. CONSUL DEMOCRACY variables
 // -----------------------------
 
-$body-margin: calc(50vw - #{$global-width * 0.5}) !default;
+$body-margin: calc(50vw - $global-width * 0.5) !default;
 $full-width-margin: unquote("#{$global-width * 0.5} - 50vw") !default;
 
 $base-font-size:      rem-calc(17) !default;

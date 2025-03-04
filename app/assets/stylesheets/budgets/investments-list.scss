@@ -14,14 +14,14 @@
     border-radius: rem-calc(6);
     display: flex;
     flex-direction: column;
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
     padding: 0;
     position: relative;
     width: 100%;
 
     @include breakpoint(medium) {
       $gap: rem-calc(map-get($grid-margin-gutters, medium));
-      width: calc(33.33% - #{$gap});
+      width: calc(33.33% - $gap);
     }
 
     img {

@@ -37,7 +37,7 @@
     @include breakpoint(medium) {
       align-self: flex-end;
       margin-bottom: 0;
-      margin-top: calc(#{$line-height} / 4);
+      margin-top: calc($line-height / 4);
     }
   }
 

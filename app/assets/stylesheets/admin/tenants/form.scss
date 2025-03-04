@@ -6,10 +6,10 @@
 
   .radio-and-label {
     display: flex;
-    margin-bottom: calc(#{$line-height} / 3);
+    margin-bottom: calc($line-height / 3);
 
     &:last-of-type {
-      margin-bottom: calc(#{$line-height * 2} / 3);
+      margin-bottom: calc($line-height * 2 / 3);
     }
 
     input {

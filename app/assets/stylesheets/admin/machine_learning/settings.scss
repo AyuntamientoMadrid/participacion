@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 
     > * {
-      flex-basis: calc((#{rem-calc(720)} - 100%) * 999);
+      flex-basis: calc((45rem - 100%) * 999);
       flex-grow: 1;
     }
 

@@ -5,7 +5,7 @@
 
   li {
     font-size: $small-font-size;
-    margin-bottom: calc(#{$line-height} / 2);
+    margin-bottom: calc($line-height / 2);
 
     &::before {
       font-size: 0.9em;

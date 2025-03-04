@@ -5,7 +5,7 @@
   li {
     border-bottom: 1px solid $border;
     margin-bottom: 0 !important;
-    padding: calc(#{$line-height} / 2);
+    padding: calc($line-height / 2);
 
     @include breakpoint(medium) {
       display: flex;
@@ -34,6 +34,6 @@
   }
 
   .flag {
-    margin-top: calc(#{$line-height} / 2);
+    margin-top: calc($line-height / 2);
   }
 }

@@ -6,7 +6,7 @@
   background: #f1f1f1;
   border-radius: rem-calc(12);
   line-height: $line-height;
-  margin-bottom: calc(#{$line-height} / 4);
+  margin-bottom: calc($line-height / 4);
   padding: $line-height $side-padding;
   position: relative;
 
@@ -16,14 +16,14 @@
 
   .ballot-list-title {
     display: block;
-    padding-right: calc(#{$close-icon-size} + #{$close-icon-margin} - #{$side-padding});
+    padding-right: calc($close-icon-size + $close-icon-margin - $side-padding);
   }
 
   .ballot-list-price {
     @include brand-color;
     display: block;
     font-weight: bold;
-    margin-top: calc(#{$line-height} / 2);
+    margin-top: calc($line-height / 2);
     text-align: right;
   }
 

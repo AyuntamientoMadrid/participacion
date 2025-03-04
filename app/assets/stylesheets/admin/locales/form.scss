@@ -19,7 +19,7 @@
   > [type="hidden"] + fieldset,
   > fieldset + fieldset {
     @include admin-fieldset-separator;
-    padding-top: calc(#{$line-height} / 4);
+    padding-top: calc($line-height / 4);
   }
 
   .collection-radio-buttons,
@@ -30,7 +30,7 @@
 
     @each $elements in 10, 15, 20, 25, 30 {
       &:has(label:nth-of-type(#{$elements})) {
-        column-count: calc(#{$elements} / 5);
+        column-count: calc($elements / 5);
       }
     }
   }

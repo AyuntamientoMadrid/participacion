@@ -25,7 +25,7 @@
 
   .label {
     display: inline-block;
-    margin-left: calc(#{$line-height} / 2);
+    margin-left: calc($line-height / 2);
     vertical-align: top;
   }
 }
@@ -34,13 +34,13 @@
   border: 2px solid $highlight;
   border-radius: rem-calc(6);
   margin-bottom: $line-height;
-  padding: calc(#{$line-height} / 2);
+  padding: calc($line-height / 2);
   text-align: center;
 
   @include breakpoint(medium only) {
     .change-behaviour {
       float: left;
-      margin-top: calc(#{$line-height} / 2);
+      margin-top: calc($line-height / 2);
       padding: $line-height;
       width: 100%;
     }
@@ -69,7 +69,7 @@
   .progress {
     background: #f0efea;
     border-radius: rem-calc(6);
-    height: calc(#{$line-height} / 2);
+    height: calc($line-height / 2);
   }
 
   .progress-meter {
@@ -109,7 +109,7 @@
 
   .action-content {
     display: inline-block;
-    margin-left: calc(#{$line-height} / 4);
+    margin-left: calc($line-height / 4);
     max-width: 90%;
     word-break: break-all;
 
@@ -118,7 +118,7 @@
     }
 
     .label {
-      margin-left: calc(#{$line-height} / 2);
+      margin-left: calc($line-height / 2);
     }
 
     a {
@@ -155,7 +155,7 @@
     border-radius: rem-calc(4);
     display: inline-block;
     height: rem-calc(20);
-    margin-top: calc(#{$line-height} / 6);
+    margin-top: calc($line-height / 6);
     width: rem-calc(20);
   }
 }
@@ -251,7 +251,7 @@
   .help-text {
     color: $text-medium;
     display: block;
-    padding-top: calc(#{$line-height} / 4);
+    padding-top: calc($line-height / 4);
   }
 }
 
@@ -309,7 +309,7 @@
     display: inline-block;
     font-size: rem-calc(24);
     line-height: $line-height;
-    padding: calc(#{$line-height} / 2) calc(#{$line-height} / 4);
+    padding: calc($line-height / 2) calc($line-height / 4);
     padding-left: 0;
     vertical-align: middle;
   }
@@ -323,7 +323,7 @@
 
     &.resources {
       border-left: 1px solid $border;
-      margin-left: calc(#{$line-height} / 2);
+      margin-left: calc($line-height / 2);
     }
   }
 
@@ -455,7 +455,7 @@
 .community-poll {
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
-  padding-bottom: calc(#{$line-height} / 2);
+  padding-bottom: calc($line-height / 2);
 }
 
 // 09. Email preview

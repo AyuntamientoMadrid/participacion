@@ -33,9 +33,9 @@
 
     li {
       line-height: 0;
-      margin-left: calc(#{$spacing} / 2);
-      margin-right: calc(#{$spacing} / 2);
-      width: calc(100% / 6 - #{$spacing});
+      margin-left: calc($spacing / 2);
+      margin-right: calc($spacing / 2);
+      width: calc(100% / 6 - $spacing);
 
       .sdg-goal-icon {
         width: 100%;
