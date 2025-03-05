@@ -13,7 +13,7 @@ class AdminNotification < ApplicationRecord
   before_validation :complete_link_url
 
   def list_of_recipients
-    UserSegments.recipients(segment_recipient) if valid_segment_recipient?
+    UserSegments.recipients(segment_recipient)
   end
 
   def valid_segment_recipient?

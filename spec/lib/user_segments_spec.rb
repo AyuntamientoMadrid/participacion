@@ -301,6 +301,24 @@ describe UserSegments do
     end
   end
 
+  describe ".recipients" do
+    it "does not return any recipients when given an invalid segment" do
+      create(:user, email: "first@email.com")
+
+      recipients = UserSegments.recipients(:invalid_segment)
+
+      expect(recipients).to be nil
+    end
+
+    it "does not return any recipients when given a method name as a segment" do
+      create(:user, email: "first@email.com")
+
+      recipients = UserSegments.recipients(:ancestors)
+
+      expect(recipients).to be nil
+    end
+  end
+
   describe ".user_segment_emails" do
     it "returns list of emails sorted by user creation date" do
       create(:user, email: "first@email.com", created_at: 1.day.ago)
