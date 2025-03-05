@@ -48,7 +48,7 @@ gem "recipient_interceptor", "~> 0.3.2"
 gem "redcarpet", "~> 3.6.0"
 gem "responders", "~> 3.1.1"
 gem "rinku", "~> 2.0.6", require: "rails_rinku"
-gem "ros-apartment", "~> 2.11.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
+gem "ros-apartment", "~> 3.2.0", require: "apartment" # Remove ConnectionHandling monkey patch when upgrading
 gem "sassc-embedded", "~> 1.80.1"
 gem "sassc-rails", "~> 2.1.2"
 gem "savon", "~> 2.15.1"
