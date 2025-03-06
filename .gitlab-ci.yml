@@ -3,7 +3,7 @@ stages:
   - lint
 
 tests:
-  image: "ruby:3.2.7"
+  image: "ruby:3.3.7"
   stage: test
   services:
     - postgres:13.16
@@ -38,7 +38,7 @@ tests:
 # PRONTO_GITLAB_API_PRIVATE_TOKEN to your repository CI/CD settings
 # giving it the value of the Personal Access Token
 linters:
-  image: "ruby:3.2.7"
+  image: "ruby:3.3.7"
   stage: lint
   cache:
     key: consul
