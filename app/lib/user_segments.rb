@@ -64,8 +64,10 @@ class UserSegments
   def self.recipients(segment)
     if geozones[segment.to_s]
       all_users.where(geozone: geozones[segment.to_s])
-    else
+    elsif valid_segment?(segment)
       send(segment)
+    else
+      User.none
     end
   end
 
