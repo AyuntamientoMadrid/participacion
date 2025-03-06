@@ -307,7 +307,7 @@ describe UserSegments do
 
       recipients = UserSegments.recipients(:invalid_segment)
 
-      expect(recipients).to be nil
+      expect(recipients).to eq []
     end
 
     it "does not return any recipients when given a method name as a segment" do
@@ -315,7 +315,7 @@ describe UserSegments do
 
       recipients = UserSegments.recipients(:ancestors)
 
-      expect(recipients).to be nil
+      expect(recipients).to eq []
     end
   end
 
@@ -326,6 +326,14 @@ describe UserSegments do
 
       emails = UserSegments.user_segment_emails(:all_users)
       expect(emails).to eq ["first@email.com", "last@email.com"]
+    end
+
+    it "returns an empty list when given an invalid segment" do
+      create(:user, email: "first@email.com")
+
+      emails = UserSegments.user_segment_emails(:invalid_segment)
+
+      expect(emails).to eq []
     end
   end
 

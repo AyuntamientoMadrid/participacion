@@ -11,7 +11,7 @@ class Newsletter < ApplicationRecord
   include ActsAsParanoidAliases
 
   def list_of_recipient_emails
-    UserSegments.user_segment_emails(segment_recipient) if valid_segment_recipient?
+    UserSegments.user_segment_emails(segment_recipient)
   end
 
   def valid_segment_recipient?

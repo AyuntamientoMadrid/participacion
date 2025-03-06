@@ -25,7 +25,7 @@ class AdminNotification < ApplicationRecord
   end
 
   def list_of_recipients_count
-    list_of_recipients&.count || 0
+    list_of_recipients.count
   end
 
   def deliver

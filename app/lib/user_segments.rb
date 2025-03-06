@@ -66,6 +66,8 @@ class UserSegments
       all_users.where(geozone: geozones[segment.to_s])
     elsif valid_segment?(segment)
       send(segment)
+    else
+      User.none
     end
   end
 
