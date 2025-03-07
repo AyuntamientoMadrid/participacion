@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::Headings::GroupSwitcherComponent < ApplicationComponent
   attr_reader :group
+  use_helpers :link_list
 
   def initialize(group)
     @group = group
@@ -25,5 +26,13 @@ class Admin::BudgetsWizard::Headings::GroupSwitcherComponent < ApplicationCompon
 
     def currently_showing_text
       sanitize(t("admin.budget_headings.group_switcher.currently_showing", group: group.name))
+    end
+
+    def link_to_group(group)
+      link_to(link_to_group_text(group), headings_path(group))
+    end
+
+    def link_to_group_text(group)
+      sanitize(t("admin.budget_headings.group_switcher.the_other_group", group: tag.strong(group.name)))
     end
 end

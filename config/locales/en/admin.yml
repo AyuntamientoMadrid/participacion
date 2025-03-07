@@ -212,7 +212,6 @@ en:
         submit: "Save heading"
       group_switcher:
         currently_showing: "Showing headings from the <strong>%{group}</strong> group."
-        different_group: "Manage headings from a different group"
         the_other_group: "Manage headings from the %{group} group."
       index:
         back: "Go back to groups"

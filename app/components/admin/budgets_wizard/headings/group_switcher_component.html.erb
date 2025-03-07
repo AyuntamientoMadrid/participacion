@@ -2,20 +2,10 @@
   <% if other_groups.one? %>
     <p>
       <%= currently_showing_text %>
-      <%= link_to t("admin.budget_headings.group_switcher.the_other_group", group: other_groups.first.name),
-                  headings_path(other_groups.first) %>
+      <%= link_to_group(other_groups.first) %>
     </p>
   <% else %>
     <p><%= currently_showing_text %></p>
-    <ul class="dropdown menu" data-dropdown-menu data-disable-hover="true" data-click-open="true">
-      <li class="has-submenu">
-        <button type="button"><%= t("admin.budget_headings.group_switcher.different_group") %></button>
-        <ul class="menu" data-submenu>
-          <% other_groups.each do |other_group| %>
-            <li><%= link_to other_group.name, headings_path(other_group) %></li>
-          <% end %>
-        </ul>
-      </li>
-    </ul>
+    <%= link_list(*other_groups.map { |group| link_to_group(group) }) %>
   <% end %>
 </div>
