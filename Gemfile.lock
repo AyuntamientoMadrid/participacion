@@ -319,7 +319,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    knapsack_pro (7.8.0)
+    knapsack_pro (8.0.1)
       rake
     kramdown (2.4.0)
       rexml
@@ -761,7 +761,7 @@ DEPENDENCIES
   image_processing (~> 1.13.0)
   invisible_captcha (~> 2.3.0)
   kaminari (~> 1.2.2)
-  knapsack_pro (~> 7.8.0)
+  knapsack_pro (~> 8.0.1)
   launchy (~> 3.1.1)
   letter_opener_web (~> 3.0.0)
   mdl (~> 0.13.0)
