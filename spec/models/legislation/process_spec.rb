@@ -154,6 +154,21 @@ describe Legislation::Process do
       expect(proposals_disabled).to be_valid
       expect(allegations_disabled).to be_valid
     end
+
+    it "is invalid if result publication is enabled but result_publication_date is not present" do
+      process = build(:legislation_process, result_publication_enabled: true, result_publication_date: "")
+
+      expect(process).not_to be_valid
+      expect(process.errors.messages[:result_publication_date]).to include("can't be blank")
+    end
+
+    it "is valid if result publication is enabled and result_publication_date is present" do
+      process = build(:legislation_process,
+                      result_publication_enabled: true,
+                      result_publication_date: Date.tomorrow)
+
+      expect(process).to be_valid
+    end
   end
 
   describe "date ranges validations" do

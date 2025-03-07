@@ -18,6 +18,7 @@ en:
           reseted: Password reseted successfully
           random: Generate random password
           save: Save password
+          show: Show password
           print: Print password
           print_help: You will be able to print the password when it is saved.
     account_info:

@@ -27,18 +27,20 @@ describe "Account" do
     expect(email).to have_text "Change your password"
   end
 
-  scenario "Manager changes the password by hand (writen by them)" do
+  scenario "Manager manually writes the new password" do
     user = create(:user, :level_three)
     login_managed_user(user)
 
     login_as_manager
     click_link "Reset password manually"
 
-    find(:css, "input[id$='user_password']").set("new_password")
+    fill_in "Password", with: "new_password"
 
     click_button "Save password"
 
     expect(page).to have_content "Password reseted successfully"
+    expect(page).to have_link "Print password", href: "javascript:window.print();"
+    expect(page).to have_css "div.for-print-only", text: "new_password", visible: :hidden
 
     logout
 
@@ -57,6 +59,19 @@ describe "Account" do
 
     new_password = find_field("user_password").value
 
+    expect(page).to have_field "Password", type: :password
+    expect(page).to have_css "button[aria-pressed=false]", exact_text: "Show password"
+
+    click_button "Show password"
+
+    expect(page).to have_field "Password", type: :text
+    expect(page).to have_css "button[aria-pressed=true]", exact_text: "Show password"
+
+    click_button "Show password"
+
+    expect(page).to have_field "Password", type: :password
+    expect(page).to have_css "button[aria-pressed=false]", exact_text: "Show password"
+
     click_button "Save password"
 
     expect(page).to have_content "Password reseted successfully"
@@ -66,22 +81,6 @@ describe "Account" do
     login_through_form_with_email_and_password(user.username, new_password)
 
     expect(page).to have_content "You have been signed in successfully."
-  end
-
-  scenario "The password is printed" do
-    user = create(:user, :level_three)
-    login_managed_user(user)
-
-    login_as_manager
-    click_link "Reset password manually"
-
-    find(:css, "input[id$='user_password']").set("another_new_password")
-
-    click_button "Save password"
-
-    expect(page).to have_content "Password reseted successfully"
-    expect(page).to have_link "Print password", href: "javascript:window.print();"
-    expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: :hidden)
   end
 
   describe "When a user has not been selected" do

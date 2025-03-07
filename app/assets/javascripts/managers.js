@@ -39,14 +39,13 @@
         e.stopPropagation();
         $("#user_password").val(App.Managers.generatePassword());
       });
-      $(".show-password").on("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+      $(".show-password").on("click", function() {
         if ($("#user_password").is("input[type='password']")) {
           App.Managers.togglePassword("text");
         } else {
           App.Managers.togglePassword("password");
         }
+        $(this).attr("aria-pressed", !JSON.parse($(this).attr("aria-pressed")));
       });
     }
   };

@@ -31,6 +31,14 @@ describe Shared::BannerComponent do
     expect(page).not_to have_content "Proposal banner"
   end
 
+  it "does not render an empty banner" do
+    banner = build(:banner, title: "", description: "")
+
+    render_inline Shared::BannerComponent.new(banner)
+
+    expect(page).not_to be_rendered
+  end
+
   context "several banners available in the same section" do
     before do
       create(:banner,

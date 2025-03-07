@@ -139,24 +139,23 @@
     }
   }
 
-  .icon-check {
-    display: inline-block;
-    font-size: rem-calc(24);
+  form {
+    display: inline;
     vertical-align: top;
+
+    button {
+      font-size: 1.5em;
+    }
+  }
+
+  .checked-link {
+    @include has-fa-icon(check, solid);
+    color: $color-success;
   }
 
   .unchecked-link {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  .unchecked {
-    border: 1px solid $border;
-    border-radius: rem-calc(4);
-    display: inline-block;
-    height: rem-calc(20);
-    margin-top: calc($line-height / 6);
-    width: rem-calc(20);
+    @include has-fa-icon(square, regular);
+    color: $dark-gray;
   }
 }
 

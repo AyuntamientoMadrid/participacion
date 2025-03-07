@@ -36,13 +36,12 @@ describe "Commenting legislation annotations" do
     end
 
     scenario "View comments of annotations in an included range" do
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
-      expect(page).to have_css(".comment", count: 2)
-      expect(page).to have_content("my annotation")
-      expect(page).to have_content("my other annotation")
+      expect(page).to have_content "Comments about"
+      expect(page).to have_css ".comment", count: 2
+      expect(page).to have_content "my annotation"
+      expect(page).to have_content "my other annotation"
     end
 
     scenario "Reply on a single annotation thread and display it in the merged annotation thread" do
@@ -71,20 +70,16 @@ describe "Commenting legislation annotations" do
         expect(page).to have_content "my other annotation"
       end
 
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
-      expect(page).to have_css(".comment", count: 3)
-      expect(page).to have_content("my annotation")
-      expect(page).to have_content("my other annotation")
-      expect(page).to have_content("replying in single annotation thread")
+      expect(page).to have_css ".comment", count: 3
+      expect(page).to have_content "my annotation"
+      expect(page).to have_content "my other annotation"
+      expect(page).to have_content "replying in single annotation thread"
     end
 
     scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
-      within("#annotation-link") do
-        find(".icon-expand").click
-      end
+      click_link "2 comment"
 
       within("#comment_#{comment2.id}") do
         click_link "Reply"
