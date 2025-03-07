@@ -2,21 +2,10 @@
   <% if other_groups.one? %>
     <p>
       <%= currently_showing_text %>
-      <%= link_to t("admin.budget_headings.group_switcher.the_other_group", group: other_groups.first.name),
-                  headings_path(other_groups.first) %>
+      <%= link_to_group(other_groups.first) %>
     </p>
   <% else %>
     <p><%= currently_showing_text %></p>
-    <ul>
-      <% other_groups.each do |other_group| %>
-        <li>
-          <%= link_to sanitize(t(
-                        "admin.budget_headings.group_switcher.the_other_group",
-                        group: tag.strong(other_group.name)
-                      )),
-                      headings_path(other_group) %>
-        </li>
-      <% end %>
-    </ul>
+    <%= link_list(*other_groups.map { |group| link_to_group(group) }) %>
   <% end %>
 </div>
