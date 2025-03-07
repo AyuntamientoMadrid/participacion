@@ -261,9 +261,10 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (2.3.18)
+    graphql (2.4.11)
       base64
       fiber-storage
+      logger
     groupdate (6.5.1)
       activesupport (>= 7)
     gyoku (1.4.0)
@@ -754,7 +755,7 @@ DEPENDENCIES
   globalize (~> 6.3.0)
   globalize-accessors (~> 0.3.0)
   graphiql-rails (~> 1.8.0)
-  graphql (~> 2.3.18)
+  graphql (~> 2.4.11)
   groupdate (~> 6.5.1)
   htmlbeautifier (~> 1.4.3)
   i18n-tasks (~> 0.9.37)
