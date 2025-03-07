@@ -6,7 +6,11 @@ class Admin::ProposalsController < Admin::BaseController
 
   has_orders %w[created_at]
 
-  before_action :load_proposal, except: :index
+  before_action :load_proposal, except: [:index, :successful]
+
+  def successful
+    @proposals = Proposal.successful.sort_by_confidence_score
+  end
 
   def show
   end

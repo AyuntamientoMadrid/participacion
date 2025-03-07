@@ -1134,18 +1134,11 @@ es:
         multiple_description: "Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas."
     questions:
       index:
-        title: "Preguntas de votaciones"
         create: "Crear pregunta ciudadana"
-        no_questions: "No hay ninguna pregunta ciudadana."
-        filter_poll: Filtrar por votación
         select_poll: Seleccionar votación
-        questions_tab: "Preguntas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
         table_proposal: "Propuesta"
-        table_question: "Pregunta"
-        table_poll: "Votación"
-        poll_not_assigned: "Votación no asignada"
       edit:
         title: "Editar pregunta ciudadana"
       form:
@@ -1166,7 +1159,6 @@ es:
         edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
-        video_url: Vídeo externo
         answers:
           title: Respuesta
           description: Descripción

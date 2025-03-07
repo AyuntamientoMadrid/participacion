@@ -512,28 +512,6 @@
     }
   }
 
-  .icon-debates,
-  .icon-proposals,
-  .icon-budget {
-    font-size: rem-calc(18);
-    line-height: $line-height;
-    margin-left: rem-calc(6);
-    top: 0;
-  }
-
-  .icon-debates {
-    color: $debates;
-  }
-
-  .icon-proposals {
-    color: $proposals-dark;
-  }
-
-  .icon-budget {
-    color: $budget;
-    font-size: $small-font-size;
-  }
-
   .debate-info,
   .proposal-info,
   .investment-project-info,

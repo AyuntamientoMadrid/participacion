@@ -100,11 +100,3 @@
     <% end %>
   </tbody>
 </table>
-
-<% if @question.video_url.present? %>
-  <p>
-    <strong><%= t("admin.questions.show.video_url") %></strong>
-    <br>
-    <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
-  </p>
-<% end %>

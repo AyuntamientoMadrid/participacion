@@ -1,7 +1,0 @@
-<%= form_tag "", method: :get, class: "poll-questions-filter" do %>
-  <div class="filter">
-    <%= label_tag :poll_id, t("admin.questions.index.filter_poll") %>
-    <%= select_tag "poll_id", poll_select_options, prompt: t("polls.all") %>
-  </div>
-  <%= submit_tag t("shared.filter") %>
-<% end %>
