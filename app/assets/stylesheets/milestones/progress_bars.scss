@@ -1,0 +1,33 @@
+.tab-milestones {
+
+  .progress-bars {
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height;
+
+    h5 {
+      font-size: rem-calc(24);
+    }
+
+    .progress {
+      background: $progress-bar-background;
+      border-radius: rem-calc(6);
+      position: relative;
+    }
+
+    .progress-meter {
+      background: $progress-bar-color;
+      border-radius: rem-calc(6);
+    }
+
+    .progress-meter-text {
+      color: color-pick-contrast($progress-bar-background);
+      right: 12px;
+      text-align: right;
+      transform: translate(0%, -50%);
+    }
+
+    .milestone-progress .row {
+      margin-bottom: calc($line-height / 2);
+    }
+  }
+}
