@@ -26,7 +26,7 @@ gem "exiftool_vendored", "~> 12.97.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "foundation_rails_helper", "~> 4.0.1"
-gem "globalize", "~> 6.3.0"
+gem "globalize", "~> 7.0.0"
 gem "globalize-accessors", "~> 0.3.0"
 gem "graphiql-rails", "~> 1.8.0"
 gem "graphql", "~> 2.3.18"
