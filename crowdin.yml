@@ -3,6 +3,8 @@ files:
     translation: /config/locales/%locale%/%original_file_name%
     ignore:
       - /config/locales/**/rails_date_order.yml
+    excluded_target_languages:
+      - es
     update_option: update_as_unapproved
     languages_mapping:
       locale:
