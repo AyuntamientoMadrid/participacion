@@ -1,5 +1,5 @@
 <% if banner %>
   <div class="banner" style="background-color:<%= banner.background_color %>;">
-    <%= sanitize link, attributes: %w[href style] %>
+    <%= sanitize banner_content, attributes: %w[href style] %>
   </div>
 <% end %>

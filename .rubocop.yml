@@ -186,6 +186,8 @@ Layout/MultilineMethodCallBraceLayout:
 
 Layout/MultilineMethodCallIndentation:
   Enabled: true
+  Exclude:
+    - "config/environments/production.rb"
 
 Layout/MultilineOperationIndentation:
   Enabled: true
@@ -466,6 +468,8 @@ Rails/Pick:
 
 Rails/PluckId:
   Enabled: true
+  Exclude:
+    - app/controllers/budgets/investments_controller.rb
 
 Rails/PluralizationGrammar:
   Enabled: true
@@ -698,6 +702,8 @@ Style/AndOr:
 
 Style/ArgumentsForwarding:
   Enabled: true
+  Exclude:
+    - "bin/setup"
 
 Style/ArrayCoercion:
   Enabled: true

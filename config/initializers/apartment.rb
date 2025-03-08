@@ -1,20 +1,3 @@
-module ActiveRecord # TODO: Remove after upgrading ros-apartment
-  # Code based on the current (as of March 2024) development version of the apartment gem
-  module ConnectionHandling
-    def connected_to_with_rails7_tenant(role: nil, prevent_writes: false, &blk)
-      current_tenant = Apartment::Tenant.current
-
-      # The connected_to_without_tenant method is defined by Apartment
-      connected_to_without_tenant(role: role, prevent_writes: prevent_writes) do
-        Apartment::Tenant.switch!(current_tenant)
-        yield(blk)
-      end
-    end
-
-    alias connected_to connected_to_with_rails7_tenant
-  end
-end
-
 # You can have Apartment route to the appropriate Tenant by adding some Rack middleware.
 # Apartment can support many different "Elevators" that can take care of this routing to your data.
 # Require whichever Elevator you're using below or none if you have a custom one.

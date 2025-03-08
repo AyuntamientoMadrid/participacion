@@ -1,5 +1,7 @@
 .banner {
   @include full-width-background;
+  @include card;
+  padding: 0 rem-calc(16);
 
   .debates-list &::before,
   .proposals-list &::before,
@@ -7,16 +9,19 @@
     content: none;
   }
 
+  &:hover {
+    text-decoration: underline;
+  }
+
   a {
-    display: block;
-
-    > * {
-      padding: 0 rem-calc(16);
-
-      &:empty {
-        display: none;
-      }
+    &,
+    &:hover {
+      color: inherit;
     }
+  }
+
+  > :empty {
+    display: none;
   }
 
   + .budget-header,
