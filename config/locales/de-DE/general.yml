@@ -608,6 +608,7 @@ de:
       info_menu: "Information"
       stats_menu: "Teilnahme Statistiken"
       results_menu: "Umfrageergebnisse"
+      send_vote: "Abstimmen"
       stats:
         total_votes: "Gesamtanzahl der Bewertungen"
         votes: "STIMMEN"
@@ -623,10 +624,11 @@ de:
         most_voted_answer: "Am meisten bewerteten Antwort: "
     poll_header:
       back_to_proposal: Zurück zum Vorschlag
+    answers:
+      create:
+        success_notice: "Ihre Abstimmung wurde erfolgreich gespeichert."
+        rollback_notice: "Während Ihrer Abstimmung ist ein Fehler aufgetreten, bitte versuchen Sie es erneut."
   poll_questions:
-    show:
-      vote_answer: "Für %{answer} abstimmen"
-      voted: "Sie haben für %{answer} abgestimmt"
     description:
       unique: "Sie können maximal 1 Antwort auswählen."
       multiple: "Sie können maximal %{maximum} Antworten auswählen."

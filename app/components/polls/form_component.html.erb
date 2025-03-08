@@ -1,0 +1,5 @@
+<%= form_for poll, url: answer_poll_path(poll), method: :post, class: "poll-form" do |f| %>
+  <%= render Polls::Questions::QuestionComponent.with_collection(questions) %>
+
+  <%= f.submit(class: "button", value: t("polls.show.send_vote")) %>
+<% end %>

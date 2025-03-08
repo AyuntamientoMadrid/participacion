@@ -560,6 +560,9 @@ RSpec/BeNil:
   Enabled: true
   EnforcedStyle: be
 
+RSpec/ChangeByZero:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: true
 

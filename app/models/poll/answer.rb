@@ -17,32 +17,13 @@ class Poll::Answer < ApplicationRecord
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
-  def save_and_record_voter_participation
-    author.with_lock do
-      save!
-      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
-    end
-  end
-
-  def destroy_and_remove_voter_participation
-    transaction do
-      destroy!
-
-      if author.poll_answers.where(question_id: poll.question_ids).none?
-        Poll::Voter.find_by(user: author, poll: poll, origin: "web").destroy!
-      end
-    end
-  end
-
   private
 
     def max_votes
       return if !question || !author || persisted?
 
-      author.with_lock do
-        if question.answers.by_author(author).count >= question.max_votes
-          errors.add(:answer, "Maximum number of votes per user exceeded")
-        end
+      if question.answers.by_author(author).count >= question.max_votes
+        errors.add(:answer, "Maximum number of votes per user exceeded")
       end
     end
 end
