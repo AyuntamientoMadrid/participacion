@@ -13,7 +13,7 @@ describe Polls::AnswersController do
             option_id: question.question_options.find_by(title: "Answer A").id,
             format: :js
           }
-        rescue ActionDispatch::IllegalStateError, ActiveRecord::RecordInvalid
+        rescue ActiveRecord::RecordInvalid
         end
       end.each(&:join)
 
